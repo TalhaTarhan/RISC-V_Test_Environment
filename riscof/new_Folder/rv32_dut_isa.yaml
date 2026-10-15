@@ -1,0 +1,18 @@
+# rv32_dut_isa.yaml  -  riscv-config ISA specification (RV32I subset)
+
+hart_ids: [0]
+hart_count: 1
+base_isa: RV32I
+ISA: RV32I
+supported_xlen: [32]
+User_Spec_Version: '2.3'
+platform_schema_version: 2.3
+
+misa:
+  reset-val: 0x40000100   # MXL=01 (RV32), I only
+  rv32:
+    accessible: true
+
+reset-pc: 0x00000000
+nmi-pc:   0x00000004
+hw_data_misaligned_support: false

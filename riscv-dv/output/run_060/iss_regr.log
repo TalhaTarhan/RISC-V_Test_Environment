@@ -1,0 +1,51 @@
+Test binary: output/run_060/asm_test/riscv_arithmetic_basic_test_0.o
+spike : output/run_060/spike_sim/riscv_arithmetic_basic_test_0.csv
+rv : output/run_060/rv_sim/riscv_arithmetic_basic_test_0.csv
+[PASSED]: 72 matched
+
+Test binary: output/run_060/asm_test/riscv_arithmetic_basic_test_1.o
+spike : output/run_060/spike_sim/riscv_arithmetic_basic_test_1.csv
+rv : output/run_060/rv_sim/riscv_arithmetic_basic_test_1.csv
+[PASSED]: 73 matched
+
+Test binary: output/run_060/asm_test/riscv_arithmetic_basic_test_2.o
+spike : output/run_060/spike_sim/riscv_arithmetic_basic_test_2.csv
+rv : output/run_060/rv_sim/riscv_arithmetic_basic_test_2.csv
+[PASSED]: 76 matched
+
+Test binary: output/run_060/asm_test/riscv_arithmetic_basic_test_3.o
+spike : output/run_060/spike_sim/riscv_arithmetic_basic_test_3.csv
+rv : output/run_060/rv_sim/riscv_arithmetic_basic_test_3.csv
+[PASSED]: 64 matched
+
+Test binary: output/run_060/asm_test/riscv_arithmetic_basic_test_4.o
+spike : output/run_060/spike_sim/riscv_arithmetic_basic_test_4.csv
+rv : output/run_060/rv_sim/riscv_arithmetic_basic_test_4.csv
+[PASSED]: 46 matched
+
+Test binary: output/run_060/asm_test/riscv_arithmetic_basic_test_5.o
+spike : output/run_060/spike_sim/riscv_arithmetic_basic_test_5.csv
+rv : output/run_060/rv_sim/riscv_arithmetic_basic_test_5.csv
+[PASSED]: 62 matched
+
+Test binary: output/run_060/asm_test/riscv_arithmetic_basic_test_6.o
+spike : output/run_060/spike_sim/riscv_arithmetic_basic_test_6.csv
+rv : output/run_060/rv_sim/riscv_arithmetic_basic_test_6.csv
+[PASSED]: 63 matched
+
+Test binary: output/run_060/asm_test/riscv_arithmetic_basic_test_7.o
+spike : output/run_060/spike_sim/riscv_arithmetic_basic_test_7.csv
+rv : output/run_060/rv_sim/riscv_arithmetic_basic_test_7.csv
+[PASSED]: 69 matched
+
+Test binary: output/run_060/asm_test/riscv_arithmetic_basic_test_8.o
+spike : output/run_060/spike_sim/riscv_arithmetic_basic_test_8.csv
+rv : output/run_060/rv_sim/riscv_arithmetic_basic_test_8.csv
+[PASSED]: 67 matched
+
+Test binary: output/run_060/asm_test/riscv_arithmetic_basic_test_9.o
+spike : output/run_060/spike_sim/riscv_arithmetic_basic_test_9.csv
+rv : output/run_060/rv_sim/riscv_arithmetic_basic_test_9.csv
+[PASSED]: 71 matched
+
+10 PASSED, 0 FAILED

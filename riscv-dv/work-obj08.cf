@@ -1,0 +1,7 @@
+v 4
+file / "/home/ahonat/Desktop/Deneme/rv32_top.vhd" "4adb9e64f013ffdca786f2a1f665659efbab8ea2" "20260514070933.646":
+  entity neorv32_top at 11( 483) + 0 on 63;
+  architecture rtl of neorv32_top at 34( 1194) + 0 on 64;
+file / "/home/ahonat/Desktop/Deneme/tb_rv32i.vhd" "7aaef03de87be70dcf7f2c733b28f724ed81f299" "20260514070609.247":
+  entity tb_rv32i at 7( 341) + 0 on 57;
+  architecture sim of tb_rv32i at 20( 597) + 0 on 58;

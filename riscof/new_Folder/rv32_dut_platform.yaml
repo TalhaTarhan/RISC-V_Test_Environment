@@ -1,0 +1,9 @@
+# rv32_dut_platform.yaml  -  riscv-config platform specification
+
+memories:
+  main:
+    base  : 0x00000000
+    size  : 0x00100000    # 1 MB
+    access: rwx
+
+# No CLINT, no PLIC, no mtime/mtimecmp

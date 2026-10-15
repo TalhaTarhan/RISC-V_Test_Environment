@@ -1,0 +1,71 @@
+[32m    INFO[0m | [32m****** RISCOF: RISC-V Architectural Test Framework 1.25.3 *******[0m
+[32m    INFO[0m | [32musing riscv_isac version : 0.18.0[0m
+[32m    INFO[0m | [32musing riscv_config version : 3.18.3[0m
+[32m    INFO[0m | [32mReading configuration from: /home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/config.ini[0m
+[32m    INFO[0m | [32mPreparing Models[0m
+[32m    INFO[0m | [32mInput-ISA file[0m
+[32m    INFO[0m | [32mISACheck: Loading input file: /home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/neorv32_isa.yaml[0m
+[32m    INFO[0m | [32mISACheck: Load Schema /home/ahonat/venv/lib/python3.12/site-packages/riscv_config/schemas/schema_isa.yaml[0m
+[32m    INFO[0m | [32mISACheck: Processing Hart:0[0m
+[32m    INFO[0m | [32mISACheck: Initiating Validation for Hart:0[0m
+[32m    INFO[0m | [32mISACheck: No errors for Hart:0[0m
+[32m    INFO[0m | [32mISACheck:  Updating fields node for each CSR in Hart:0[0m
+[32m    INFO[0m | [32mISACheck: Dumping out Normalized Checked YAML: /home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscof_work/neorv32_isa_checked.yaml[0m
+[32m    INFO[0m | [32mInput-Platform file[0m
+[32m    INFO[0m | [32mLoading input file: /home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/neorv32_platform.yaml[0m
+[32m    INFO[0m | [32mLoad Schema /home/ahonat/venv/lib/python3.12/site-packages/riscv_config/schemas/schema_platform.yaml[0m
+[32m    INFO[0m | [32mInitiating Validation[0m
+[32m    INFO[0m | [32mNo Syntax errors in Input Platform Yaml. :)[0m
+[32m    INFO[0m | [32mDumping out Normalized Checked YAML: /home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscof_work/neorv32_platform_checked.yaml[0m
+[32m    INFO[0m | [32mGenerating database for suite: /home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite[0m
+[32m    INFO[0m | [32mDatabase File Generated: /home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscof_work/database.yaml[0m
+[32m    INFO[0m | [32mEnv path set to/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/env[0m
+[32m    INFO[0m | [32mRunning Build for DUT[0m
+[32m    INFO[0m | [32mRunning Build for Reference[0m
+[32m    INFO[0m | [32mSelecting Tests.[0m
+[32m    INFO[0m | [32mRunning Tests on DUT.[0m
+[32m    INFO[0m | [32mRunning Tests on Reference Model.[0m
+[32m    INFO[0m | [32mInitiating signature checking.[0m
+[32m    INFO[0m | [32mFollowing 38 tests have been run :
+[0m
+[32m    INFO[0m | [32mTEST NAME                                          : COMMIT ID                                : STATUS[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/add-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/addi-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/and-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/andi-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/auipc-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/beq-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bge-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bgeu-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/blt-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bltu-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bne-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/fence-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jal-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jalr-01.S : -                                        : Passed[0m
+[1;31m   ERROR[0m | [1;31m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lb-align-01.S : -                                        : Failed[0m
+[1;31m   ERROR[0m | [1;31m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lbu-align-01.S : -                                        : Failed[0m
+[1;31m   ERROR[0m | [1;31m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lh-align-01.S : -                                        : Failed[0m
+[1;31m   ERROR[0m | [1;31m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lhu-align-01.S : -                                        : Failed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lui-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lw-align-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/or-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/ori-01.S : -                                        : Passed[0m
+[1;31m   ERROR[0m | [1;31m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sb-align-01.S : -                                        : Failed[0m
+[1;31m   ERROR[0m | [1;31m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sh-align-01.S : -                                        : Failed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sll-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slli-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slt-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slti-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltiu-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltu-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sra-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srai-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srl-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srli-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sub-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sw-align-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/xor-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32m/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/xori-01.S : -                                        : Passed[0m
+[32m    INFO[0m | [32mTest report generated at /home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/riscof_work/report.html.[0m
+[32m    INFO[0m | [32mOpening test report in web-browser[0m

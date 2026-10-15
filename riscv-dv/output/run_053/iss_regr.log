@@ -1,0 +1,66 @@
+Test binary: output/run_053/asm_test/riscv_arithmetic_basic_test_0.o
+spike : output/run_053/spike_sim/riscv_arithmetic_basic_test_0.csv
+rv : output/run_053/rv_sim/riscv_arithmetic_basic_test_0.csv
+Mismatch[0]:
+[82] spike : pc[800001c0] ecall:  
+142807 instructions left in trace rv
+[FAILED]: 68 matched, 142807 mismatch
+
+Test binary: output/run_053/asm_test/riscv_arithmetic_basic_test_1.o
+spike : output/run_053/spike_sim/riscv_arithmetic_basic_test_1.csv
+rv : output/run_053/rv_sim/riscv_arithmetic_basic_test_1.csv
+[PASSED]: 59 matched
+
+Test binary: output/run_053/asm_test/riscv_arithmetic_basic_test_2.o
+spike : output/run_053/spike_sim/riscv_arithmetic_basic_test_2.csv
+rv : output/run_053/rv_sim/riscv_arithmetic_basic_test_2.csv
+Mismatch[0]:
+[72] spike : pc[80000188] ecall:  
+142812 instructions left in trace rv
+[FAILED]: 66 matched, 142812 mismatch
+
+Test binary: output/run_053/asm_test/riscv_arithmetic_basic_test_3.o
+spike : output/run_053/spike_sim/riscv_arithmetic_basic_test_3.csv
+rv : output/run_053/rv_sim/riscv_arithmetic_basic_test_3.csv
+[PASSED]: 52 matched
+
+Test binary: output/run_053/asm_test/riscv_arithmetic_basic_test_4.o
+spike : output/run_053/spike_sim/riscv_arithmetic_basic_test_4.csv
+rv : output/run_053/rv_sim/riscv_arithmetic_basic_test_4.csv
+[PASSED]: 59 matched
+
+Test binary: output/run_053/asm_test/riscv_arithmetic_basic_test_5.o
+spike : output/run_053/spike_sim/riscv_arithmetic_basic_test_5.csv
+rv : output/run_053/rv_sim/riscv_arithmetic_basic_test_5.csv
+[PASSED]: 65 matched
+
+Test binary: output/run_053/asm_test/riscv_arithmetic_basic_test_6.o
+spike : output/run_053/spike_sim/riscv_arithmetic_basic_test_6.csv
+rv : output/run_053/rv_sim/riscv_arithmetic_basic_test_6.csv
+[PASSED]: 57 matched
+
+Test binary: output/run_053/asm_test/riscv_arithmetic_basic_test_7.o
+spike : output/run_053/spike_sim/riscv_arithmetic_basic_test_7.csv
+rv : output/run_053/rv_sim/riscv_arithmetic_basic_test_7.csv
+Mismatch[0]:
+[69] spike : pc[8000015c] ecall:  
+142812 instructions left in trace rv
+[FAILED]: 59 matched, 142812 mismatch
+
+Test binary: output/run_053/asm_test/riscv_arithmetic_basic_test_8.o
+spike : output/run_053/spike_sim/riscv_arithmetic_basic_test_8.csv
+rv : output/run_053/rv_sim/riscv_arithmetic_basic_test_8.csv
+Mismatch[0]:
+[83] spike : pc[800001d0] ecall:  
+142807 instructions left in trace rv
+[FAILED]: 72 matched, 142807 mismatch
+
+Test binary: output/run_053/asm_test/riscv_arithmetic_basic_test_9.o
+spike : output/run_053/spike_sim/riscv_arithmetic_basic_test_9.csv
+rv : output/run_053/rv_sim/riscv_arithmetic_basic_test_9.csv
+Mismatch[0]:
+[73] spike : pc[800001c0] ecall:  
+142811 instructions left in trace rv
+[FAILED]: 63 matched, 142811 mismatch
+
+5 PASSED, 5 FAILED

@@ -1,0 +1,7 @@
+v 4
+file / "/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/rvtest_tb.vhd" "2030687c793ba6e5736a10ee40c855015c3a6358" "20261014161233.300":
+  entity rvtest_tb at 36( 1723) + 0 on 69;
+  architecture sim of rvtest_tb at 64( 2825) + 0 on 70;
+file / "/home/ahonat/Desktop/riscof-neorv32-Deneme/neorv32-riscof/plugins/neorv32/neorv32_top.vhd" "133d0e05fbf4d57855fc43a3866d4e158b14794b" "20261014161233.287":
+  entity neorv32_top at 11( 483) + 0 on 67;
+  architecture rtl of neorv32_top at 41( 1515) + 0 on 68;

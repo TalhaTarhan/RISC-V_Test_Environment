@@ -1,0 +1,12 @@
+compile:
+  cmd:
+    - "ghdl -a --std=08 -frelaxed /home/ahonat/Desktop/Deneme/rv32_top.vhd"
+    - "ghdl -a --std=08 -frelaxed /home/ahonat/Desktop/Deneme/tb_rv32i.vhd"
+    - "ghdl -e --std=08 -frelaxed tb_rv32i"
+
+sim:
+  cmd:
+    - "ghdl -r --std=08 -frelaxed tb_rv32i --stop-time=10ms"
+
+iss: spike
+iss_opts: "--isa=rv32i_zicsr"

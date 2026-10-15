@@ -1,0 +1,472 @@
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering LB
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering LH
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering LW
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering LBU
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering LHU
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering SB
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering SH
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering SW
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering SLL
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering SLLI
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering SRL
+2026-05-07 11:54:40,830 riscv_instr.py 119 INFO Registering SRLI
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering SRA
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering SRAI
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering ADD
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering ADDI
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering NOP
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering SUB
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering LUI
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering AUIPC
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering XOR
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering XORI
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering OR
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering ORI
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering AND
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering ANDI
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering SLT
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering SLTI
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering SLTU
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering SLTIU
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering BEQ
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering BNE
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering BLT
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering BGE
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering BLTU
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering BGEU
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering JAL
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering JALR
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering FENCE
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering FENCE_I
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering SFENCE_VMA
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering ECALL
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering EBREAK
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering URET
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering SRET
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering MRET
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering DRET
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering WFI
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering CSRRW
+2026-05-07 11:54:40,831 riscv_instr.py 119 INFO Registering CSRRS
+2026-05-07 11:54:40,832 riscv_instr.py 119 INFO Registering CSRRC
+2026-05-07 11:54:40,832 riscv_instr.py 119 INFO Registering CSRRWI
+2026-05-07 11:54:40,832 riscv_instr.py 119 INFO Registering CSRRSI
+2026-05-07 11:54:40,832 riscv_instr.py 119 INFO Registering CSRRCI
+2026-05-07 11:54:41,551 riscv_instr_gen_config.py 475 INFO min_stack_len_per_program value = 8
+2026-05-07 11:54:41,552 riscv_instr_base_test.py 78 INFO riscv_instr_gen_config is randomized
+2026-05-07 11:54:41,554 riscv_instr_gen_config.py 475 INFO min_stack_len_per_program value = 8
+2026-05-07 11:54:41,555 riscv_instr_gen_config.py 475 INFO min_stack_len_per_program value = 8
+2026-05-07 11:54:41,556 riscv_instr_base_test.py 78 INFO riscv_instr_gen_config is randomized
+2026-05-07 11:54:41,556 riscv_instr_base_test.py 78 INFO riscv_instr_gen_config is randomized
+2026-05-07 11:54:41,560 riscv_utils.py 70 INFO 
++-----+---------------------------------+---------------+--------+---------------------------------------------------------------------------+
+|     | Name                            | Type          |   Size | Value                                                                     |
+|-----+---------------------------------+---------------+--------+---------------------------------------------------------------------------|
+|   0 | tname                           | <class 'str'> |     54 | riscv_instr_gen_config                                                    |
+|   1 | main_program_instr_cnt          | <class 'str'> |     71 | 13                                                                        |
+|   2 | sub_program_instr_cnt           | <class 'str'> |     70 | []                                                                        |
+|   3 | debug_program_instr_cnt         | <class 'str'> |     72 | 0                                                                         |
+|   4 | debug_sub_program_instr_cnt     | <class 'str'> |     76 | []                                                                        |
+|   5 | data_page_pattern               | <class 'str'> |     66 | 0                                                                         |
+|   6 | vreg_init_method                | <class 'str'> |     65 | 1                                                                         |
+|   7 | max_directed_instr_stream_seq   | <class 'str'> |     78 | 20                                                                        |
+|   8 | m_mode_exception_delegation     | <class 'str'> |     76 | {}                                                                        |
+|   9 | s_mode_exception_delegation     | <class 'str'> |     76 | {}                                                                        |
+|  10 | m_mode_interrupt_delegation     | <class 'str'> |     76 | {}                                                                        |
+|  11 | s_mode_interrupt_delegation     | <class 'str'> |     76 | {}                                                                        |
+|  12 | init_privileged_mode            | <class 'str'> |     69 | 3                                                                         |
+|  13 | mstatus                         | <class 'str'> |     56 | 1285259392                                                                |
+|  14 | mie                             | <class 'str'> |     52 | 1714993615                                                                |
+|  15 | sstatus                         | <class 'str'> |     56 | 1645675313                                                                |
+|  16 | sie                             | <class 'str'> |     52 | 85606150                                                                  |
+|  17 | ustatus                         | <class 'str'> |     56 | 100275775                                                                 |
+|  18 | uie                             | <class 'str'> |     52 | 1314521862                                                                |
+|  19 | mstatus_mprv                    | <class 'str'> |     61 | 0                                                                         |
+|  20 | mstatus_mxr                     | <class 'str'> |     60 | 0                                                                         |
+|  21 | mstatus_sum                     | <class 'str'> |     60 | 0                                                                         |
+|  22 | mstatus_tvm                     | <class 'str'> |     60 | 0                                                                         |
+|  23 | mstatus_fs                      | <class 'str'> |     59 | 0                                                                         |
+|  24 | mstatus_vs                      | <class 'str'> |     59 | 3                                                                         |
+|  25 | mtvec_mode                      | <class 'str'> |     59 | 1                                                                         |
+|  26 | tvec_alignment                  | <class 'str'> |     63 | 4                                                                         |
+|  27 | fcsr_rm                         | <class 'str'> |     56 | 1                                                                         |
+|  28 | enable_sfence                   | <class 'str'> |     62 | 1                                                                         |
+|  29 | gpr                             | <class 'str'> |     52 | [30, 29, 31, 20]                                                          |
+|  30 | scratch_reg                     | <class 'str'> |     60 | 2                                                                         |
+|  31 | pmp_reg                         | <class 'str'> |     56 | 15                                                                        |
+|  32 | sp                              | <class 'str'> |     51 | 27                                                                        |
+|  33 | tp                              | <class 'str'> |     51 | 28                                                                        |
+|  34 | ra                              | <class 'str'> |     51 | 7                                                                         |
+|  35 | check_misa_init_val             | <class 'str'> |     68 | 0                                                                         |
+|  36 | check_xstatus                   | <class 'str'> |     62 | 1                                                                         |
+|  37 | virtual_addr_translation_on     | <class 'str'> |     76 | 0                                                                         |
+|  38 | stack_len                       | <class 'str'> |     58 | 5000                                                                      |
+|  39 | kernel_stack_len                | <class 'str'> |     65 | 4000                                                                      |
+|  40 | kernel_program_instr_cnt        | <class 'str'> |     73 | 400                                                                       |
+|  41 | invalid_priv_mode_csrs          | <class 'str'> |     71 | []                                                                        |
+|  42 | num_of_sub_program              | <class 'str'> |     67 | 0                                                                         |
+|  43 | instr_cnt                       | <class 'str'> |     58 | 50                                                                        |
+|  44 | num_of_tests                    | <class 'str'> |     61 | 3                                                                         |
+|  45 | no_data_page                    | <class 'str'> |     61 | 0                                                                         |
+|  46 | no_branch_jump                  | <class 'str'> |     63 | 0                                                                         |
+|  47 | no_load_store                   | <class 'str'> |     62 | 0                                                                         |
+|  48 | no_csr_instr                    | <class 'str'> |     61 | 1                                                                         |
+|  49 | no_ebreak                       | <class 'str'> |     58 | 1                                                                         |
+|  50 | no_dret                         | <class 'str'> |     56 | 1                                                                         |
+|  51 | no_fence                        | <class 'str'> |     57 | 1                                                                         |
+|  52 | no_wfi                          | <class 'str'> |     55 | 1                                                                         |
+|  53 | enable_unaligned_load_store     | <class 'str'> |     76 | 0                                                                         |
+|  54 | illegal_instr_ratio             | <class 'str'> |     68 | 0                                                                         |
+|  55 | hint_instr_ratio                | <class 'str'> |     65 | 0                                                                         |
+|  56 | num_of_harts                    | <class 'str'> |     61 | 1                                                                         |
+|  57 | fix_sp                          | <class 'str'> |     55 | 0                                                                         |
+|  58 | use_push_data_section           | <class 'str'> |     70 | 0                                                                         |
+|  59 | boot_mode_opts                  | <class 'str'> |     63 | m                                                                         |
+|  60 | enable_page_table_exception     | <class 'str'> |     76 | 0                                                                         |
+|  61 | no_directed_instr               | <class 'str'> |     66 | 0                                                                         |
+|  62 | asm_test_suffix                 | <class 'str'> |     64 |                                                                           |
+|  63 | enable_interrupt                | <class 'str'> |     65 | 0                                                                         |
+|  64 | enable_nested_interrupt         | <class 'str'> |     72 | 0                                                                         |
+|  65 | enable_timer_irq                | <class 'str'> |     65 | 0                                                                         |
+|  66 | bare_program_mode               | <class 'str'> |     66 | 0                                                                         |
+|  67 | enable_illegal_csr_instruction  | <class 'str'> |     79 | 0                                                                         |
+|  68 | enable_access_invalid_csr_level | <class 'str'> |     80 | 0                                                                         |
+|  69 | enable_misaligned_instr         | <class 'str'> |     72 | 0                                                                         |
+|  70 | enable_dummy_csr_write          | <class 'str'> |     71 | 0                                                                         |
+|  71 | randomize_csr                   | <class 'str'> |     62 | 0                                                                         |
+|  72 | allow_sfence_exception          | <class 'str'> |     71 | 0                                                                         |
+|  73 | no_delegation                   | <class 'str'> |     62 | 1                                                                         |
+|  74 | force_m_delegation              | <class 'str'> |     67 | 0                                                                         |
+|  75 | force_s_delegation              | <class 'str'> |     67 | 0                                                                         |
+|  76 | support_supervisor_mode         | <class 'str'> |     72 | 0                                                                         |
+|  77 | disable_compressed_instr        | <class 'str'> |     73 | 1                                                                         |
+|  78 | require_signature_addr          | <class 'str'> |     71 | 0                                                                         |
+|  79 | signature_addr                  | <class 'str'> |     63 | 3735928559                                                                |
+|  80 | gen_debug_section               | <class 'str'> |     66 | 0                                                                         |
+|  81 | enable_ebreak_in_debug_rom      | <class 'str'> |     75 | 0                                                                         |
+|  82 | set_dcsr_ebreak                 | <class 'str'> |     64 | 0                                                                         |
+|  83 | num_debug_sub_program           | <class 'str'> |     70 | 0                                                                         |
+|  84 | enable_debug_single_step        | <class 'str'> |     73 | 0                                                                         |
+|  85 | single_step_iterations          | <class 'str'> |     71 | 531020743                                                                 |
+|  86 | set_mstatus_tw                  | <class 'str'> |     63 | 0                                                                         |
+|  87 | set_mstatus_mprv                | <class 'str'> |     65 | 0                                                                         |
+|  88 | min_stack_len_per_program       | <class 'str'> |     74 | 8                                                                         |
+|  89 | max_stack_len_per_program       | <class 'str'> |     74 | 64                                                                        |
+|  90 | max_branch_step                 | <class 'str'> |     64 | 20                                                                        |
+|  91 | reserved_regs                   | <class 'str'> |     62 | [28, 27, 2]                                                               |
+|  92 | enable_floating_point           | <class 'str'> |     70 | 0                                                                         |
+|  93 | enable_vector_extension         | <class 'str'> |     72 | 0                                                                         |
+|  94 | vector_instr_only               | <class 'str'> |     66 | 0                                                                         |
+|  95 | enable_b_extension              | <class 'str'> |     67 | 0                                                                         |
+|  96 | enable_bitmanip_groups          | <class 'str'> |     71 | ['ZBB', 'ZBS', 'ZBP', 'ZBE', 'ZBF', 'ZBC', 'ZBR', 'ZBM', 'ZBT', 'ZB_TMP'] |
+|  97 | dist_control_mode               | <class 'str'> |     66 | 0                                                                         |
+|  98 | category_dist                   | <class 'str'> |     62 | {}                                                                        |
+|  99 | march_isa                       | <class 'str'> |     58 | []                                                                        |
+| 100 | supported_interrupt_mode        | <class 'str'> |     73 | [0, 1]                                                                    |
+| 101 | XLEN                            | <class 'str'> |     53 | 32                                                                        |
+| 102 | SATP_MODE                       | <class 'str'> |     58 | 0                                                                         |
+| 103 | init_privil_mode                | <class 'str'> |     65 | 3                                                                         |
+| 104 | tvec_ceil                       | <class 'str'> |     58 | 4                                                                         |
++-----+---------------------------------+---------------+--------+---------------------------------------------------------------------------+
+2026-05-07 11:54:41,564 riscv_utils.py 70 INFO 
++-----+---------------------------------+---------------+--------+---------------------------------------------------------------------------+
+|     | Name                            | Type          |   Size | Value                                                                     |
+|-----+---------------------------------+---------------+--------+---------------------------------------------------------------------------|
+|   0 | tname                           | <class 'str'> |     54 | riscv_instr_gen_config                                                    |
+|   1 | main_program_instr_cnt          | <class 'str'> |     71 | 43                                                                        |
+|   2 | sub_program_instr_cnt           | <class 'str'> |     70 | []                                                                        |
+|   3 | debug_program_instr_cnt         | <class 'str'> |     72 | 0                                                                         |
+|   4 | debug_sub_program_instr_cnt     | <class 'str'> |     76 | []                                                                        |
+|   5 | data_page_pattern               | <class 'str'> |     66 | 1                                                                         |
+|   6 | vreg_init_method                | <class 'str'> |     65 | 1                                                                         |
+|   7 | max_directed_instr_stream_seq   | <class 'str'> |     78 | 20                                                                        |
+|   8 | m_mode_exception_delegation     | <class 'str'> |     76 | {}                                                                        |
+|   9 | s_mode_exception_delegation     | <class 'str'> |     76 | {}                                                                        |
+|  10 | m_mode_interrupt_delegation     | <class 'str'> |     76 | {}                                                                        |
+|  11 | s_mode_interrupt_delegation     | <class 'str'> |     76 | {}                                                                        |
+|  12 | init_privileged_mode            | <class 'str'> |     69 | 3                                                                         |
+|  13 | mstatus                         | <class 'str'> |     56 | 2049212030                                                                |
+|  14 | mie                             | <class 'str'> |     52 | 763691273                                                                 |
+|  15 | sstatus                         | <class 'str'> |     56 | 2082679665                                                                |
+|  16 | sie                             | <class 'str'> |     52 | 105426907                                                                 |
+|  17 | ustatus                         | <class 'str'> |     56 | 500987299                                                                 |
+|  18 | uie                             | <class 'str'> |     52 | 982615664                                                                 |
+|  19 | mstatus_mprv                    | <class 'str'> |     61 | 0                                                                         |
+|  20 | mstatus_mxr                     | <class 'str'> |     60 | 0                                                                         |
+|  21 | mstatus_sum                     | <class 'str'> |     60 | 0                                                                         |
+|  22 | mstatus_tvm                     | <class 'str'> |     60 | 0                                                                         |
+|  23 | mstatus_fs                      | <class 'str'> |     59 | 0                                                                         |
+|  24 | mstatus_vs                      | <class 'str'> |     59 | 1                                                                         |
+|  25 | mtvec_mode                      | <class 'str'> |     59 | 1                                                                         |
+|  26 | tvec_alignment                  | <class 'str'> |     63 | 4                                                                         |
+|  27 | fcsr_rm                         | <class 'str'> |     56 | 4                                                                         |
+|  28 | enable_sfence                   | <class 'str'> |     62 | 1                                                                         |
+|  29 | gpr                             | <class 'str'> |     52 | [24, 31, 15, 7]                                                           |
+|  30 | scratch_reg                     | <class 'str'> |     60 | 10                                                                        |
+|  31 | pmp_reg                         | <class 'str'> |     56 | 23                                                                        |
+|  32 | sp                              | <class 'str'> |     51 | 27                                                                        |
+|  33 | tp                              | <class 'str'> |     51 | 14                                                                        |
+|  34 | ra                              | <class 'str'> |     51 | 31                                                                        |
+|  35 | check_misa_init_val             | <class 'str'> |     68 | 0                                                                         |
+|  36 | check_xstatus                   | <class 'str'> |     62 | 1                                                                         |
+|  37 | virtual_addr_translation_on     | <class 'str'> |     76 | 0                                                                         |
+|  38 | stack_len                       | <class 'str'> |     58 | 5000                                                                      |
+|  39 | kernel_stack_len                | <class 'str'> |     65 | 4000                                                                      |
+|  40 | kernel_program_instr_cnt        | <class 'str'> |     73 | 400                                                                       |
+|  41 | invalid_priv_mode_csrs          | <class 'str'> |     71 | []                                                                        |
+|  42 | num_of_sub_program              | <class 'str'> |     67 | 0                                                                         |
+|  43 | instr_cnt                       | <class 'str'> |     58 | 50                                                                        |
+|  44 | num_of_tests                    | <class 'str'> |     61 | 3                                                                         |
+|  45 | no_data_page                    | <class 'str'> |     61 | 0                                                                         |
+|  46 | no_branch_jump                  | <class 'str'> |     63 | 0                                                                         |
+|  47 | no_load_store                   | <class 'str'> |     62 | 0                                                                         |
+|  48 | no_csr_instr                    | <class 'str'> |     61 | 1                                                                         |
+|  49 | no_ebreak                       | <class 'str'> |     58 | 1                                                                         |
+|  50 | no_dret                         | <class 'str'> |     56 | 1                                                                         |
+|  51 | no_fence                        | <class 'str'> |     57 | 1                                                                         |
+|  52 | no_wfi                          | <class 'str'> |     55 | 1                                                                         |
+|  53 | enable_unaligned_load_store     | <class 'str'> |     76 | 0                                                                         |
+|  54 | illegal_instr_ratio             | <class 'str'> |     68 | 0                                                                         |
+|  55 | hint_instr_ratio                | <class 'str'> |     65 | 0                                                                         |
+|  56 | num_of_harts                    | <class 'str'> |     61 | 1                                                                         |
+|  57 | fix_sp                          | <class 'str'> |     55 | 0                                                                         |
+|  58 | use_push_data_section           | <class 'str'> |     70 | 0                                                                         |
+|  59 | boot_mode_opts                  | <class 'str'> |     63 | m                                                                         |
+|  60 | enable_page_table_exception     | <class 'str'> |     76 | 0                                                                         |
+|  61 | no_directed_instr               | <class 'str'> |     66 | 0                                                                         |
+|  62 | asm_test_suffix                 | <class 'str'> |     64 |                                                                           |
+|  63 | enable_interrupt                | <class 'str'> |     65 | 0                                                                         |
+|  64 | enable_nested_interrupt         | <class 'str'> |     72 | 0                                                                         |
+|  65 | enable_timer_irq                | <class 'str'> |     65 | 0                                                                         |
+|  66 | bare_program_mode               | <class 'str'> |     66 | 0                                                                         |
+|  67 | enable_illegal_csr_instruction  | <class 'str'> |     79 | 0                                                                         |
+|  68 | enable_access_invalid_csr_level | <class 'str'> |     80 | 0                                                                         |
+|  69 | enable_misaligned_instr         | <class 'str'> |     72 | 0                                                                         |
+|  70 | enable_dummy_csr_write          | <class 'str'> |     71 | 0                                                                         |
+|  71 | randomize_csr                   | <class 'str'> |     62 | 0                                                                         |
+|  72 | allow_sfence_exception          | <class 'str'> |     71 | 0                                                                         |
+|  73 | no_delegation                   | <class 'str'> |     62 | 1                                                                         |
+|  74 | force_m_delegation              | <class 'str'> |     67 | 0                                                                         |
+|  75 | force_s_delegation              | <class 'str'> |     67 | 0                                                                         |
+|  76 | support_supervisor_mode         | <class 'str'> |     72 | 0                                                                         |
+|  77 | disable_compressed_instr        | <class 'str'> |     73 | 1                                                                         |
+|  78 | require_signature_addr          | <class 'str'> |     71 | 0                                                                         |
+|  79 | signature_addr                  | <class 'str'> |     63 | 3735928559                                                                |
+|  80 | gen_debug_section               | <class 'str'> |     66 | 0                                                                         |
+|  81 | enable_ebreak_in_debug_rom      | <class 'str'> |     75 | 0                                                                         |
+|  82 | set_dcsr_ebreak                 | <class 'str'> |     64 | 0                                                                         |
+|  83 | num_debug_sub_program           | <class 'str'> |     70 | 0                                                                         |
+|  84 | enable_debug_single_step        | <class 'str'> |     73 | 0                                                                         |
+|  85 | single_step_iterations          | <class 'str'> |     71 | 2560304721                                                                |
+|  86 | set_mstatus_tw                  | <class 'str'> |     63 | 0                                                                         |
+|  87 | set_mstatus_mprv                | <class 'str'> |     65 | 0                                                                         |
+|  88 | min_stack_len_per_program       | <class 'str'> |     74 | 8                                                                         |
+|  89 | max_stack_len_per_program       | <class 'str'> |     74 | 64                                                                        |
+|  90 | max_branch_step                 | <class 'str'> |     64 | 20                                                                        |
+|  91 | reserved_regs                   | <class 'str'> |     62 | [14, 27, 10]                                                              |
+|  92 | enable_floating_point           | <class 'str'> |     70 | 0                                                                         |
+|  93 | enable_vector_extension         | <class 'str'> |     72 | 0                                                                         |
+|  94 | vector_instr_only               | <class 'str'> |     66 | 0                                                                         |
+|  95 | enable_b_extension              | <class 'str'> |     67 | 0                                                                         |
+|  96 | enable_bitmanip_groups          | <class 'str'> |     71 | ['ZBB', 'ZBS', 'ZBP', 'ZBE', 'ZBF', 'ZBC', 'ZBR', 'ZBM', 'ZBT', 'ZB_TMP'] |
+|  97 | dist_control_mode               | <class 'str'> |     66 | 0                                                                         |
+|  98 | category_dist                   | <class 'str'> |     62 | {}                                                                        |
+|  99 | march_isa                       | <class 'str'> |     58 | []                                                                        |
+| 100 | supported_interrupt_mode        | <class 'str'> |     73 | [0, 1]                                                                    |
+| 101 | XLEN                            | <class 'str'> |     53 | 32                                                                        |
+| 102 | SATP_MODE                       | <class 'str'> |     58 | 0                                                                         |
+| 103 | init_privil_mode                | <class 'str'> |     65 | 3                                                                         |
+| 104 | tvec_ceil                       | <class 'str'> |     58 | 4                                                                         |
++-----+---------------------------------+---------------+--------+---------------------------------------------------------------------------+
+2026-05-07 11:54:41,564 riscv_utils.py 70 INFO 
++-----+---------------------------------+---------------+--------+---------------------------------------------------------------------------+
+|     | Name                            | Type          |   Size | Value                                                                     |
+|-----+---------------------------------+---------------+--------+---------------------------------------------------------------------------|
+|   0 | tname                           | <class 'str'> |     54 | riscv_instr_gen_config                                                    |
+|   1 | main_program_instr_cnt          | <class 'str'> |     71 | 28                                                                        |
+|   2 | sub_program_instr_cnt           | <class 'str'> |     70 | []                                                                        |
+|   3 | debug_program_instr_cnt         | <class 'str'> |     72 | 0                                                                         |
+|   4 | debug_sub_program_instr_cnt     | <class 'str'> |     76 | []                                                                        |
+|   5 | data_page_pattern               | <class 'str'> |     66 | 2                                                                         |
+|   6 | vreg_init_method                | <class 'str'> |     65 | 1                                                                         |
+|   7 | max_directed_instr_stream_seq   | <class 'str'> |     78 | 20                                                                        |
+|   8 | m_mode_exception_delegation     | <class 'str'> |     76 | {}                                                                        |
+|   9 | s_mode_exception_delegation     | <class 'str'> |     76 | {}                                                                        |
+|  10 | m_mode_interrupt_delegation     | <class 'str'> |     76 | {}                                                                        |
+|  11 | s_mode_interrupt_delegation     | <class 'str'> |     76 | {}                                                                        |
+|  12 | init_privileged_mode            | <class 'str'> |     69 | 3                                                                         |
+|  13 | mstatus                         | <class 'str'> |     56 | 1220897377                                                                |
+|  14 | mie                             | <class 'str'> |     52 | 514794846                                                                 |
+|  15 | sstatus                         | <class 'str'> |     56 | 476405271                                                                 |
+|  16 | sie                             | <class 'str'> |     52 | 232085586                                                                 |
+|  17 | ustatus                         | <class 'str'> |     56 | 878548503                                                                 |
+|  18 | uie                             | <class 'str'> |     52 | 707164073                                                                 |
+|  19 | mstatus_mprv                    | <class 'str'> |     61 | 0                                                                         |
+|  20 | mstatus_mxr                     | <class 'str'> |     60 | 0                                                                         |
+|  21 | mstatus_sum                     | <class 'str'> |     60 | 0                                                                         |
+|  22 | mstatus_tvm                     | <class 'str'> |     60 | 0                                                                         |
+|  23 | mstatus_fs                      | <class 'str'> |     59 | 0                                                                         |
+|  24 | mstatus_vs                      | <class 'str'> |     59 | 1                                                                         |
+|  25 | mtvec_mode                      | <class 'str'> |     59 | 0                                                                         |
+|  26 | tvec_alignment                  | <class 'str'> |     63 | 2                                                                         |
+|  27 | fcsr_rm                         | <class 'str'> |     56 | 1                                                                         |
+|  28 | enable_sfence                   | <class 'str'> |     62 | 0                                                                         |
+|  29 | gpr                             | <class 'str'> |     52 | [31, 30, 24, 29]                                                          |
+|  30 | scratch_reg                     | <class 'str'> |     60 | 27                                                                        |
+|  31 | pmp_reg                         | <class 'str'> |     56 | 17                                                                        |
+|  32 | sp                              | <class 'str'> |     51 | 26                                                                        |
+|  33 | tp                              | <class 'str'> |     51 | 9                                                                         |
+|  34 | ra                              | <class 'str'> |     51 | 31                                                                        |
+|  35 | check_misa_init_val             | <class 'str'> |     68 | 0                                                                         |
+|  36 | check_xstatus                   | <class 'str'> |     62 | 1                                                                         |
+|  37 | virtual_addr_translation_on     | <class 'str'> |     76 | 0                                                                         |
+|  38 | stack_len                       | <class 'str'> |     58 | 5000                                                                      |
+|  39 | kernel_stack_len                | <class 'str'> |     65 | 4000                                                                      |
+|  40 | kernel_program_instr_cnt        | <class 'str'> |     73 | 400                                                                       |
+|  41 | invalid_priv_mode_csrs          | <class 'str'> |     71 | []                                                                        |
+|  42 | num_of_sub_program              | <class 'str'> |     67 | 0                                                                         |
+|  43 | instr_cnt                       | <class 'str'> |     58 | 50                                                                        |
+|  44 | num_of_tests                    | <class 'str'> |     61 | 3                                                                         |
+|  45 | no_data_page                    | <class 'str'> |     61 | 0                                                                         |
+|  46 | no_branch_jump                  | <class 'str'> |     63 | 0                                                                         |
+|  47 | no_load_store                   | <class 'str'> |     62 | 0                                                                         |
+|  48 | no_csr_instr                    | <class 'str'> |     61 | 1                                                                         |
+|  49 | no_ebreak                       | <class 'str'> |     58 | 1                                                                         |
+|  50 | no_dret                         | <class 'str'> |     56 | 1                                                                         |
+|  51 | no_fence                        | <class 'str'> |     57 | 1                                                                         |
+|  52 | no_wfi                          | <class 'str'> |     55 | 1                                                                         |
+|  53 | enable_unaligned_load_store     | <class 'str'> |     76 | 0                                                                         |
+|  54 | illegal_instr_ratio             | <class 'str'> |     68 | 0                                                                         |
+|  55 | hint_instr_ratio                | <class 'str'> |     65 | 0                                                                         |
+|  56 | num_of_harts                    | <class 'str'> |     61 | 1                                                                         |
+|  57 | fix_sp                          | <class 'str'> |     55 | 0                                                                         |
+|  58 | use_push_data_section           | <class 'str'> |     70 | 0                                                                         |
+|  59 | boot_mode_opts                  | <class 'str'> |     63 | m                                                                         |
+|  60 | enable_page_table_exception     | <class 'str'> |     76 | 0                                                                         |
+|  61 | no_directed_instr               | <class 'str'> |     66 | 0                                                                         |
+|  62 | asm_test_suffix                 | <class 'str'> |     64 |                                                                           |
+|  63 | enable_interrupt                | <class 'str'> |     65 | 0                                                                         |
+|  64 | enable_nested_interrupt         | <class 'str'> |     72 | 0                                                                         |
+|  65 | enable_timer_irq                | <class 'str'> |     65 | 0                                                                         |
+|  66 | bare_program_mode               | <class 'str'> |     66 | 0                                                                         |
+|  67 | enable_illegal_csr_instruction  | <class 'str'> |     79 | 0                                                                         |
+|  68 | enable_access_invalid_csr_level | <class 'str'> |     80 | 0                                                                         |
+|  69 | enable_misaligned_instr         | <class 'str'> |     72 | 0                                                                         |
+|  70 | enable_dummy_csr_write          | <class 'str'> |     71 | 0                                                                         |
+|  71 | randomize_csr                   | <class 'str'> |     62 | 0                                                                         |
+|  72 | allow_sfence_exception          | <class 'str'> |     71 | 0                                                                         |
+|  73 | no_delegation                   | <class 'str'> |     62 | 1                                                                         |
+|  74 | force_m_delegation              | <class 'str'> |     67 | 0                                                                         |
+|  75 | force_s_delegation              | <class 'str'> |     67 | 0                                                                         |
+|  76 | support_supervisor_mode         | <class 'str'> |     72 | 0                                                                         |
+|  77 | disable_compressed_instr        | <class 'str'> |     73 | 1                                                                         |
+|  78 | require_signature_addr          | <class 'str'> |     71 | 0                                                                         |
+|  79 | signature_addr                  | <class 'str'> |     63 | 3735928559                                                                |
+|  80 | gen_debug_section               | <class 'str'> |     66 | 0                                                                         |
+|  81 | enable_ebreak_in_debug_rom      | <class 'str'> |     75 | 0                                                                         |
+|  82 | set_dcsr_ebreak                 | <class 'str'> |     64 | 0                                                                         |
+|  83 | num_debug_sub_program           | <class 'str'> |     70 | 0                                                                         |
+|  84 | enable_debug_single_step        | <class 'str'> |     73 | 0                                                                         |
+|  85 | single_step_iterations          | <class 'str'> |     71 | 387185600                                                                 |
+|  86 | set_mstatus_tw                  | <class 'str'> |     63 | 0                                                                         |
+|  87 | set_mstatus_mprv                | <class 'str'> |     65 | 0                                                                         |
+|  88 | min_stack_len_per_program       | <class 'str'> |     74 | 8                                                                         |
+|  89 | max_stack_len_per_program       | <class 'str'> |     74 | 64                                                                        |
+|  90 | max_branch_step                 | <class 'str'> |     64 | 20                                                                        |
+|  91 | reserved_regs                   | <class 'str'> |     62 | [9, 26, 27]                                                               |
+|  92 | enable_floating_point           | <class 'str'> |     70 | 0                                                                         |
+|  93 | enable_vector_extension         | <class 'str'> |     72 | 0                                                                         |
+|  94 | vector_instr_only               | <class 'str'> |     66 | 0                                                                         |
+|  95 | enable_b_extension              | <class 'str'> |     67 | 0                                                                         |
+|  96 | enable_bitmanip_groups          | <class 'str'> |     71 | ['ZBB', 'ZBS', 'ZBP', 'ZBE', 'ZBF', 'ZBC', 'ZBR', 'ZBM', 'ZBT', 'ZB_TMP'] |
+|  97 | dist_control_mode               | <class 'str'> |     66 | 0                                                                         |
+|  98 | category_dist                   | <class 'str'> |     62 | {}                                                                        |
+|  99 | march_isa                       | <class 'str'> |     58 | []                                                                        |
+| 100 | supported_interrupt_mode        | <class 'str'> |     73 | [0, 1]                                                                    |
+| 101 | XLEN                            | <class 'str'> |     53 | 32                                                                        |
+| 102 | SATP_MODE                       | <class 'str'> |     58 | 0                                                                         |
+| 103 | init_privil_mode                | <class 'str'> |     65 | 3                                                                         |
+| 104 | tvec_ceil                       | <class 'str'> |     58 | 4                                                                         |
++-----+---------------------------------+---------------+--------+---------------------------------------------------------------------------+
+2026-05-07 11:54:41,690 riscv_instr_base_test.py 70 INFO All directed instruction is applied
+2026-05-07 11:54:41,691 riscv_asm_program_gen.py 611 INFO Generating privileged mode routing for MACHINE_MODE
+2026-05-07 11:54:41,698 riscv_instr_base_test.py 70 INFO All directed instruction is applied
+2026-05-07 11:54:41,699 riscv_asm_program_gen.py 611 INFO Generating privileged mode routing for MACHINE_MODE
+2026-05-07 11:54:41,700 riscv_instr_base_test.py 70 INFO All directed instruction is applied
+2026-05-07 11:54:41,701 riscv_asm_program_gen.py 611 INFO Generating privileged mode routing for MACHINE_MODE
+2026-05-07 11:54:41,717 riscv_privileged_common_seq.py 139 INFO self.mstatus_val: 0x1e00
+2026-05-07 11:54:41,724 riscv_privileged_common_seq.py 139 INFO self.mstatus_val: 0x1a00
+2026-05-07 11:54:41,726 riscv_privileged_common_seq.py 139 INFO self.mstatus_val: 0x1a00
+2026-05-07 11:54:41,819 riscv_instr_sequence.py 75 INFO Start generating 13 instruction
+2026-05-07 11:54:41,820 riscv_instr_sequence.py 75 INFO Start generating 43 instruction
+2026-05-07 11:54:41,823 riscv_instr_sequence.py 75 INFO Start generating 28 instruction
+2026-05-07 11:54:42,026 riscv_instr_sequence.py 85 INFO Finishing instruction generation
+2026-05-07 11:54:42,026 riscv_asm_program_gen.py 248 INFO Randomizing call stack..done
+2026-05-07 11:54:42,026 riscv_instr_sequence.py 188 INFO Processing branch instruction[0]:beq         s1, a6, -1856 # 0 -> 4
+2026-05-07 11:54:42,027 riscv_instr_sequence.py 188 INFO Processing branch instruction[4]:blt         tp, t4, -155 # 4 -> 6
+2026-05-07 11:54:42,027 riscv_instr_sequence.py 201 INFO Finished post-processing instructions
+2026-05-07 11:54:42,027 riscv_asm_program_gen.py 117 INFO Post-processing main program...done
+2026-05-07 11:54:42,027 riscv_instr_sequence.py 291 INFO Injecting 0 illegal instructions, ratio 0/100
+2026-05-07 11:54:42,027 riscv_instr_sequence.py 303 INFO Injecting 0 HINT instructions, ratio 0/100
+2026-05-07 11:54:42,027 riscv_asm_program_gen.py 119 INFO Generating main program instruction stream...done
+2026-05-07 11:54:42,027 riscv_asm_program_gen.py 134 INFO Main/sub program generation...done
+2026-05-07 11:54:42,028 riscv_data_page_gen.py 57 INFO Generate data section: region_0 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,031 riscv_data_page_gen.py 57 INFO Generate data section: region_1 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,036 riscv_data_page_gen.py 57 INFO Generate data section: s_region_0 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,039 riscv_data_page_gen.py 57 INFO Generate data section: s_region_1 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,042 riscv_asm_program_gen.py 1063 INFO output/run_013/asm_test/riscv_arithmetic_basic_test_2.S is generated
+2026-05-07 11:54:42,042 riscv_instr_base_test.py 73 INFO TEST GENERATED USING SEED VALUE = 1739944923
+2026-05-07 11:54:42,042 riscv_instr_base_test.py 74 INFO TEST GENERATION DONE
+2026-05-07 11:54:42,225 riscv_instr_sequence.py 85 INFO Finishing instruction generation
+2026-05-07 11:54:42,225 riscv_asm_program_gen.py 248 INFO Randomizing call stack..done
+2026-05-07 11:54:42,226 riscv_instr_sequence.py 188 INFO Processing branch instruction[2]:blt         s2, tp, 1879 # 2 -> 21
+2026-05-07 11:54:42,226 riscv_instr_sequence.py 188 INFO Processing branch instruction[5]:blt         a1, tp, 1924 # 5 -> 12
+2026-05-07 11:54:42,226 riscv_instr_sequence.py 188 INFO Processing branch instruction[6]:bltu        s7, a7, -896 # 6 -> 21
+2026-05-07 11:54:42,226 riscv_instr_sequence.py 188 INFO Processing branch instruction[8]:bgeu        s11, t6, -1229 # 8 -> 15
+2026-05-07 11:54:42,226 riscv_instr_sequence.py 188 INFO Processing branch instruction[13]:beq         t6, a6, -838 # 13 -> 14
+2026-05-07 11:54:42,227 riscv_instr_sequence.py 188 INFO Processing branch instruction[17]:blt         gp, s10, -1906 # 17 -> 22
+2026-05-07 11:54:42,227 riscv_instr_sequence.py 188 INFO Processing branch instruction[18]:bltu        t0, s10, -319 # 18 -> 21
+2026-05-07 11:54:42,227 riscv_instr_sequence.py 188 INFO Processing branch instruction[20]:bltu        s4, s4, 189 # 20 -> 27
+2026-05-07 11:54:42,227 riscv_instr_sequence.py 188 INFO Processing branch instruction[25]:beq         s0, t1, 1936 # 25 -> 27
+2026-05-07 11:54:42,227 riscv_instr_sequence.py 201 INFO Finished post-processing instructions
+2026-05-07 11:54:42,227 riscv_asm_program_gen.py 117 INFO Post-processing main program...done
+2026-05-07 11:54:42,229 riscv_instr_sequence.py 291 INFO Injecting 0 illegal instructions, ratio 0/100
+2026-05-07 11:54:42,229 riscv_instr_sequence.py 303 INFO Injecting 0 HINT instructions, ratio 0/100
+2026-05-07 11:54:42,229 riscv_asm_program_gen.py 119 INFO Generating main program instruction stream...done
+2026-05-07 11:54:42,229 riscv_asm_program_gen.py 134 INFO Main/sub program generation...done
+2026-05-07 11:54:42,231 riscv_data_page_gen.py 57 INFO Generate data section: region_0 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,234 riscv_data_page_gen.py 57 INFO Generate data section: region_1 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,240 riscv_data_page_gen.py 57 INFO Generate data section: s_region_0 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,242 riscv_data_page_gen.py 57 INFO Generate data section: s_region_1 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,245 riscv_asm_program_gen.py 1063 INFO output/run_013/asm_test/riscv_arithmetic_basic_test_1.S is generated
+2026-05-07 11:54:42,245 riscv_instr_base_test.py 73 INFO TEST GENERATED USING SEED VALUE = 665156225
+2026-05-07 11:54:42,245 riscv_instr_base_test.py 74 INFO TEST GENERATION DONE
+2026-05-07 11:54:42,396 riscv_instr_sequence.py 85 INFO Finishing instruction generation
+2026-05-07 11:54:42,396 riscv_asm_program_gen.py 248 INFO Randomizing call stack..done
+2026-05-07 11:54:42,396 riscv_instr_sequence.py 188 INFO Processing branch instruction[1]:bge         s1, s11, -1918 # 1 -> 11
+2026-05-07 11:54:42,396 riscv_instr_sequence.py 188 INFO Processing branch instruction[4]:bne         a0, t0, -1508 # 4 -> 24
+2026-05-07 11:54:42,396 riscv_instr_sequence.py 188 INFO Processing branch instruction[6]:beq         s8, s10, 1462 # 6 -> 22
+2026-05-07 11:54:42,396 riscv_instr_sequence.py 188 INFO Processing branch instruction[12]:bge         s3, a6, 1016 # 12 -> 28
+2026-05-07 11:54:42,396 riscv_instr_sequence.py 188 INFO Processing branch instruction[13]:bltu        t3, a1, 1756 # 13 -> 24
+2026-05-07 11:54:42,397 riscv_instr_sequence.py 188 INFO Processing branch instruction[15]:bge         s11, s8, -70 # 15 -> 20
+2026-05-07 11:54:42,397 riscv_instr_sequence.py 188 INFO Processing branch instruction[22]:beq         t6, s1, -493 # 22 -> 30
+2026-05-07 11:54:42,397 riscv_instr_sequence.py 188 INFO Processing branch instruction[25]:beq         sp, gp, -1500 # 25 -> 42
+2026-05-07 11:54:42,397 riscv_instr_sequence.py 188 INFO Processing branch instruction[34]:bltu        t0, zero, -701 # 34 -> 42
+2026-05-07 11:54:42,397 riscv_instr_sequence.py 188 INFO Processing branch instruction[35]:bge         t4, s2, 1317 # 35 -> 42
+2026-05-07 11:54:42,397 riscv_instr_sequence.py 188 INFO Processing branch instruction[38]:bne         s1, tp, 832 # 38 -> 42
+2026-05-07 11:54:42,397 riscv_instr_sequence.py 188 INFO Processing branch instruction[39]:beq         t2, s9, 1846 # 39 -> 42
+2026-05-07 11:54:42,397 riscv_instr_sequence.py 188 INFO Processing branch instruction[41]:beq         s2, t3, -197 # 41 -> 42
+2026-05-07 11:54:42,397 riscv_instr_sequence.py 201 INFO Finished post-processing instructions
+2026-05-07 11:54:42,397 riscv_asm_program_gen.py 117 INFO Post-processing main program...done
+2026-05-07 11:54:42,399 riscv_instr_sequence.py 291 INFO Injecting 0 illegal instructions, ratio 0/100
+2026-05-07 11:54:42,399 riscv_instr_sequence.py 303 INFO Injecting 0 HINT instructions, ratio 0/100
+2026-05-07 11:54:42,399 riscv_asm_program_gen.py 119 INFO Generating main program instruction stream...done
+2026-05-07 11:54:42,399 riscv_asm_program_gen.py 134 INFO Main/sub program generation...done
+2026-05-07 11:54:42,400 riscv_data_page_gen.py 57 INFO Generate data section: region_0 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,401 riscv_data_page_gen.py 57 INFO Generate data section: region_1 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,405 riscv_data_page_gen.py 57 INFO Generate data section: s_region_0 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,407 riscv_data_page_gen.py 57 INFO Generate data section: s_region_1 size:0x4096 xwr:0x8
+2026-05-07 11:54:42,410 riscv_asm_program_gen.py 1063 INFO output/run_013/asm_test/riscv_arithmetic_basic_test_0.S is generated
+2026-05-07 11:54:42,410 riscv_instr_base_test.py 73 INFO TEST GENERATED USING SEED VALUE = 1687868840
+2026-05-07 11:54:42,410 riscv_instr_base_test.py 74 INFO TEST GENERATION DONE
+2026-05-07 11:54:42,416 riscv_instr_base_test.py 90 INFO Total execution time: 1s

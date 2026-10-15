@@ -1,0 +1,6 @@
+Test binary: output/run_070/asm_test/riscv_arithmetic_basic_test_0.o
+spike : output/run_070/spike_sim/riscv_arithmetic_basic_test_0.csv
+rv : output/run_070/rv_sim/riscv_arithmetic_basic_test_0.csv
+[PASSED]: 64 matched
+
+1 PASSED, 0 FAILED

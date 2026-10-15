@@ -1,0 +1,1475 @@
+.include "user_define.h"
+.globl _start
+.section .text
+.option norvc;
+_start:           
+                  .include "user_init.s"
+                  csrr x5, 0xf14
+                  li x6, 0
+                  beq x5, x6, 0f
+
+0: la x29, h0_start
+jalr x0, x29, 0
+h0_start:
+                  li x31, 0x40000100
+                  csrw 0x301, x31
+kernel_sp:        
+                  la x28, kernel_stack_end
+
+trap_vec_init:    
+                  la x31, mtvec_handler
+                  ori x31, x31, 1
+                  csrw 0x305, x31 # MTVEC
+
+mepc_setup:       
+                  la x31, init
+                  csrw 0x341, x31
+
+init_machine_mode:
+                  li x31, 0x1c00
+                  csrw 0x300, x31 # MSTATUS
+                  li x31, 0x0
+                  csrw 0x304, x31 # MIE
+                  mret
+init:             
+                  li x0, 0x80000000
+                  li x1, 0xf141260b
+                  li x2, 0xf3d353be
+                  li x3, 0xf045ad61
+                  li x4, 0xf992cf81
+                  li x5, 0xfbd757a4
+                  li x6, 0xf5cf5aa7
+                  li x7, 0xfbf50702
+                  li x8, 0xc
+                  li x9, 0x1
+                  li x10, 0x3
+                  li x11, 0xf8df629d
+                  li x12, 0x4
+                  li x13, 0xfc2e9481
+                  li x14, 0x0
+                  li x15, 0x7
+                  li x16, 0x0
+                  li x17, 0xbac69b52
+                  li x18, 0x0
+                  li x20, 0xf5f86447
+                  li x21, 0x80000000
+                  li x22, 0x80000000
+                  li x23, 0x0
+                  li x24, 0x781cede7
+                  li x25, 0x80000000
+                  li x26, 0x0
+                  li x27, 0x333afb08
+                  li x29, 0x80000000
+                  li x30, 0x80000000
+                  li x31, 0x0
+                  la x19, user_stack_end
+main:             bge         a6, a5, 1f
+1:                sra         s8, a4, t5
+                  xori        s0, ra, -1348
+                  bltu        tp, a3, 16f
+                  slt         ra, s4, gp
+                  bge         a0, t1, 15f
+                  andi        s0, s10, 508
+                  srai        gp, s2, 26
+                  addi        ra, a5, 563
+                  add         s2, t2, t0
+                  srli        gp, t2, 29
+                  srai        s7, s4, 18
+                  or          tp, a7, s6
+                  andi        tp, s8, -1661
+                  slti        s1, t5, -131
+15:               bltu        s4, a3, 27f
+16:               bge         t4, t2, 33f
+                  slt         s5, a7, a0
+                  sll         t0, a7, sp
+                  blt         t5, s4, 25f
+                  xor         a3, s7, t3
+                  addi        s10, a5, 1572
+                  nop
+                  bne         t2, a2, 34f
+                  bge         a1, s11, 34f
+25:               auipc       t5, 498538
+                  or          s6, tp, t2
+27:               srl         s2, zero, gp
+                  sltiu       a7, t2, -1815
+                  sub         s4, s0, s2
+                  slti        s8, a0, -624
+                  xori        zero, t2, -1154
+                  lui         a1, 885483
+33:               andi        a4, gp, -1412
+34:               srl         zero, a1, a6
+                  la x29, test_done
+                  jalr x0, x29, 0
+test_done:        
+                  li gp, 1
+                  ecall
+write_tohost:     
+                  sw gp, tohost, t5
+
+_exit:            
+                  j write_tohost
+
+instr_end:        
+                  nop
+
+.section .data
+.align 6; .global tohost; tohost: .dword 0;
+.align 6; .global fromhost; fromhost: .dword 0;
+.section .region_0,"aw",@progbits;
+region_0:
+.word 0xdfaca417, 0x4d2158c1, 0xc961e0ce, 0x5e45d75c, 0x304b4d7a, 0xdb31394d, 0x88bff110, 0x26f4d254
+.word 0xf91153de, 0xce909cbe, 0x61ab029b, 0xa54ad2c2, 0x1997937b, 0xb014ce8b, 0xd576a593, 0x90b43fb9
+.word 0x8683a301, 0x48f3dcec, 0x75c61340, 0x4d0f065a, 0x7c0dab14, 0x06fdaf4a, 0x89382b3a, 0x51e224b1
+.word 0x962c6ade, 0x64c0c48a, 0x8f90c412, 0x41c09b4b, 0xd5d908da, 0xc1f9f2dd, 0xc1289da5, 0x538d33a5
+.word 0xa3f0c615, 0x66de8e13, 0xadad1509, 0x28bf9f0e, 0x7f33c1f5, 0x3df8d397, 0x73ad0314, 0x5c935aa3
+.word 0xd375ecfb, 0xf64e5012, 0x8b8f924b, 0x9c091ac4, 0x3bdcc859, 0x2e1bd29e, 0x7e3384e5, 0xcf4c71e4
+.word 0x9dc7b91b, 0xb77c09e6, 0x2d339103, 0x7ded52cc, 0x0b063b6d, 0xadc46529, 0xf50f2f7e, 0x67de6d3a
+.word 0x6524a6f5, 0x4c2010af, 0xb479896f, 0x73a8f618, 0xe8c99d69, 0x8e9a549e, 0x0c48425c, 0x94d4d95f
+.word 0x0c8c06cd, 0x3f8e8cb5, 0xb4639a7a, 0x8833a95b, 0x54186169, 0x941aa8b4, 0x78683632, 0xa67d2f3b
+.word 0x182f38f8, 0xbfbd1a5a, 0x8ebabd3d, 0x8dc3b960, 0xa4447daa, 0x7e8a6144, 0x3545255b, 0x1da5ac86
+.word 0x111f13fb, 0xf08a0782, 0x640efd3b, 0x84419b20, 0x74d77886, 0xe2cd2efb, 0x69646141, 0x0422a8f3
+.word 0x3dd22976, 0xf9fc747c, 0x27cf9f9b, 0x4ba85080, 0x0d654d3b, 0xfdeb551c, 0x87e0d3f0, 0xaaae8557
+.word 0xd8108358, 0xbccd36cf, 0x9c94cb0f, 0x1f4799fc, 0xfb972a73, 0xfc0d297e, 0x24667ba4, 0x9ac8f81e
+.word 0x817c282e, 0x76afcbfa, 0x9c7c6246, 0x471a42fe, 0x198aa780, 0x8b74c715, 0x23763fae, 0x4b0ba1eb
+.word 0x67548944, 0xd23fa67d, 0x7a68ef77, 0xfe110d94, 0x10f6a18e, 0x940dd3ca, 0xcd490d61, 0xdd810928
+.word 0x36f24665, 0x23b7183c, 0x0dda052b, 0xfefb7a36, 0x95e98b36, 0x9017c982, 0x2160d178, 0xe5d5e1d0
+.word 0xfee214cd, 0x2a4c047a, 0xf863de98, 0x2fe6a2ca, 0xeef3e54a, 0xdf1c675e, 0x328d779b, 0x5f925404
+.word 0x12b1b5c4, 0x8a505ac3, 0xa43db91d, 0x29da94d9, 0x0251b2bf, 0x226550fe, 0x155ad74e, 0xc3d6263b
+.word 0x1e461073, 0x302550de, 0xb852be52, 0x6babbb03, 0x73ee8cce, 0x336ae096, 0x9023846d, 0x0af51e94
+.word 0x35a93dc6, 0x3a3e7612, 0x1b2b2bbd, 0xa359f737, 0x26c48e06, 0xf406c551, 0x19a590d9, 0x0859788a
+.word 0x0574f157, 0x9212dfd7, 0xa449072e, 0x0baa64f5, 0x21fac76e, 0x0f8594be, 0x996c4f8e, 0x25b75441
+.word 0x264f8cd9, 0xe6086501, 0x7f5dac24, 0x3b095a54, 0xea9fb357, 0x998f5700, 0x1ac05248, 0x562ef322
+.word 0xd3e25955, 0xcc9c40d7, 0x186397de, 0xc6cdba5f, 0xa38940d1, 0x8c83aa72, 0xf5523f83, 0xb1260e44
+.word 0xa6ce76ca, 0x77b33119, 0x220a4294, 0x5414bfbf, 0x126aa6da, 0xedcb1bd7, 0xaa665801, 0xae40d74e
+.word 0xba47e873, 0xef19f280, 0x6c159fdf, 0x3ae24f89, 0xc90ad75a, 0x2f1699e4, 0x1ee0979e, 0x045e3662
+.word 0x2e18a032, 0xd65495d8, 0x0349b772, 0xe71ce758, 0x56276197, 0x0b5dea74, 0x660e89bf, 0x4b4e05a1
+.word 0xa793134e, 0x1f5d36bd, 0xe9af3e68, 0x08babc36, 0xd97316b5, 0xc42368f4, 0x89978f9b, 0xe5e5e321
+.word 0xcf13795a, 0x81fdb6e1, 0xb47dd88c, 0xe3e841b1, 0x0a511a09, 0xe753e796, 0xf3f713ed, 0xca63e55e
+.word 0x7e8e5848, 0x66f4281a, 0x575ddc6e, 0xe0b9e628, 0xf53bb7c0, 0x840f7f83, 0xdb716739, 0xd32cea9e
+.word 0x9ed14760, 0xd96a5c3c, 0xf5717069, 0x29aa218e, 0xfd742528, 0x5a6cde0a, 0x5b6548cc, 0xba770802
+.word 0x9dc58e6c, 0xf06f78e1, 0xcf60bd22, 0xb02f3131, 0x12809dea, 0x8a2af416, 0x9d6eb75e, 0x60618cc2
+.word 0x995ab205, 0x832ab997, 0x518e2c1e, 0x4b600e30, 0xde71f3db, 0x3320be7d, 0x8d322be4, 0x6ca812a9
+.word 0x9a025762, 0x8336f40a, 0xa9001a70, 0x6c0e7690, 0xc0d653fe, 0x13906e9c, 0x5d901e6f, 0xc7599b09
+.word 0x8f4c828b, 0xaaa5ae1d, 0xe5361783, 0x8728d2b6, 0xd5fce292, 0x55867687, 0x4be61ecd, 0x2aba6dde
+.word 0x6566d063, 0x9f6d981d, 0xf0a560da, 0xeb26fb14, 0x1638d7d5, 0x42a9e2af, 0x6998a4d4, 0x6781c539
+.word 0x891598ec, 0xee34c153, 0x8be53348, 0x7638f6de, 0x6af065a2, 0x2a31b1be, 0xde05a68d, 0xbcf5dae4
+.word 0x55975221, 0x42203dbc, 0x4cb655a8, 0x61215bf0, 0x377e4840, 0x440220b6, 0x6965edf4, 0xe78634dc
+.word 0x79dc5b85, 0xe6876173, 0x4e7a33ca, 0xe2da9cde, 0xf362c61f, 0x9f08f5ed, 0x37e7deee, 0xc93bd19f
+.word 0x88d62be6, 0x10658d96, 0xd7ded049, 0x5f5f2a53, 0xf8f1e075, 0xe249719d, 0x148f0f96, 0x02a948b8
+.word 0x8f4afc71, 0x7825a4ec, 0x1a3737b0, 0xfd86460b, 0x4489d38a, 0x83cda6eb, 0xa5b1522c, 0x3b397500
+.word 0xfb194fea, 0xa731c619, 0x6f41113f, 0xb51000de, 0x71dfee08, 0x3024fd72, 0x1157a544, 0x76c4a176
+.word 0xf10706e2, 0x92196a69, 0x550fb4af, 0xd932217d, 0xa8dc86dc, 0x23d851cf, 0x35c2873f, 0x79f77c48
+.word 0x915e435d, 0x8bfced39, 0xad6e0722, 0x9c0b5aa2, 0xd8d56756, 0xca350da9, 0x751845b4, 0xc5fae6c6
+.word 0x3e47e013, 0x13b775ab, 0x97fb56a5, 0x3309bd07, 0x40effcc8, 0xa5308f78, 0xbaae2401, 0x18af8829
+.word 0x78f71a66, 0xa5509ba2, 0x76c2c2fb, 0x49206802, 0xdebbe1be, 0x975c5869, 0x31a1cd43, 0xa9c66d29
+.word 0x8865913f, 0x56208634, 0x3310410b, 0xc12451a6, 0x82ef7394, 0x836d4286, 0x8faafed0, 0xbd29b0a9
+.word 0x69e05e69, 0x98b81106, 0x213a55f6, 0xcbbc6780, 0x7bed96ad, 0x1ad22ea0, 0x47276327, 0xb70815ad
+.word 0x2fdd99d4, 0x799734b3, 0x2b0b7d21, 0xf7699453, 0x7cd72d50, 0xcf9d9a16, 0x3a5960ae, 0x08fc4a71
+.word 0xbbd3be4d, 0x9605b5c8, 0xf52ca110, 0xe0db1201, 0x07682c46, 0x5abe304b, 0xcc2ffc62, 0xad968596
+.word 0x725de985, 0xc005153e, 0x1ce7823e, 0x2efda9c2, 0x858011ad, 0x82ceeaae, 0x15292106, 0xf0404fdc
+.word 0x2af486f9, 0x74a7f28c, 0xcf081397, 0x51482c2d, 0x44ebfb54, 0xbc773e97, 0xf92bdeea, 0x0f2c6c95
+.word 0x25f2f37d, 0x761235f5, 0x6a0737fa, 0x2b1a1dbc, 0x75f1c94d, 0xdbebdcc8, 0xf38b8ece, 0x3f334610
+.word 0x09e19073, 0x75e72860, 0x019bafca, 0xd4150325, 0x39bb26db, 0x1981c2e5, 0x4e10bc25, 0x9a8c2321
+.word 0xfde5b0c7, 0xeb31a1c4, 0x122fea82, 0x21036f85, 0xbb82dacd, 0x489aeae1, 0xa13cdfad, 0x2e281728
+.word 0xa1c01655, 0x720915cb, 0x28ed3996, 0x8d53e7f1, 0xac13d3c3, 0x47995c4a, 0xe0ae3751, 0x3dc73937
+.word 0xf6545333, 0x39161fcb, 0xedc70797, 0x90621eb9, 0x0112a4dc, 0xe9387988, 0xcece72a7, 0xab4079bd
+.word 0x7d7a5a92, 0x76927a1d, 0xfc44ad8c, 0xb5404b9e, 0xb9e5e4e3, 0x22a1173b, 0x2030d7b0, 0x96e2e2a4
+.word 0x653e21e5, 0x967c291b, 0xcfac4bc4, 0xb9e6213f, 0x05a828a1, 0x7daf8c2b, 0x8e275b92, 0x83ae808f
+.word 0x8464ac45, 0xe07b3e3a, 0xe0ea18f0, 0x952add56, 0xf7bf3345, 0x2fe2e74a, 0xedafd85b, 0xc3ce7250
+.word 0x395b62da, 0xb213de30, 0xebdc52db, 0x1d2cf073, 0xb705f512, 0xa5447e72, 0x5202ee48, 0xed52fbcb
+.word 0x3db494fd, 0xc4d19d49, 0xaacb8350, 0x996550d4, 0xbbafb8df, 0x925cf1d9, 0x576341c9, 0x8d6b43c4
+.word 0xfbf18547, 0x45f68b2e, 0xf57aa957, 0x94d40373, 0xc0345bcb, 0xd3a16304, 0x10b5195e, 0xa2e7b65e
+.word 0x29487479, 0xad050418, 0x21e1fde6, 0x37e39102, 0x3b23cb71, 0x8721cc50, 0x24b8b0b3, 0xdf44281c
+.word 0xc6ed8229, 0x428481a6, 0xb6f30140, 0x94f7db5d, 0x08578306, 0xcf5cd497, 0x8c16a8c0, 0x78ea1149
+.word 0xd71b0d21, 0x51240eef, 0x367c8810, 0xaae23336, 0x311fc5ac, 0xe344b484, 0xefbe1d9a, 0xe255d379
+.word 0xc7511bc5, 0xc095d474, 0xecd4ed7b, 0xa9e868d3, 0x248d0bf9, 0xbed99151, 0xe7e14b91, 0x9391c92c
+.word 0x65dcab42, 0xba21335c, 0x0155a650, 0xe235c9da, 0xcbc3a329, 0xb915e53f, 0x292454aa, 0xbc15c9f4
+.word 0xbef6eae5, 0x6c597feb, 0xa318a2d6, 0x0794b06d, 0x6cf7e6aa, 0x4c83d855, 0x32261100, 0xd7c4dd29
+.word 0xed00d658, 0x4fda0920, 0x3e30ae75, 0xf2de2b68, 0xaefe3e40, 0x99ce4c7e, 0xfcceb1b6, 0xe6942913
+.word 0x8c0f2a95, 0xe692c5ba, 0xc6994f39, 0x35057a9c, 0x5090f1f9, 0x3936fc86, 0xa877e00e, 0xb9c9dcef
+.word 0x1bdcb0e5, 0x31bcfe7f, 0x182df971, 0x0d849e76, 0x1315ed60, 0xa9f62c27, 0x1cbb827f, 0x9e32df72
+.word 0x9e3d2d0c, 0x76040b92, 0x895f8d2f, 0xfd973d3d, 0x3681685f, 0x063d4a3b, 0xa53da386, 0xaf02c9a9
+.word 0x429c86a6, 0x11432196, 0x22d3e162, 0xf535fd6a, 0x54630250, 0xb0b58016, 0xa4dbcaec, 0xf6589f71
+.word 0xcb67cbd2, 0xcbfc5f0a, 0xfee31840, 0x3aee454a, 0x3978a4e2, 0x67fe880c, 0x6beb8943, 0x1fc1222c
+.word 0x3ea8674d, 0xac2a2301, 0x5504a288, 0xf50398d7, 0xd802e83e, 0x55ac5a12, 0x8c5d2de2, 0x924311a4
+.word 0x881a69d0, 0x79c203ef, 0x872031e0, 0x27ee0466, 0xf3ecc061, 0x2c60eaaf, 0xd65a3886, 0x1838715c
+.word 0xa0999296, 0xaac92f4b, 0x16d03348, 0x50d3be48, 0xb847edb8, 0xb0371fdc, 0x0c364b5b, 0xbf1932fb
+.word 0xce87b301, 0x758cf74f, 0xa7cf23d5, 0x83549dcd, 0xcb9908a8, 0x4911bd3b, 0x506f0f01, 0xacf74d12
+.word 0x33bac4b0, 0x10e130ae, 0x126309d5, 0x251df80f, 0x6c643aa4, 0xf5c5cedc, 0x5174769e, 0x17d7b478
+.word 0xc981de8e, 0xde69ce99, 0xc773d5d9, 0x1b31df08, 0x966bfa8c, 0x506ad8fb, 0x2f59cd7c, 0x02396909
+.word 0xb154b56b, 0x12f5b835, 0x818f86b5, 0xc6659cc6, 0xd593e097, 0xbcdb95ac, 0x5d33a951, 0x14271da4
+.word 0x118d2d43, 0x1d9fd5f5, 0x407bcb7f, 0x9cc04a5c, 0x8bf20f01, 0x5987a510, 0x65e930d9, 0x140348a6
+.word 0x5af6b615, 0x02a670d9, 0x721472ae, 0x496444be, 0xa75bb322, 0x24b9d663, 0xea9c83f2, 0x5f9e5f86
+.word 0x90600d14, 0xd77b017d, 0xf7699841, 0x3cddef54, 0x7cf7531c, 0xeeb53e86, 0xe88082a0, 0x7fa445f0
+.word 0x3e43b832, 0x02642fbf, 0xcf4bc4b0, 0xd2d948da, 0xdb1cd7b2, 0x607b3252, 0xbe9ad48c, 0xf6a5c4b1
+.word 0x58334494, 0xa6f9331b, 0xdc1f5b8c, 0x5db6d24d, 0x6e656f4f, 0x330a2b2c, 0x2c63eb49, 0x7dba4a7f
+.word 0x1e9ce9ab, 0xbd65dc60, 0xecc1be71, 0xb5b04c65, 0xd6a8a364, 0xe90752ec, 0x97c98354, 0x035d4c78
+.word 0x578c1eab, 0x63db42de, 0xf622b444, 0x22873a3d, 0xbf63e0b6, 0x275341aa, 0x32754de6, 0xcdad9d94
+.word 0x9763403b, 0xe3769c28, 0x5f3469bb, 0x753d006f, 0x6d38369e, 0x3420af3b, 0xa2cd324a, 0xc0f2af4b
+.word 0x782b08fe, 0x8d541565, 0x517213f8, 0x77c5b1b3, 0xda40569a, 0x99d274d1, 0x55ee6872, 0xd9b56df7
+.word 0x3cab6244, 0xe672fb08, 0xc2f86307, 0x10209b39, 0xa97e803d, 0x636c371e, 0x656e7bb9, 0xe7409687
+.word 0x059e7f78, 0x242d7ec5, 0xd313e9e9, 0x55ea14ab, 0x3a57bcb4, 0xc875160d, 0x666482f4, 0x1382512e
+.word 0xa8ea5b9b, 0x1adb8baa, 0x5472e5db, 0x4a20495c, 0x9e67abc5, 0xd128da1e, 0x225def7b, 0xf5dda051
+.word 0x1595a3a9, 0x478e4411, 0xcf9aa30a, 0x5d45068f, 0xdf0fe82f, 0x7b490a63, 0x00e1c57b, 0xe2216e0a
+.word 0xb0aba769, 0xfbfa01f3, 0xde38089b, 0x5629b7a2, 0x1a76055c, 0x3be533d1, 0xd145fc63, 0xc6df4928
+.word 0xb2543f5b, 0x67a7db27, 0x2c05bcc7, 0x6ad46840, 0x775fa096, 0xfbf5729f, 0xd2235f45, 0x50aef696
+.word 0x196ba23f, 0xeceeb2fa, 0x3e501823, 0xd0ac1d99, 0xc32d7c73, 0x0d7c8d20, 0xa30562a3, 0xb37e7855
+.word 0x158454b3, 0x85c9532f, 0x50132fee, 0x7c7ca6fc, 0x707d294e, 0x3bc45f2b, 0x096aeb07, 0x9f3ccc34
+.word 0x6d0c1973, 0xfc73d3c8, 0xe8ca1567, 0x9aac6f33, 0x6d930fc4, 0x720115cc, 0x80fab083, 0xac8e057d
+.word 0x735d588c, 0xc3bb77ac, 0x2ce25795, 0x9e363aad, 0xa2e0f070, 0x72701f8a, 0x93d7113e, 0xb364a29e
+.word 0x37dadde6, 0x6ef124ae, 0x3f8e0bf8, 0x5bcb81c9, 0x33bf5916, 0x6d34a4a3, 0xa750c55e, 0x3b9260c6
+.word 0xcbe06408, 0x74e2c5fc, 0xa3d80db8, 0x25b1c646, 0x41ec1718, 0x7cfd7514, 0x64e1e408, 0x58c5c8e3
+.word 0x183bd5c6, 0x1344f9c6, 0x382ade06, 0x367609e7, 0x765455b6, 0xf881fcc7, 0x4d18258b, 0xa09e126b
+.word 0x5191a858, 0xf08049e8, 0x98c45771, 0x9a23e069, 0xa4818427, 0x3afc6ea4, 0x425af4f2, 0xa27d85e0
+.word 0x715aac56, 0x882e1000, 0xbdea0c51, 0xe99b9e6b, 0x4eeb6d01, 0x92a24e78, 0xecb244c0, 0x26293355
+.word 0xfcae37be, 0xf4a67913, 0x622fcca8, 0x4f362998, 0x33b9d035, 0x2cfdb4cd, 0x156bb600, 0x26ced887
+.word 0xc78c1de0, 0x9d2b77e6, 0xb8766471, 0x76ac6e92, 0xd9a47a06, 0x629ddc67, 0xea78f2d6, 0xe7996a6a
+.word 0x7f442488, 0x774f52f0, 0xc8849523, 0x6acfadf2, 0x246c4cdf, 0xb9a53877, 0x7f3df6a2, 0xac8a0246
+.word 0x348733ed, 0x0e8e6691, 0x6ace7e23, 0xc0a5e5a1, 0xdc54f079, 0xb301b9be, 0xabfc268a, 0x53015410
+.word 0xde89c6a3, 0x4c3d14d5, 0xf22a75a1, 0x67a2a6ef, 0x907a9923, 0x25308078, 0xd6bec97d, 0xd715f27e
+.word 0x487ac723, 0x6789f782, 0x008c95f6, 0x361a80de, 0x30d81d6c, 0xb6881cbd, 0xfdf93890, 0x7c07d850
+.word 0xd7586d9a, 0xf1d91221, 0xd366287d, 0xa4c1a8dc, 0x4a94e3e9, 0x7add87dc, 0x4ddafadb, 0x57c58d5d
+.word 0xaebe7fb0, 0x7b9c6af4, 0xe45106f3, 0x71888db4, 0xbb245bac, 0xc9113882, 0x695dce13, 0xe71227c3
+.word 0x5c94c0f8, 0x744ad0e5, 0xf3eaeee2, 0x1f0cf04b, 0x7a2af90b, 0x5148c793, 0xbedb2960, 0x6c3c0cdf
+.word 0x51db02fe, 0x5fa6d015, 0x18a999fd, 0x5102adf1, 0x2920470e, 0x625d1931, 0x218d9583, 0x3d37dc6d
+.word 0x29c0be74, 0xbb8df95b, 0x5df91fb8, 0xe623f90e, 0x50e4a8bc, 0x6ba11d13, 0x99d85029, 0xe4cb1bfb
+.word 0xc4409535, 0x08f7afeb, 0x2e66efaa, 0x60950dde, 0xd4ceb44a, 0x536909ba, 0x94dfed09, 0xcf4afbef
+.word 0xadb39c43, 0x0008f363, 0x3c1c3437, 0x05abf656, 0xa04041c0, 0x63a6aa61, 0x8f4cfc69, 0xb1e13a9c
+.word 0x4d80a77e, 0xfcdd1ddc, 0x68da3c8a, 0xde7e3db0, 0x836a80df, 0x27722bf4, 0xd3c2041a, 0x89cbbcce
+.word 0xa08949b8, 0xdc6c61e1, 0x23b7dcda, 0xe88c0498, 0x62dce469, 0x2e053255, 0x9dfdcfc5, 0xe1f9c2f0
+.word 0x06365f28, 0xab637762, 0x57c4d703, 0xde78cb26, 0x87054c8f, 0x5d1cbdf9, 0xd0e438c3, 0xb56aaaf9
+.word 0x6aa33d2f, 0x742d7731, 0xd622476f, 0xa30cc3ef, 0x77094209, 0x884cbb3f, 0x4d5290a5, 0xd57a716c
+.word 0x68426a30, 0x7f4f9054, 0x057b4637, 0x1c27954e, 0xe6420f55, 0xb674ba87, 0xe7eb686e, 0x726faa41
+.word 0xa6d1aec6, 0x8fb6bedf, 0xbdda6af6, 0x1c05f864, 0x8a67da1f, 0x383f8cb0, 0x7e7093e6, 0x5623e197
+.word 0x55a64d21, 0x06a48115, 0x936040f6, 0x61f60f2b, 0x0eb90148, 0xfc4f0234, 0x4041f4fd, 0x5b7a2e37
+.word 0x1fd10dab, 0xae41b478, 0xe43cea12, 0xf7057030, 0x4cccd9fa, 0x75f76c59, 0x7abdc009, 0x271efd1f
+.word 0xa8eea97c, 0xc969112b, 0x424a723b, 0xaf180214, 0x40b41918, 0x16f48c87, 0xe732cbce, 0x824a1121
+.word 0x104bca88, 0x0df35b0a, 0x0fdc4fea, 0x42626943, 0xf4f45677, 0x7d0868da, 0xb03232e6, 0x66e9ddd9
+.section .region_1,"aw",@progbits;
+region_1:
+.word 0x32aaef58, 0x1c6133d0, 0x19df2bdb, 0x53aaa69c, 0x7778c115, 0xb8576d09, 0x5703e398, 0x2cfb0b95
+.word 0x399e0f73, 0x68344cef, 0x9d457415, 0xbfd33834, 0x171d41e1, 0x0fb8012f, 0x9321d08f, 0xae8a57df
+.word 0xf6de7346, 0xf954f2a0, 0xae27308c, 0x0f152fed, 0xa1e466aa, 0xe2e5bad5, 0x14da7175, 0x5fb1988f
+.word 0x5928290e, 0x2706d14f, 0x2a4ccbce, 0x8093b9f0, 0x2705cb73, 0xe690eb26, 0xabbcddc8, 0xa8617779
+.word 0xa8ab57a4, 0xb49bbd8c, 0xbcc4f6aa, 0x16b37f0d, 0xe9d5992d, 0x4a7cb148, 0x31ab3d40, 0x45b3c719
+.word 0xd87879df, 0xf7685283, 0x1c83c3d2, 0x1112183b, 0xe2c0ba1f, 0x421a3f77, 0x0618688c, 0x17346a60
+.word 0x50188a7e, 0x6db89dd8, 0xa6b5e6ba, 0xc3473225, 0x5fd855cc, 0x89e8b6f5, 0x5b3fab80, 0x6e8278d0
+.word 0x84f17906, 0x9c2f4789, 0xe61b0511, 0x2bf88396, 0xa0c8c396, 0x2a7ca88e, 0xf7d760e0, 0xabc6a8ee
+.word 0xa94546ee, 0x36efbc91, 0xf2d3248f, 0x36db95c4, 0xcb213e8a, 0x9df6d1cd, 0x2c9cd8e9, 0x5cfca25d
+.word 0x0ad8e230, 0xafc2b7ad, 0x85007a31, 0x0e9e6a8c, 0x6688fe41, 0x8c57e2f1, 0xaa41c7be, 0xeb882eea
+.word 0xba9b63cb, 0x40f10b4b, 0x3844f33e, 0x22bc02d7, 0x3943c865, 0xc61c86a4, 0xc1673a08, 0x80baeecb
+.word 0x5ea31b37, 0x8f6131ec, 0x78e21987, 0x0b67d294, 0xf5de3cbe, 0xf6f314af, 0xdc2eddcc, 0xbaae9a80
+.word 0xd318df04, 0x2f89bdfe, 0x16cc3aef, 0x34962d81, 0x5861aca9, 0xbd7af72d, 0x70160a17, 0x89f5c803
+.word 0x89e4f11c, 0x870924e9, 0x7509e8e3, 0xaa0f3e3d, 0xa8124a01, 0x3149ecee, 0xdef3e47f, 0x4a0cddd2
+.word 0xf13e37bf, 0xc6834e11, 0x084ff156, 0x52b04b8f, 0x3e89c39b, 0x4cf4f658, 0x8f78307d, 0x087f31a6
+.word 0x5b518c40, 0xb23ed719, 0xc2a9b1f2, 0xb8d5bbf1, 0xa1f12f58, 0x84c91b63, 0xd14b7875, 0x56228daf
+.word 0x75b2b3d2, 0x31bd91b2, 0x83bd9161, 0x29cda7b3, 0x868c0b48, 0x33856245, 0x8e32b60d, 0x329e6db0
+.word 0x26e27e1d, 0x0560b692, 0x5cb5cd0b, 0xd5854d84, 0xd9cbc43f, 0xef240de5, 0x94c3da9b, 0x41f5c10b
+.word 0xd7326857, 0x5534199e, 0x108fe952, 0x5f9ea113, 0x4765eeae, 0x7bd9f1b2, 0x14a4aa38, 0x246c22f8
+.word 0x25614923, 0x22a38447, 0x6507fa8e, 0x9487491e, 0xc59274ce, 0x60955b3d, 0xc2d6509d, 0xc576a1d1
+.word 0xaff2e70b, 0xbb1bf346, 0xb10cf2f0, 0xd3836f73, 0xfecca7d9, 0x83e09e78, 0xb671cc7b, 0x62890fce
+.word 0xc1f9f1d5, 0xa499b42d, 0x4720833f, 0xb35ab647, 0x892b817d, 0xcc32fa16, 0xdfc67b25, 0xd3162f46
+.word 0xe1c3be3b, 0x58b80023, 0x9c3b515b, 0x6e2bcad7, 0x4ec9cd35, 0x4daa5e63, 0x85521da2, 0x7d938c1e
+.word 0xfd534e7b, 0x5d00de8f, 0xd1ca83f3, 0x22181055, 0x9be0fd91, 0xceb32bad, 0x4a0f72c0, 0x0dd76c60
+.word 0x0bb2061f, 0x51659261, 0xc5f3654f, 0x85369f1f, 0x7968f8e8, 0x3cf66a45, 0x41b9c14e, 0x1f92fef1
+.word 0x9d93894e, 0x0d0a83d5, 0xdf81904c, 0xc8ebc512, 0x4a2f20fd, 0x7e9a1e3c, 0xb9bc4990, 0xb57f169a
+.word 0x3e4311f5, 0xb58ca6c8, 0x7b6f37ba, 0xda1e2634, 0x6c321af8, 0x07945b0e, 0x012a3650, 0xbe8f20cb
+.word 0xbdf3f547, 0xf096d051, 0x982a8c3e, 0x1a295827, 0x9e28836f, 0x912efb59, 0x76621865, 0x7e57d629
+.word 0x74e162d7, 0x0e3f5063, 0xc6eb0b5a, 0xb6b23483, 0x375723ad, 0xe87c8773, 0x95473bc3, 0x8e2325b8
+.word 0xf42502d5, 0x8313e2ca, 0x25cde663, 0x4c94347d, 0x9ac4d233, 0x2f0fc8db, 0x542721be, 0x4c8b6da1
+.word 0xaf2711ed, 0xe73b7452, 0x07fcb827, 0xba03b03a, 0xd7642e59, 0xf48bc3ca, 0xd53fc493, 0xd538b758
+.word 0x8c673c83, 0x47a6d9fd, 0xd72613e5, 0xa7b4c0b3, 0x3b324e9a, 0x0ebc60fa, 0x43547c34, 0x63887b33
+.word 0x70907bd3, 0xbb2bbe09, 0x5ccb94e2, 0xa4a45e7f, 0xbd2807ee, 0xb4023c94, 0x6b3682a9, 0x4d7ba0c8
+.word 0x2b837a13, 0xb7f362f9, 0x0e6e13f8, 0xf92a998d, 0x74dff087, 0xf2f257d9, 0x8084a08b, 0x096e8036
+.word 0x7477846c, 0xea308808, 0x9ee666fd, 0xf1e55aea, 0x29e0695e, 0x5dfb666f, 0x0d3a4655, 0x5c4c5369
+.word 0xce9d705c, 0x79ab00b1, 0xa27c6402, 0xf91153ac, 0x6ba3a228, 0x71713c10, 0xd17bfcc7, 0xfa2bb243
+.word 0x5510cc6e, 0x4235b11d, 0x0eb24fb9, 0xe7cc2375, 0x7e74dce5, 0xb7eca84d, 0xc052b1aa, 0x8353db98
+.word 0x3714f0be, 0xc1b4b6d2, 0xbfb777c4, 0x4868613e, 0x4356d3ea, 0xca410ea3, 0xa90c9742, 0xab36af71
+.word 0x68f7bee8, 0x75b35acc, 0x3be77ea1, 0x29334e95, 0x450e9a34, 0xb5a0e3b0, 0xe621670c, 0x9502b5f8
+.word 0x8f81fbd4, 0x40aa3eac, 0x75d9d7cc, 0x3b1eea0c, 0x469c39a3, 0xd7fb62df, 0x1ad790fd, 0x73c60650
+.word 0x52976cfc, 0x34838887, 0xb02151f1, 0x947cee94, 0x74b5ca5c, 0x9dbfa0f8, 0x207e4522, 0xe08476a8
+.word 0xd502ca01, 0x8f1e82db, 0xcd881724, 0xe4834abf, 0x05a9c1e1, 0xe8dd3ce9, 0xb01e4fa9, 0xf8f52be0
+.word 0xe811a50e, 0x854180b9, 0x240bbefb, 0x8840c879, 0x6446f6f2, 0x746442d1, 0x9bb0867e, 0x1ac9c360
+.word 0xf9014c5a, 0x59427365, 0xa9fa68a4, 0xd9762477, 0x33d8c192, 0x3caf8f90, 0xf1472feb, 0x154ce68f
+.word 0x3f59f88c, 0x8bde322a, 0x38782be9, 0x45ad960c, 0x7ee81799, 0x967dc467, 0x3533d10b, 0x7692cef9
+.word 0xc491ceb7, 0x754484a1, 0xdc706546, 0xae683e5a, 0x072f305d, 0x5bab5d46, 0x31eaf1fb, 0x06bab2f6
+.word 0x321d54b5, 0xa0f48f9d, 0xb16e244e, 0xfb479055, 0x73218178, 0x0033035b, 0x209a0362, 0xa60cd256
+.word 0x54c1c6a9, 0x672d59bf, 0xa9592326, 0x7705a69e, 0xb946a5f5, 0x42a15c58, 0xdd22ade3, 0xd822171b
+.word 0x4cce293e, 0x4f21f96f, 0xea4512bd, 0x22eb941b, 0xa9264007, 0xca75d1ee, 0x8dcc589a, 0xbb6051b2
+.word 0x21506579, 0x90539837, 0x66a21e6b, 0x7618aa36, 0x37f554e1, 0xb2637cd2, 0xf9145aa0, 0xbbab55e0
+.word 0x8fbcac82, 0xfde59c7c, 0xc66d5bc5, 0xcc855aca, 0x4efeecd9, 0xd273f8da, 0xbddc3d66, 0x0281e89f
+.word 0xda6eb58a, 0xc6742aad, 0x695b25fb, 0x518e39b5, 0x74988eaa, 0x27c9ccc4, 0x64c0349e, 0xc2922bbc
+.word 0x523ba835, 0xdba9e877, 0xf9530fa5, 0x70420563, 0x5d16b234, 0x77c301a2, 0x0c6071f6, 0x74d0c2f0
+.word 0x727ae840, 0x6a3c41a8, 0xb276d296, 0x3fc51a32, 0x29e924c6, 0xb0d38660, 0xa7a097ed, 0x0ebebb5a
+.word 0xe6c9b19a, 0x192ab090, 0xefdfb897, 0x88dc4711, 0x676d5e17, 0x921f0af0, 0x3bf88721, 0x2c529728
+.word 0x23baafd6, 0xcbc96424, 0xbfaeb5d0, 0x965fa180, 0x71132200, 0xfc0ecf80, 0x79545884, 0x7d116c7a
+.word 0xc0e8713f, 0x03124327, 0xd3757a42, 0x3af3f4f4, 0xc2791e9f, 0xe59dfe36, 0x6642585d, 0xeaf9aaaf
+.word 0xa94d6a83, 0x240cf572, 0x29ee21db, 0xeacb1075, 0x743ac739, 0xd2a34d3d, 0x308fa5ec, 0x2aae1e23
+.word 0x82a2a0da, 0x19887ca2, 0x3cc63c02, 0xdd99542f, 0xf3afd408, 0x0dd6bc82, 0xf1833f05, 0x767fe347
+.word 0x4f44e97f, 0x7ce40756, 0x08e07ed7, 0x985aace0, 0x01d27ab7, 0x53277b92, 0x5ac6e63e, 0x55e513d6
+.word 0x9fbe37f2, 0xfc6ffd6b, 0xeaf1f806, 0xddb91737, 0x8ca2af77, 0x37fbc1e6, 0x42dd195b, 0x8bd424fa
+.word 0xdc7106a4, 0x39cec7f1, 0x92d5c77b, 0xe5e50a84, 0x019ab05f, 0x3aaf9888, 0x3e6cb599, 0xd375a077
+.word 0x277e6471, 0xbcc26ed5, 0xc8aa29d3, 0xa5a3e48e, 0x357b07dd, 0x39ad9203, 0x55bf413b, 0x38a60599
+.word 0x32c14879, 0x10dbca88, 0xd24d6857, 0xe76e9682, 0xce50a609, 0x436c5fee, 0xdb29d8b5, 0xf106c5f6
+.word 0x8d9fc34c, 0x7d9be2f5, 0xe645069f, 0x705aa217, 0x57d0f76b, 0xb58baf47, 0x72baaad3, 0x5fd7382d
+.word 0xbea1f33e, 0x76f7ef25, 0xe27ce1b7, 0x281c05d8, 0xe1249aee, 0x4c676172, 0xf2a25dad, 0x9cfc8acd
+.word 0x8c783d4a, 0xd39b0d79, 0xa11d88af, 0x52524cc0, 0x7bf45ffa, 0x3688d1ed, 0x9d0fab3f, 0x5dd98870
+.word 0x6fc3caeb, 0xe690bfde, 0x2a0d4dd6, 0xf634d03b, 0x0df0c0f1, 0x426d2749, 0xe4a522cc, 0x442fedf0
+.word 0x7f69bef4, 0xd782f7ee, 0x4ab89603, 0xa9a33c90, 0x782fc832, 0x66cf6492, 0xccdf5638, 0xb43ec8d8
+.word 0xc69d14c0, 0xcc3c77a0, 0x9a25c633, 0x2b570750, 0xe15abcd5, 0x8bf9682c, 0xd18e2366, 0xf8bb59f6
+.word 0x4a8dd2c0, 0x2a6003ad, 0x149fc15b, 0xf5f8a577, 0x3e0d0d6e, 0x991f6def, 0xb8a14c83, 0x8ab44771
+.word 0x2063e345, 0x1f1632ac, 0x9f167008, 0x52f3803e, 0xca045358, 0x1a2614a2, 0xc6014a89, 0xf90364a1
+.word 0x14dbd8a7, 0xbc3a21e2, 0x31db9644, 0xbfd2d338, 0x83871388, 0x302a54a5, 0xe7318d1d, 0x51a3c2d3
+.word 0x6de38216, 0xb0ab3197, 0x2ba04fdd, 0x2fd0e3d9, 0xaaa2e373, 0x6b776734, 0x211f32b0, 0x9340dd28
+.word 0xe24c2a0a, 0xd292eca2, 0x59599e92, 0xec879699, 0x77f456ce, 0xcb751f6d, 0x17a27ec3, 0xadf507d3
+.word 0x28d50f61, 0x2e5b5222, 0xdbae76ec, 0xed6521de, 0xe004d89f, 0x98ab0c00, 0x77d9444b, 0x3937ca5a
+.word 0xb0d71480, 0x72fd4859, 0x9d990197, 0x39ccb71c, 0xfe86b450, 0x4169df97, 0xdc2c5576, 0xea98cbf6
+.word 0x9af1f585, 0x1c204444, 0x3ebcdf6f, 0x6ba3f904, 0xe0e16afd, 0x4c27b26b, 0x715ccdc5, 0x56c061a9
+.word 0x65815ae3, 0x7a1e3e15, 0x34990816, 0x6c208f7f, 0x92b4e89d, 0x5b5dac50, 0x36cdccb7, 0x2e8a86fc
+.word 0xc9045317, 0xc6d4b909, 0x9aeb998b, 0x926f7873, 0xb819d573, 0xbab0b364, 0x266d7c7a, 0x932c3a45
+.word 0x15633d41, 0xf29fc2df, 0xdb37087c, 0x689a6f03, 0x7775de92, 0x4f62bb71, 0x3a2e3823, 0xe128511b
+.word 0x7c05fa50, 0x53962705, 0x87a253aa, 0xb6776d62, 0x3f3e3e3a, 0x33b77a6d, 0x54983a0d, 0xa5b941c3
+.word 0x51b838fb, 0xc7cbeee3, 0xb920463c, 0x865a8904, 0xed29b59d, 0x5f6487d0, 0xec563705, 0x5cb3cf3e
+.word 0x0e6ad276, 0x6bee2fd6, 0x494a0a0c, 0x63470be8, 0x39ccf476, 0x54989483, 0xb304f439, 0xd3fc5ac2
+.word 0x04579eaa, 0x3d96ca19, 0x0a5ba618, 0xf4e51b5a, 0x2bf8d09c, 0xc17fd3ce, 0xb83607a3, 0x31c57cef
+.word 0xc0f309dd, 0x4cfef968, 0x6b03e5f6, 0xac8e6f46, 0x622ef8c8, 0x8ec1f3c0, 0x8bd3be41, 0xa3dd2482
+.word 0xd63aacee, 0xf34e91aa, 0xb4dfd216, 0x0120a29f, 0xd871fcd7, 0x06551310, 0x671c5307, 0xa4884a0e
+.word 0x1ba2ee19, 0x846d33d0, 0x21a6fc4b, 0xc881f4f8, 0x637c2a49, 0x652284aa, 0x39795b1b, 0x5310ed28
+.word 0x2a6da8d3, 0x1018960c, 0x0254780f, 0x5b4ec5e4, 0x9d8d929f, 0x30110857, 0x11760953, 0x82796471
+.word 0x9acebe0e, 0xba66e405, 0xbd87aee3, 0x341e09f7, 0xa497f9c7, 0xad30e982, 0x84dc0feb, 0x748cdc59
+.word 0xe24c940a, 0xddcf1336, 0x7e8fee15, 0x5bb20945, 0x40fc2026, 0xb5aa715e, 0xf84cc817, 0x5e724ffd
+.word 0x9fdf0edb, 0x90e9bedf, 0x257d12de, 0x68f73205, 0x7b8cc180, 0x51cb9a11, 0x82c9951c, 0x2a74e8b0
+.word 0x885c9737, 0x2723cc9b, 0x66fd0e14, 0xa51f7f90, 0xb6656b08, 0x4dd1b78b, 0x2ed86566, 0x7bbc1eac
+.word 0xd6c4a8da, 0x9420fb3f, 0x1a9bb862, 0x9a6dc853, 0xb735e9a3, 0x5f8d126e, 0xeddf28ab, 0x1f906ef6
+.word 0xa3b686fe, 0xc0075c99, 0x0ff8c4bc, 0xb739276c, 0xb38b6199, 0x04b39c31, 0x06f299a8, 0xc291d172
+.word 0x48d412f3, 0xbcc54470, 0x0371b7f3, 0x1aaf94bf, 0xfe96e5a2, 0x70e56f93, 0x13eb26de, 0xc0a62179
+.word 0xbc336ac9, 0x2e0f77af, 0x24b2e63b, 0x0867572f, 0xa564d222, 0x6979aac0, 0x66dfd243, 0x57e9e0fe
+.word 0x9b2b0bbe, 0xa28154e3, 0xacf76752, 0x6e366946, 0x8ed32971, 0xf196f502, 0x209efa03, 0x51c8b7c9
+.word 0xd81d0fb0, 0xee452814, 0x424dcca5, 0x0443c359, 0xa851b097, 0x38486680, 0xc6c2e410, 0xc05688ef
+.word 0xa329c2a7, 0xc3265f3e, 0x11f5cb9e, 0xed0235ee, 0xf4fe0e95, 0x10888f47, 0x110643cf, 0xec69628d
+.word 0x53f72cf0, 0x22b64622, 0x6df21d7a, 0x616471b4, 0x4f33d18d, 0xc6646e39, 0x0590598c, 0x66a41548
+.word 0x588376c1, 0xa64c2f29, 0x80c55925, 0x43f18f96, 0x43cc152e, 0xb4c8a65f, 0x182ce024, 0xfd2369c1
+.word 0x875935d6, 0xd9991563, 0x4f6a312d, 0xab346ff6, 0x311ee0af, 0xdc433c54, 0xfc1e3797, 0x4991fa25
+.word 0xa4a50eb5, 0x28385968, 0x500b82c7, 0x58f696c5, 0x9a3e498a, 0x60b7a07c, 0x953893ba, 0x340e5866
+.word 0x5b93332a, 0x05e41b0f, 0x01d1a81a, 0xd3bdf239, 0x9d6ee510, 0x55efb72a, 0xf3f6df49, 0x68effd83
+.word 0xfbb86957, 0x9768474d, 0xbac2c6fa, 0xd4403590, 0x7d926c0b, 0x4766f7e9, 0x30a77ce9, 0xbab3a9c6
+.word 0x41d6f55b, 0x4f6b212c, 0x50d9a79d, 0xae8f0935, 0x01ccd6f6, 0x4ca4b9a6, 0xf799b342, 0x456dca35
+.word 0x12a18f04, 0x1f0bf761, 0x5b9cd3a4, 0x2febc49c, 0x7f1bc603, 0xd5458863, 0xb85e646e, 0xeca06502
+.word 0x2e747826, 0x52c460d1, 0x94b25dd7, 0x382ad8fd, 0x51fece3a, 0x0d4db7b2, 0xda7d28fd, 0xc9b27487
+.word 0xb70acee1, 0x1e2a5f06, 0x602292b7, 0x16455852, 0xdc4451ee, 0x5157ab57, 0x2212943d, 0xa3edaa7f
+.word 0xf96f7cd4, 0xaf3bcfdb, 0x27c8039a, 0x5791a68f, 0xc744077e, 0x69069c33, 0xc9b1e5dd, 0xdeab121a
+.word 0xfd5c08be, 0x75b6bf47, 0x77206235, 0x08367822, 0x52f9d930, 0x3af357f4, 0x3beff5eb, 0xcb3b9288
+.word 0xb9473fc8, 0x2da2eb4e, 0x7f2f7ffe, 0x4fd1c868, 0xfbd6b4a4, 0x853e309f, 0x7ef8674c, 0x06631c1a
+.word 0xa32a0915, 0xe2479a62, 0xfabccabc, 0xcece1fac, 0x6224dd74, 0x5b3662fa, 0x06a98c8f, 0xa4aeea71
+.word 0xa958ab52, 0xb30863c7, 0x04538a9d, 0x4a262ca5, 0x6aa24af1, 0x5dc7f8cf, 0xf694e2dd, 0xdc93c3af
+.word 0x6ff33fd2, 0xc7e1c339, 0xf3afa91d, 0x06fcdfd8, 0xe81127b0, 0x3eaf0ff6, 0x3462d536, 0x77135e2a
+.word 0x3f601c9a, 0xf4f524af, 0x2c5dc4b7, 0xa7818eb1, 0x2bcef7bc, 0x990cc0c6, 0x047bc99e, 0x2c581f7a
+.word 0xc72dc734, 0xa6cb2f34, 0xb724226b, 0xf9bfda2c, 0x1eaaeb5d, 0x29293f02, 0xed2917e9, 0x468a43a4
+.word 0x35d1a1ae, 0xd9eeda3d, 0xa9ce3e6a, 0xe8efca04, 0x504ab978, 0x096e282c, 0x18bba2bb, 0x51c4ad0b
+.word 0x5fb7dd61, 0x423b766c, 0xdba3d901, 0x1b2e653b, 0x41c56d12, 0x8d35ca0d, 0xd9eedabd, 0x9215cf9a
+.word 0x0afb72a3, 0x16595fb5, 0x8c58c2e9, 0xb6aab813, 0x40495e5c, 0x74da1e40, 0x86e965da, 0x45bc2470
+.word 0xca2922d5, 0xbd87307e, 0x7c4116ad, 0x8ebe20d3, 0x48202127, 0x0c0179c8, 0xd7906374, 0xf328d3c6
+.word 0x0d9703c2, 0x4f2e51c1, 0x50bb8c06, 0x2452ced1, 0xcbaa35e5, 0x22cb7710, 0xafa9b47b, 0x756e32c6
+.word 0x41200f0c, 0x9e19e7ee, 0xd7da3622, 0xb26d9499, 0x58bc28ec, 0x5fa9bd0e, 0x4528c8df, 0xafa380fa
+.word 0xd32125f7, 0x443324b9, 0x20bd3fe5, 0x968f26bd, 0xb7ef8cc0, 0xe81b65bf, 0xde089c4e, 0x89bbcb6b
+.word 0xc71ae7b7, 0x5fef0f3d, 0x42814824, 0x1a3ac8b6, 0x9790467d, 0x0667f94b, 0xb46ced94, 0xfa002774
+.word 0xa3433c7a, 0xf8a08591, 0xe48e6450, 0x6700f79a, 0x1355573c, 0x903b4a48, 0xd25f9fa9, 0x581c3c6d
+.word 0xb36f407c, 0x7f577b02, 0xb1c63e9e, 0xed49a71d, 0x49b0363c, 0x227042b1, 0xb9944e61, 0xe2c7813a
+.section .user_stack,"aw",@progbits;
+.align 2
+user_stack_start:
+.rept 4999
+.4byte 0x0
+.endr
+user_stack_end:
+.4byte 0x0
+.align 2
+kernel_instr_start:
+.text
+mmode_intr_vector_1:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_2:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_3:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_4:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_5:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_6:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_7:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_8:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_9:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_10:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_11:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_12:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_13:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_14:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+mmode_intr_vector_15:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x342 # MCAUSE
+                  srli x31, x31, 0x1f
+                  beqz x31, 1f
+                  j mmode_intr_handler
+                  1: la x29, test_done
+                  jalr x0, x29, 0
+
+.align 4
+mtvec_handler:    
+                  .option norvc;
+                  j mmode_exception_handler
+                  j mmode_intr_vector_1
+                  j mmode_intr_vector_2
+                  j mmode_intr_vector_3
+                  j mmode_intr_vector_4
+                  j mmode_intr_vector_5
+                  j mmode_intr_vector_6
+                  j mmode_intr_vector_7
+                  j mmode_intr_vector_8
+                  j mmode_intr_vector_9
+                  j mmode_intr_vector_10
+                  j mmode_intr_vector_11
+                  j mmode_intr_vector_12
+                  j mmode_intr_vector_13
+                  j mmode_intr_vector_14
+                  j mmode_intr_vector_15
+
+mmode_exception_handler:
+                  csrrw x19, 0x340, x19
+                  add x19, x28, zero
+                  1: addi x19, x19, -124
+                  sw x1, 4(x19)
+                  sw x2, 8(x19)
+                  sw x3, 12(x19)
+                  sw x4, 16(x19)
+                  sw x5, 20(x19)
+                  sw x6, 24(x19)
+                  sw x7, 28(x19)
+                  sw x8, 32(x19)
+                  sw x9, 36(x19)
+                  sw x10, 40(x19)
+                  sw x11, 44(x19)
+                  sw x12, 48(x19)
+                  sw x13, 52(x19)
+                  sw x14, 56(x19)
+                  sw x15, 60(x19)
+                  sw x16, 64(x19)
+                  sw x17, 68(x19)
+                  sw x18, 72(x19)
+                  sw x19, 76(x19)
+                  sw x20, 80(x19)
+                  sw x21, 84(x19)
+                  sw x22, 88(x19)
+                  sw x23, 92(x19)
+                  sw x24, 96(x19)
+                  sw x25, 100(x19)
+                  sw x26, 104(x19)
+                  sw x27, 108(x19)
+                  sw x28, 112(x19)
+                  sw x29, 116(x19)
+                  sw x30, 120(x19)
+                  sw x31, 124(x19)
+                  csrr x31, 0x341 # MEPC
+                  csrr x31, 0x342 # MCAUSE
+                  li x17, 0xb # ECALL_MMODE
+                  beq x31, x17, ecall_handler
+                  li x17, 0x2 # ILLEGAL_INSTRUCTION
+                  beq x31, x17, illegal_instr_handler
+                  csrr x17, 0x343 # MTVAL
+                  1: la x29, test_done
+                  jalr x1, x29, 0
+
+ecall_handler:    
+                  la x31, _start
+                  sw x0, 0(x31)
+                  sw x1, 4(x31)
+                  sw x2, 8(x31)
+                  sw x3, 12(x31)
+                  sw x4, 16(x31)
+                  sw x5, 20(x31)
+                  sw x6, 24(x31)
+                  sw x7, 28(x31)
+                  sw x8, 32(x31)
+                  sw x9, 36(x31)
+                  sw x10, 40(x31)
+                  sw x11, 44(x31)
+                  sw x12, 48(x31)
+                  sw x13, 52(x31)
+                  sw x14, 56(x31)
+                  sw x15, 60(x31)
+                  sw x16, 64(x31)
+                  sw x17, 68(x31)
+                  sw x18, 72(x31)
+                  sw x19, 76(x31)
+                  sw x20, 80(x31)
+                  sw x21, 84(x31)
+                  sw x22, 88(x31)
+                  sw x23, 92(x31)
+                  sw x24, 96(x31)
+                  sw x25, 100(x31)
+                  sw x26, 104(x31)
+                  sw x27, 108(x31)
+                  sw x28, 112(x31)
+                  sw x29, 116(x31)
+                  sw x30, 120(x31)
+                  sw x31, 124(x31)
+                  la x29, write_tohost
+                  jalr x0, x29, 0
+
+illegal_instr_handler:
+                  csrr  x31, 0x341
+                  addi  x31, x31, 4
+                  csrw  0x341, x31
+                  lw x1, 4(x19)
+                  lw x2, 8(x19)
+                  lw x3, 12(x19)
+                  lw x4, 16(x19)
+                  lw x5, 20(x19)
+                  lw x6, 24(x19)
+                  lw x7, 28(x19)
+                  lw x8, 32(x19)
+                  lw x9, 36(x19)
+                  lw x10, 40(x19)
+                  lw x11, 44(x19)
+                  lw x12, 48(x19)
+                  lw x13, 52(x19)
+                  lw x14, 56(x19)
+                  lw x15, 60(x19)
+                  lw x16, 64(x19)
+                  lw x17, 68(x19)
+                  lw x18, 72(x19)
+                  lw x19, 76(x19)
+                  lw x20, 80(x19)
+                  lw x21, 84(x19)
+                  lw x22, 88(x19)
+                  lw x23, 92(x19)
+                  lw x24, 96(x19)
+                  lw x25, 100(x19)
+                  lw x26, 104(x19)
+                  lw x27, 108(x19)
+                  lw x28, 112(x19)
+                  lw x29, 116(x19)
+                  lw x30, 120(x19)
+                  lw x31, 124(x19)
+                  addi x19, x19, 124
+                  add x28, x19, zero
+                  csrrw x19, 0x340, x19
+                  mret
+
+pt_fault_handler: 
+
+.align 2
+mmode_intr_handler:
+                  csrr  x31, 0x300 # MSTATUS;
+                  csrr  x31, 0x304 # MIE;
+                  csrr  x31, 0x344 # MIP;
+                  csrrc x31, 0x344, x31 # MIP;
+                  lw x1, 4(x19)
+                  lw x2, 8(x19)
+                  lw x3, 12(x19)
+                  lw x4, 16(x19)
+                  lw x5, 20(x19)
+                  lw x6, 24(x19)
+                  lw x7, 28(x19)
+                  lw x8, 32(x19)
+                  lw x9, 36(x19)
+                  lw x10, 40(x19)
+                  lw x11, 44(x19)
+                  lw x12, 48(x19)
+                  lw x13, 52(x19)
+                  lw x14, 56(x19)
+                  lw x15, 60(x19)
+                  lw x16, 64(x19)
+                  lw x17, 68(x19)
+                  lw x18, 72(x19)
+                  lw x19, 76(x19)
+                  lw x20, 80(x19)
+                  lw x21, 84(x19)
+                  lw x22, 88(x19)
+                  lw x23, 92(x19)
+                  lw x24, 96(x19)
+                  lw x25, 100(x19)
+                  lw x26, 104(x19)
+                  lw x27, 108(x19)
+                  lw x28, 112(x19)
+                  lw x29, 116(x19)
+                  lw x30, 120(x19)
+                  lw x31, 124(x19)
+                  addi x19, x19, 124
+                  add x28, x19, zero
+                  csrrw x19, 0x340, x19
+                  mret;
+
+kernel_instr_end: nop
+.align 2
+kernel_data_start:
+.section .s_region_0,"aw",@progbits;
+s_region_0:
+.word 0x643a6693, 0x17a55ac7, 0xcda6bc7e, 0x2153e720, 0x1e1e5169, 0x34bc80e6, 0xbb911508, 0x4f1b2a80
+.word 0x30826e01, 0xe8786d5c, 0x27f35d18, 0x235aa32d, 0x4a43c09e, 0x67584161, 0xb14a7c91, 0xa1569c4b
+.word 0xd00ef519, 0x6896caad, 0x9b7ae167, 0x40123e77, 0xd04bfa21, 0x90dfea0a, 0x9580e704, 0x20320e9c
+.word 0xa252e007, 0x4aef5c06, 0xe32ef73a, 0x944bf8b7, 0x85d5cf9d, 0x7451766f, 0x3579a41a, 0xb59cdee3
+.word 0xf8e182fd, 0xac44c1e3, 0xc1153f9a, 0xdfb82f48, 0x626ce6a9, 0x4d2257d5, 0x808d4fbd, 0x38457def
+.word 0xd8189775, 0xa28489e6, 0x100fb312, 0xbb9a62f0, 0x226a1384, 0x042e1029, 0x2c78afd2, 0xf634d550
+.word 0xfaf88f40, 0xf0967f9d, 0x47133f09, 0x37d5fbd0, 0x7ec4612c, 0xa8a67f44, 0xb88f85be, 0x88248ca1
+.word 0x0ec67eb4, 0x1d2769f1, 0x3d1d5090, 0xa6f20501, 0xf0c936ef, 0xfe230d95, 0x3b7ff0d6, 0xa48fa96c
+.word 0x6d60127a, 0x4450131a, 0xb9ef564d, 0x79a12dad, 0x1dc4e338, 0x8ef04be3, 0x8970def2, 0xd0f3da02
+.word 0x7eed16c2, 0xecb5b977, 0x2f48da6c, 0xf3776b97, 0xac0dde82, 0x3a381318, 0x2319ec34, 0xdeb8d7cd
+.word 0x4fbd5c5e, 0xb8a27a0a, 0x4b7987ad, 0x4603510b, 0xf5fb7268, 0x3349348a, 0xf3d6eaf5, 0xfe19ab7e
+.word 0x7d8b7b7b, 0xe9c21abe, 0x3b3ec902, 0x50f825a8, 0xbba20c1c, 0x53d80fa6, 0x7ac7742a, 0xadcef744
+.word 0xcc237c82, 0x31953bce, 0xa1817e78, 0x91f1e710, 0xd9e4dbca, 0x1a8d30a7, 0x555d4728, 0x4b26b807
+.word 0x78982a28, 0xb2d162ec, 0xb9fb81c2, 0x63e3f682, 0x890c3f2f, 0xd9f318ca, 0x1078ef57, 0x43f11b57
+.word 0xf99d03ac, 0x20197b03, 0x072d2018, 0x1fbc8499, 0xc792f078, 0x19aac578, 0xdf859e36, 0x9335f0d5
+.word 0x6035434d, 0x2850e831, 0xa0929475, 0x66a90943, 0x0b5ec5e1, 0xf6156900, 0xf3f663a8, 0xd8477759
+.word 0x52214299, 0x56a92bd5, 0xafc60965, 0x60025e9e, 0x6591a743, 0x8bd83da1, 0x12300629, 0xc2052f4b
+.word 0x8fcc68cd, 0x2cb721f4, 0xbae1bb94, 0xbeae8e84, 0x60b51846, 0xc7977b9a, 0xbbd878a5, 0xd5f9cc84
+.word 0x24b8c1f1, 0xdd921993, 0xc917b3a6, 0x0c098de8, 0xf492e322, 0xf4b2f6ec, 0xbcc415c8, 0x453a8da1
+.word 0xe3b98c0d, 0xaaaed66c, 0x0156c45c, 0x25794e09, 0x03d3028b, 0x966dcf46, 0xb05d4a42, 0xace3f935
+.word 0x7b460157, 0x491fa5af, 0xc02d1899, 0x55f38631, 0xc1a424ca, 0x1a0168e4, 0x28f5390d, 0x86421a2b
+.word 0x5b275036, 0x206611ae, 0x4c0917cb, 0x52a029b3, 0x227daf1f, 0xcb46f0ad, 0x11eabcaf, 0x3642cfd9
+.word 0xd44c73cb, 0xb62a511e, 0x2f5df7c7, 0xcbf72692, 0xfbb7f939, 0x351568f3, 0xe49ce5b4, 0xae01bbe8
+.word 0x02e8c445, 0x1f47b723, 0x223aca1f, 0xb42f05ea, 0x90d0d083, 0x5c847569, 0x9bf2a434, 0xfc54ae63
+.word 0x69cb4c61, 0xdbae51c6, 0xe10e66e7, 0x3cef363a, 0x6d15b0e4, 0x4db72bac, 0x5b07de70, 0xd03679de
+.word 0x392a5d2b, 0x61ce83c9, 0x129f1c79, 0x8b0b5657, 0xf079e03d, 0x64ddb4f9, 0xbb379eab, 0x4906b9eb
+.word 0x84934e9a, 0x6d280353, 0xf1656230, 0x052be4fc, 0xcb301c7d, 0x52a18105, 0xe01ec58d, 0x5085ac00
+.word 0x304afaa4, 0x1a24b834, 0x0e6cb3e0, 0x2004848a, 0xd38564fa, 0x939e626a, 0xf8ef0632, 0x3ac0df3d
+.word 0x0aefaec8, 0xf02fafe0, 0x9071b197, 0xfc5fdc4b, 0x05502ae1, 0xedb6d444, 0xf4cfba97, 0x90457673
+.word 0xfd430722, 0x460520ae, 0x8523e6c6, 0xdaf806cf, 0xda4701f9, 0x4e956410, 0x581c18ac, 0xf244eaf2
+.word 0x1ea8d472, 0xb3285a19, 0xbc7e3d86, 0xdc5951cd, 0xb1b90f64, 0x98f4ce69, 0x5768951f, 0xea611d1f
+.word 0x0b5471fd, 0xea49f023, 0xe4a10e5e, 0x5f6fb9b7, 0x95b54699, 0xb3030f8e, 0x9650831f, 0xb2b5fdee
+.word 0x991fb76f, 0xbf3258f4, 0xf455f9ca, 0xc9ada9c0, 0xf436f6c8, 0xc0201f56, 0x33cdc1e9, 0xa0dfe520
+.word 0xe9116c90, 0x10512248, 0x276121aa, 0x3c3dc77d, 0x5711cf43, 0x74b745fa, 0xcc5fe6d6, 0xcf5dc433
+.word 0x27d1a1aa, 0x17e9373c, 0xc75bad1f, 0x9b6b2499, 0xaa81b0c6, 0xfa24f625, 0x07475e27, 0xe1a9bc1f
+.word 0x6d43b8f1, 0x4443f51f, 0x09511cdb, 0x32ce0a0a, 0x6817bce7, 0x262bc07c, 0xb5a8c74f, 0xd46fde63
+.word 0xfbef793e, 0xabdabc77, 0x2177d8d0, 0xa227a6da, 0x3a9f9c80, 0x7364b076, 0xd877cc27, 0x3516d8ca
+.word 0x25df0828, 0x94f7754d, 0x71b8f435, 0x3237651e, 0x7c77303b, 0xf6cbd390, 0xa4946647, 0x7d12b11f
+.word 0x8d0be574, 0xe8ded0e2, 0x2c4d05c0, 0xc6c0f042, 0xbf5a0a9f, 0xeb15f1de, 0xc373f89e, 0xcf9a3b3e
+.word 0xb7efc396, 0xc8d0f190, 0x3c863bb8, 0x62b55501, 0xdf936925, 0x8e615566, 0xdf28414e, 0xf208733a
+.word 0x3cb747a9, 0x1236fc6f, 0xedb54ad9, 0x10c8c609, 0xcabb0742, 0xb60c02be, 0xc8655ad7, 0x254e6a9a
+.word 0xfa0e2f9d, 0xa5c77807, 0xc1fd2fd0, 0x79132a18, 0xb77b95a9, 0xb03df8f5, 0x39ec46a8, 0xb12b7b81
+.word 0xab3e6e53, 0x3aedcd8f, 0xd8854da1, 0x2707184e, 0x979a5bd7, 0xec60b32e, 0xf61aa7c9, 0x89ac9cb3
+.word 0xdd634214, 0x507bccaa, 0x40600f7d, 0x213ebd2d, 0x08c1eafe, 0xc3343ab7, 0x9d045f6a, 0xeff26509
+.word 0xd07b6a68, 0xc8038c1a, 0xb6fc7a75, 0x65e2c1ef, 0xba055797, 0xa776920a, 0x56e10854, 0x0ae6a70d
+.word 0x78c0f84b, 0xc4fda22e, 0xfa965121, 0x3879c218, 0x84825955, 0x1837375f, 0xceec1b5a, 0x1c7e8d9b
+.word 0x6168444d, 0x63f9107d, 0x948b92a4, 0x18d5c307, 0x436ff978, 0xa94264fe, 0xa25e5ea4, 0xdc8a507e
+.word 0xa67c99fe, 0xdcbc4909, 0x301063b5, 0x1587ca40, 0x2e47ccb7, 0xed97130f, 0x3c3b84cd, 0xcf415cac
+.word 0xf919890d, 0xb0ae2c69, 0x26a7c78b, 0x6e9fdda1, 0x1862921d, 0x9beb30c3, 0x3068a7b7, 0xa5a47ee8
+.word 0x1ed9f24b, 0xb056c912, 0xf5d9cf65, 0xf1a916b1, 0x08ac944d, 0xf3005d09, 0xdeedbd3c, 0x7dd1a919
+.word 0xc198a015, 0x45122510, 0xea0af0ca, 0x6ca99e93, 0x51b4ea3c, 0xeb264cb1, 0xf2b85fb1, 0x545ff7fd
+.word 0x16e7263d, 0x7ae52c7b, 0x0c5a74c0, 0x01d70abc, 0xdc197363, 0x2ba7f686, 0x60b60a91, 0xb0912e43
+.word 0x0dde6ba0, 0x38850f6a, 0x6b9f405c, 0xb0a0acd1, 0x4230d513, 0x881b7475, 0xadc45fc0, 0x3c681ee6
+.word 0x9280c110, 0x4926826e, 0x39a4315e, 0x293e9fd7, 0x75f36851, 0x6131190b, 0xefacd640, 0x7c985a2d
+.word 0x4515c22e, 0xd6096c6b, 0x8f572a64, 0xd0c41c90, 0x6f48db06, 0xbea56e6d, 0x5c8100ee, 0xb720ddcc
+.word 0x1578dd92, 0x9f9aaa46, 0xf17250b2, 0x31646a89, 0x2b7d16e3, 0xa03e9939, 0x7cf649f0, 0x767b0669
+.word 0x89b026cc, 0x23522959, 0x18aaad45, 0x2b5431c0, 0x492515ab, 0xbc57bb06, 0x3d3533cc, 0xcf84a7e6
+.word 0x4ba5e5b2, 0xdd4e0c94, 0x2a513505, 0xb4bf4fab, 0xce9ef05c, 0xc641ba2b, 0x18125f3a, 0x8640cf87
+.word 0x4a105da6, 0xb0ad8445, 0x83190b5e, 0xee89ba14, 0xab698021, 0xa55f2474, 0x10cfea12, 0x6e0c960b
+.word 0xcbe55538, 0x05c0506f, 0x6a5c7885, 0x511ed61f, 0x08348985, 0x8aa339f5, 0xe0d7877b, 0x9471b436
+.word 0x736f7311, 0x23b95c2b, 0x1903560f, 0x516cba33, 0x52a4f98e, 0xbcc1c07a, 0x353ced9e, 0x24bdcdf5
+.word 0xcdfe24cb, 0x3b0f2706, 0xf97f4095, 0xf94df10c, 0x8d707818, 0x9d283fed, 0x6dddd665, 0x7c8dd642
+.word 0x45973646, 0x87fa1515, 0x583d8115, 0x2ddd3998, 0xe105a676, 0x7b82af3c, 0x6ddcc9e5, 0xd835e004
+.word 0xed659f33, 0x286d52f8, 0x0eb44cc5, 0x5c7a2584, 0x17c41ac1, 0xf40c60a4, 0xef9d0847, 0xbd593cc0
+.word 0x1492e57b, 0x0d656506, 0xb0ca24e6, 0x63b7447f, 0x3ec17787, 0xd4ebeedc, 0x3c46d3c4, 0xcd15e358
+.word 0xdfb76f56, 0xe07ca113, 0x7a5d8352, 0x262953ca, 0x0d86d68e, 0xdcd31a25, 0x98815615, 0x0a93d18b
+.word 0x91a12873, 0x93ad4237, 0x057548a1, 0xdafa5f42, 0x8878a3d6, 0x6cfa62a6, 0x4bee1597, 0xc44f0ede
+.word 0x2114899c, 0x963f238f, 0x59a15c59, 0x99a732fc, 0x5946bb86, 0xd43e2fda, 0x16f365e8, 0xd958f741
+.word 0x62b5d8c2, 0xfdfb3742, 0x180a6622, 0xc3636972, 0x47dc6a6d, 0x14c7aee0, 0x23160a99, 0x57030a6f
+.word 0xc1b15ab3, 0x971c6e65, 0xa12337f7, 0xa12dca02, 0xda858b4c, 0x7ba80469, 0xabf4323c, 0x316832b9
+.word 0x7ee57c0d, 0xba7d82be, 0x0105933c, 0x0b308a62, 0x511e8196, 0xa1c616b4, 0x85422b61, 0x5c9d4275
+.word 0xf642df86, 0x85e39ca2, 0x2122aaf8, 0x685d24b3, 0x13a57e16, 0xb71c5d2c, 0x15ce3c69, 0x5e5fd4a3
+.word 0xa7d28258, 0x62315e45, 0xea94122e, 0xc93945fe, 0x0500dbed, 0xf71e875e, 0x13ec3bda, 0x3d258515
+.word 0x67b8cc49, 0x955f910d, 0x483c757b, 0x8b0ea829, 0xd6d38ae3, 0x67f64759, 0x6d5c5666, 0xaf1d49e4
+.word 0x297474a6, 0x394ddf5b, 0xa78128d9, 0x33a5062f, 0xce28f1be, 0x4b36ec1d, 0xf07ab382, 0x67b8add9
+.word 0x9a2aa1ac, 0x0ce6736e, 0x695460a5, 0x53ba9182, 0x9f3e4146, 0x5d1e2468, 0x913f0987, 0x854f7d5e
+.word 0x66f78b5d, 0xcfa93a00, 0xc989d6b5, 0x766e7579, 0xfb570d81, 0x65832494, 0x20dcfa66, 0x3ce1d6d0
+.word 0xd6fd3405, 0xd2b9b5ef, 0x9775a0fa, 0x7a5a47ad, 0x1010cfd0, 0x7a7e78aa, 0x2d773a97, 0x8a206662
+.word 0x8038406b, 0x9e9ef524, 0x36594b8c, 0xcebfb7e2, 0xdaaa667e, 0xc2edc5f6, 0x012eb84c, 0xd2e65149
+.word 0x55d61a93, 0xe59a7a83, 0xb59c27c2, 0x8dc04b43, 0xaae6c1ac, 0x35788732, 0xc5b0cd21, 0x22a46fb3
+.word 0x9830849e, 0x12187342, 0x416714ba, 0x0e30fac4, 0x133e3dad, 0xe12f8295, 0xa8b74b2a, 0x30f10dee
+.word 0x6b5d7267, 0x231fa072, 0x26fa82cd, 0xf10d55a6, 0x47a4a14a, 0xf4f99fa1, 0x2790af52, 0xa7a0e067
+.word 0xa1bbe878, 0x386d8569, 0x5aeefb6e, 0x5c1e29bc, 0x6fd90e17, 0xd6a3e2c8, 0xab7a15cb, 0xfee81d84
+.word 0x1ef19746, 0xc3756f6c, 0x95cd738a, 0x6a5d30d9, 0xed994422, 0xde59fc84, 0x9646157e, 0x8c594d97
+.word 0x9741bb83, 0xfb59efc9, 0xb2c70004, 0xb9424cb0, 0x957671cd, 0xaec07501, 0xc1d3e738, 0x919f0b31
+.word 0xdde7e340, 0xc3547767, 0xa368603b, 0x9268cf8a, 0x6be1cd33, 0x4840a88b, 0x6c410744, 0xb6559900
+.word 0xa30fe513, 0xa1fa4c0a, 0xeb805898, 0x42d557cb, 0x5c6416f1, 0x6b3a9720, 0x83c40e7e, 0x84f9f35a
+.word 0x27a5d66c, 0xcae3bf2b, 0xeb3870e1, 0xb34c8686, 0x5c92e805, 0x1b826ea9, 0x65ef6931, 0xac350233
+.word 0x998ed6f7, 0x8df5e98d, 0x8f9e868b, 0xcebbeb20, 0x71e12a78, 0xc5278a23, 0x95c16478, 0xa1b3d776
+.word 0xcdc5fd4c, 0xdeeb62be, 0xd1945b49, 0x80c0d084, 0x20551c8f, 0xb43f35bf, 0xc8794230, 0xca921573
+.word 0x22703510, 0xe628860d, 0x803c5cce, 0x6e64ed18, 0x585f1c00, 0xe254b792, 0x45896598, 0x47fc5113
+.word 0xa5cfbb23, 0xfb545765, 0x86b435cf, 0xc9f5bc15, 0x2ca1ed77, 0x3dfb6ae6, 0xfedc4aba, 0x49c13239
+.word 0x90a7aaf0, 0x1c6a804b, 0x4ee30b9f, 0x98614957, 0x5646f24b, 0x744a5691, 0xa2cb3c5d, 0xe8fd2cf4
+.word 0xa5c50f43, 0xab9408a5, 0x51e2bc16, 0x592e4db6, 0xa0bbce51, 0xee7f474e, 0x73b4511f, 0x26a0467e
+.word 0x4a614ce0, 0xd3ac773e, 0xb66c75a2, 0x2054d605, 0xa52052eb, 0x94b73f8a, 0xb282c2e8, 0x9bde135f
+.word 0xaff53f83, 0x0e1672b5, 0xeb8cc750, 0xc8f600ee, 0xbfcfc6bf, 0x69490569, 0x75235f96, 0xcb5ec6b2
+.word 0xbd2afadc, 0x6f1db5ea, 0x973c8c3b, 0xbcd1fa41, 0x76b01c80, 0x7baad9d7, 0x0b9d77f1, 0x4964a49f
+.word 0xce712f96, 0x4b60ea1f, 0x6e276932, 0xd9740236, 0x4a6638ca, 0xcfa52ca0, 0xf44f3191, 0xa6edae95
+.word 0x8dd75962, 0x345ad390, 0xec3df67f, 0x24212712, 0x315c584a, 0xc6c151cb, 0x58c891fd, 0xfb4db6bb
+.word 0x699ff456, 0xd0b1a95f, 0x51aedb42, 0x99967e35, 0xaede7bf2, 0x28fc0603, 0x5245b06d, 0xa6c22c49
+.word 0x60e852d8, 0x054893d9, 0x88f9792a, 0x935b66b8, 0x65dce6c4, 0x5ec2cdcc, 0x2c7b1b81, 0x22c271e3
+.word 0xe83b18b9, 0x34d3a060, 0x1021c0df, 0xbcb01f49, 0x0822078e, 0xcd61282f, 0xb8bbefe8, 0xc12fda0e
+.word 0x564a79e4, 0x7ca8b0b3, 0xbca9d4a4, 0xa7a8a0ac, 0x91490262, 0x9a48dfe5, 0x4323eb79, 0x141e5144
+.word 0xf7e57120, 0xa5d58f91, 0xe86c38aa, 0x47b4ecc1, 0xa33fb2d9, 0xc737bc65, 0xb5b7d432, 0x69c1d68f
+.word 0x1663befc, 0xd535276f, 0x5cb6b86a, 0x9c07a83b, 0xc89dcab3, 0x3f072700, 0x9fb40d18, 0xee30b801
+.word 0x436c0cbe, 0xbec9d0c4, 0xdf6f6b35, 0x02963f93, 0xcdecc3e8, 0x872efbe4, 0x0a5ec64b, 0xbd0faa8b
+.word 0x47f4000f, 0x01bce3bd, 0x026e1841, 0xbfa912f6, 0xfc56fcb1, 0xebb80921, 0xbdb607df, 0x70311f4e
+.word 0x6e85df9a, 0x4537d1c2, 0xd1d5d39b, 0x5a010e9a, 0xba649431, 0x064d044f, 0xad3c1297, 0xf5d77dc6
+.word 0x3f603dba, 0x05f531df, 0x81c5b0b7, 0x19a2b258, 0xaa334250, 0x91e584c3, 0xe9c62099, 0x802951cb
+.word 0xf4a410be, 0xfa6bce49, 0xa0dd9bc7, 0x4a7762f1, 0xc1f3fdf1, 0x25c20ed0, 0x81631899, 0xa1304d40
+.word 0xb98a4e09, 0xb36a6d72, 0x8da06bd2, 0xbe8d2c62, 0x68f3f623, 0x639d055d, 0x812c4a31, 0x547d5f0d
+.word 0x4c134612, 0x7994845f, 0xf81c1337, 0xdf82fc2b, 0x1c7a5939, 0x4e717b20, 0x5532f43d, 0xe78e2691
+.word 0xa0fef30f, 0x59a5fc73, 0xdd984f21, 0x6e6ed3d5, 0xdad433f1, 0x07d3c8b3, 0x21e185af, 0x0d23f00f
+.word 0xc84a3e65, 0x7e0f0563, 0x4bf79f3f, 0x39a95c8e, 0x943eed00, 0x6521fd4a, 0xe40d0732, 0xb4b87adc
+.word 0x5c386ffd, 0x86cd3f29, 0x1f7aa2f5, 0x43d90eb4, 0x57a8cf33, 0x77fdf099, 0x0c914e34, 0x022db238
+.word 0x7bb2420b, 0xfa4caff2, 0x199d01ae, 0x5323269e, 0x9e11268e, 0xf01a55c7, 0x291aa092, 0x37df352e
+.word 0xed2ca78b, 0x0d27425f, 0xc1d73e2a, 0xdd224ceb, 0x5c3225c8, 0xad35072e, 0x0a135390, 0x1ea9a9a9
+.word 0x7bf65cd4, 0xf89f25e4, 0x436490cd, 0x41e37645, 0x00117f94, 0x65e4265d, 0x54c3e677, 0x16854808
+.word 0x0f87ad79, 0x624690c2, 0x0b1c650f, 0xec7d487e, 0x119d85a7, 0xf244e9ca, 0xa66ce63b, 0x9f6ae1cb
+.word 0x70424466, 0x58384616, 0x733776d5, 0x1a52d130, 0x8076fe90, 0x84c2fccd, 0x3024d16c, 0x16f8d68a
+.word 0xb8f017f1, 0x88542b78, 0x17bdd610, 0x853bcfc4, 0x0331095b, 0x0e9ec58e, 0xf16b9b24, 0x0eb64dac
+.word 0xc354e961, 0xc6aa18a6, 0x1d814a14, 0x297eec17, 0x3189a56f, 0xd31feaae, 0xabe67d77, 0xea76bbef
+.word 0xaf204ca7, 0x9ae850f6, 0xf6a05f95, 0xb9f7b9da, 0x65f2e9dd, 0xcfeea070, 0xbf1941cf, 0x39036304
+.word 0xd6d414f4, 0xef460f4a, 0xab2f175c, 0xa8bf816c, 0x4e7160e3, 0xfa11a176, 0x150e6770, 0x5611186e
+.word 0xd46677ca, 0xfc59ea02, 0x0cbc2572, 0x382af055, 0x370fac4e, 0xe9adde4c, 0xc9367353, 0xa366aa92
+.word 0x9360c6aa, 0xbeaa02da, 0x243a347e, 0xbe7771f9, 0x3e5309fc, 0x10686a1d, 0x05c15859, 0x44f67977
+.word 0x7331d15b, 0xedaa1f60, 0xa8a6329e, 0x5912a67f, 0xce628560, 0xd3135671, 0xdf888a26, 0xf9043323
+.word 0x6c5450c2, 0x55852e74, 0x195ca9ed, 0xfea75304, 0x58b534b9, 0x2e0a5cba, 0x518497ed, 0x80227d28
+.section .s_region_1,"aw",@progbits;
+s_region_1:
+.word 0xc8c31100, 0x51f0ca8a, 0x7b9dd17e, 0x6bd6d2d5, 0x47eddbaa, 0x0cb9b9f6, 0x915b9cdf, 0x3f166045
+.word 0x7c6cc5be, 0x6ff24d95, 0x7cd60994, 0x2f304860, 0xcc0ecb29, 0x19a78c17, 0x51c3bde7, 0xed254cad
+.word 0x1a9818a9, 0xd07341df, 0x1dcb9271, 0xc15598d9, 0xa823f556, 0xb8d87245, 0xb8b88db5, 0x7a00cbcb
+.word 0xc434bd81, 0xe1a1ca8e, 0x4c72ae74, 0x4c9f4733, 0xcb8f6728, 0xdb821468, 0x7833448f, 0x402c1579
+.word 0x99a432d3, 0x078e119e, 0xb6fc48b5, 0xcfe81f78, 0x025cb504, 0x5a7c7417, 0x85361f10, 0x2284a7fd
+.word 0xa0e77ad1, 0xf5342323, 0x11986aae, 0xb4f10698, 0x714ecef0, 0x35b12d7b, 0xf33556d8, 0xb7b4fd8a
+.word 0x79a87801, 0x73edcbbb, 0x1720fdbf, 0xef4a2429, 0xb323d726, 0xa4967f0c, 0x7204a94c, 0x9bd0ce2e
+.word 0x8a69af13, 0x015b9993, 0x1314f64e, 0xb1b0a0e0, 0x0fdc9430, 0xd247529c, 0xf54405a1, 0x71c04d89
+.word 0xcde2cfb2, 0x170667c6, 0xb1a3d9f1, 0x41865f58, 0xa9dbbbb9, 0xfa917ac5, 0xd089b79c, 0x8fbbfccd
+.word 0x12986b9e, 0x4e695f51, 0x595e3990, 0x196743a5, 0x2d0d5c63, 0xa5bedd39, 0x17881e5f, 0xccd58181
+.word 0x0c3f2dab, 0xafe9ec84, 0xb60aeeb5, 0xf2e2d804, 0x4987fbe6, 0xa1cf4c52, 0x7f921838, 0xaab8a29d
+.word 0x9caaae64, 0x143bf7cd, 0x27d260d5, 0x61b22b56, 0x0a9de790, 0x7d424bed, 0x5320e08a, 0xfd8668bb
+.word 0x04778f8d, 0xa42b0ac7, 0x7ef60852, 0xa773b98b, 0x313a7257, 0x78c89546, 0x9d0f1c6e, 0x427b8402
+.word 0x1bbca15d, 0x7ff1b730, 0x92549b4a, 0xc89645e4, 0x8fe08e95, 0x8bb03ad9, 0xf88a102c, 0x519b013b
+.word 0x06ec5fc9, 0xa2db5e1f, 0x5c19b6ed, 0x54e0a511, 0x359f2de2, 0xda6e5345, 0x030bd68a, 0x0392f5c3
+.word 0x2ac8b5d2, 0xee6e4d98, 0x80d3839a, 0xa50a9ad4, 0x12f08de9, 0x655bab60, 0x777b7706, 0x4790114d
+.word 0xf1dfa099, 0xf1e36efb, 0x0506828a, 0x439144d0, 0xab5f2ff2, 0x65483cd1, 0x1c5a8b1c, 0x0d4db31c
+.word 0xfc0caf1d, 0xad4ecdf2, 0x13cf3234, 0xc5dc0685, 0xc75eb2cf, 0xd9e3a046, 0x7e68606c, 0x73f1a91f
+.word 0x2f5f06b1, 0xd5988066, 0x35ab0541, 0x189073ab, 0x4f6cf870, 0x1c8946af, 0xbba96ff2, 0x177b66ed
+.word 0xf800897a, 0x0c5934c4, 0x9cc09007, 0x43628d61, 0xfddbb222, 0x48d50981, 0xbad1031d, 0x3e0dfc4d
+.word 0x71f03ff0, 0x987fe06f, 0xf574d42a, 0xbada546d, 0xec0cc108, 0x75acfe00, 0x4dc393f3, 0xbf9c4042
+.word 0xfb2c1685, 0x30880a1b, 0xc8259ea9, 0xe2327c8c, 0x9f832253, 0x5dd23657, 0x6951961d, 0x26b9d121
+.word 0xbdeb5ceb, 0xe32e0e25, 0xd9d8ba83, 0xe0418a6a, 0x92707ed6, 0x17374945, 0x96acc736, 0x2abad45e
+.word 0x92dc810f, 0xb486e1d6, 0xc6d3ebcd, 0x3c36bbe6, 0x279b7477, 0x5224c8a1, 0xa36d8003, 0xdc070bed
+.word 0x672f122f, 0x27c6ccb0, 0x7a01db01, 0x8b9debe4, 0x9d3c9119, 0x9f5b5666, 0x0ecf7cb1, 0x20bffe00
+.word 0xc90280af, 0xa83b94ab, 0xcb051210, 0x426bc0a3, 0x8b38c8eb, 0x6ae50647, 0xbf3a1b8c, 0xf3a66017
+.word 0x80607e3c, 0x9a7e6fbd, 0x5a59432c, 0x18b820a0, 0xc048b71d, 0x7f408a36, 0xad98dd6e, 0xdfd453c0
+.word 0x30800f38, 0xad55f60f, 0x9f2c9e7c, 0x3b44d7fe, 0xa6b8f409, 0x3fa9f395, 0x10468592, 0xc4bc7d3e
+.word 0x0406c0b9, 0xa6baba04, 0xdcd69def, 0x3a011a39, 0xc07645ee, 0xb1edd5a8, 0x82b0e5f7, 0xf18dfb0c
+.word 0xbe55b7cf, 0x24e6c38d, 0x06b0156c, 0x20c45e94, 0xf0183f0a, 0xaf93ce85, 0x90b5d9a2, 0x1c7d47b0
+.word 0xfb370a98, 0x1d647594, 0x0b5b736c, 0x0f98f990, 0x2e70f62b, 0x7c2b2331, 0x61daa736, 0xf7b7c091
+.word 0x3e3a4937, 0x7bd87bdb, 0x28aa6273, 0x531e6778, 0xee7a64f4, 0x0e109ff1, 0x32bbc72a, 0xcaa5f4d9
+.word 0x9246b21d, 0x70421fc6, 0xc65f4ed6, 0x2522ae7f, 0x656aae75, 0x20005d91, 0xdb3509fa, 0x4bacc3d1
+.word 0x92c67009, 0x00e75630, 0x796d6845, 0x9e6f240e, 0x5590bb91, 0x95758b54, 0x3e8af358, 0x49eb25aa
+.word 0x97771769, 0xc68579b2, 0x15935a07, 0xe5e15eca, 0x6e4bee07, 0x42d1baf9, 0xec300040, 0x8a332d68
+.word 0xb3f99693, 0x24a9cdfa, 0x73c2edc3, 0x874c3480, 0x457cf1ae, 0x7202c25b, 0x38f08de9, 0x72d9ab9f
+.word 0xd499a099, 0xc3761b80, 0x09252d24, 0x27afa917, 0x56a56450, 0x6b52cc7e, 0x6b0af3e7, 0xde3c4969
+.word 0x0df76960, 0xd4b5e1dd, 0xf8ddc082, 0x400084fb, 0x3f940b8b, 0x34da63d5, 0x869a0fb5, 0xa024bdf0
+.word 0xf494b682, 0xf992d199, 0x2d0b1e7a, 0x8b496e36, 0x801d34dc, 0x8c05dc1f, 0xc85c2c2d, 0x8ff48a11
+.word 0x59f83f3d, 0x930776ee, 0x530ed369, 0xde605ac1, 0x34bfc4bf, 0x5d72cf30, 0x09f16729, 0x987dca43
+.word 0x5a7680a5, 0xedb70c13, 0x82a11dae, 0xc21d6e31, 0xe96931f5, 0x6fa8e13c, 0x07d93f09, 0x9435d086
+.word 0x56e39969, 0x5e8f9c6a, 0x0b2446d8, 0x07a5e9cd, 0x83bac457, 0x7015c88e, 0x618c884d, 0xc8fa11fb
+.word 0xbcd7d0a2, 0xa2dfe1b1, 0x328fbbb5, 0xa901c07b, 0xe2049b50, 0x68c3e1d0, 0xcfcbb623, 0x0ef6de01
+.word 0x46075185, 0xcf8b74cc, 0x0f89459a, 0x831a85df, 0x615310de, 0x96b11fd7, 0xd19cc794, 0xc8f64f4c
+.word 0x948d9905, 0xf7a33787, 0xd4eea0a1, 0xfd8e4f04, 0xc9a5ba07, 0x154caec6, 0x83fdd3df, 0xe3a15e94
+.word 0xca43865f, 0xae631a2a, 0x2d08f3d3, 0x0f904b3c, 0x4b34406d, 0xd8bfe807, 0xa2044bc1, 0x0139a4f3
+.word 0x87bbb5c2, 0x6f154640, 0x00f47f4c, 0xbee69bfd, 0x19133626, 0x6ea43e43, 0xd7712dd0, 0xf6b57d77
+.word 0x73369d31, 0x2b02474c, 0x9be27811, 0xa6496d2d, 0xabaeda9a, 0xc6e97fbf, 0x468153b1, 0xce533b74
+.word 0x324acaf8, 0x8c16dbd7, 0xbdaab0bd, 0xed61c52a, 0x14e97f48, 0x66c5eb08, 0x93910165, 0x2f77b0a6
+.word 0x1f094098, 0xe08c0845, 0xc67182d4, 0xa180efa7, 0x82f409e3, 0x4cb6f195, 0x3673d54c, 0xd8466601
+.word 0xd912524a, 0x0a82fe6d, 0x44bff072, 0xabbe5249, 0x5c63d1d8, 0xad5c3004, 0x294ec085, 0xd59035c1
+.word 0x6c8c5c67, 0xc8a4c055, 0xf4f99528, 0x2d611c34, 0x803e8a6c, 0xa1145568, 0xef8cd284, 0x8c6d157c
+.word 0x950984e0, 0x5a2d246c, 0x52410e91, 0xa5b0d501, 0xd1697d13, 0x084709c2, 0x741ecd9b, 0x5e319bd2
+.word 0xc77fa685, 0x7d56c7ed, 0xaa2c3032, 0x85698640, 0x2464ec93, 0x838e8959, 0x4220cd18, 0xec837fdc
+.word 0xce59f0a1, 0x048d56a8, 0xcca713a0, 0xb4e8c112, 0x46fd39d6, 0x7c2146d2, 0x06e02437, 0x1c6c619d
+.word 0xf43e1479, 0x40204a84, 0x0b06ef18, 0x26b8cad5, 0xd94d05e5, 0x5dcdbba8, 0x4bf8be3f, 0xe21ed777
+.word 0x314e42aa, 0xb93b2591, 0xd338a2b0, 0x273a37e6, 0xa8b95d5a, 0xcd814c07, 0x82487c83, 0xde1ccf29
+.word 0x1d21eed6, 0xb1a13349, 0xf16a0811, 0xbfb1832e, 0x5e00a1e8, 0x8f6c6394, 0x5697e597, 0xbfc22e53
+.word 0x6d9dbb8a, 0x4e2b2f2b, 0x27d91031, 0x92f3fc7e, 0x0fb3eb6c, 0x8e24f25d, 0x4fd9c0b7, 0xa61f2522
+.word 0x836e6388, 0x195292f3, 0x54338498, 0x3edc2ac8, 0x47082497, 0xb5329edd, 0x4f9d3e7a, 0x99e3f17b
+.word 0x865940f0, 0x55320c7c, 0x28e50a84, 0x5a400021, 0x5d9ac481, 0xbf0ad620, 0xdd0e2481, 0x0c1674cc
+.word 0x0bdc8e96, 0x35d0f1b1, 0x8a28714a, 0x1980b4de, 0x73348976, 0x41c97edc, 0xa63095f0, 0xe53ec5b0
+.word 0x6ac84903, 0xc9233600, 0x8f260c76, 0x46a90ece, 0x3fe8355d, 0xb1a055c5, 0xe2145300, 0x7ad4a4be
+.word 0x4caf6630, 0x57be5c79, 0x46371302, 0x3222e0af, 0x7838ca99, 0x9a11acb3, 0x9daa1a22, 0xb482d705
+.word 0x2bd27361, 0x2260b007, 0x7df3e92c, 0x7f7af87b, 0x9e86eccf, 0x739f2b43, 0xf3bae49f, 0xa83b5e26
+.word 0x3f413a9f, 0x79a15ada, 0xf8130c8d, 0x913b6179, 0x0415cb98, 0x030c32df, 0xd50a3773, 0x43eb7348
+.word 0xe84e73ca, 0x62e1f913, 0x276c67fb, 0x0e8ca6ef, 0x9c60d313, 0x1ce97bb4, 0x17dc8e23, 0xd37e34ee
+.word 0xf3750d6a, 0x1fa043b8, 0xe770535a, 0x73409595, 0x7ab41de5, 0x1adf6327, 0xc4bf1de1, 0xd21241c3
+.word 0x6d86d78f, 0x159f8419, 0x5f4d7bde, 0x98fc6cc7, 0x44c10163, 0x318b02ec, 0x048683b2, 0x07dff303
+.word 0x9f0c8ecf, 0xa65beca1, 0x91c989f2, 0x52893775, 0xc92a9cb2, 0x4924d215, 0x4d1532ae, 0xb91d2f6f
+.word 0xfcdf6cbf, 0x28a735b2, 0x20b134f0, 0xded24d5b, 0xd5bfed6e, 0xf67ea57c, 0x26dc413b, 0x21da97a4
+.word 0x851d2b62, 0x40a295af, 0x8dbcfce9, 0x39c441d5, 0xad369992, 0xf3969b63, 0x009dc565, 0x53e76dbb
+.word 0x68596dc1, 0x5b3aac0d, 0x30d89b8e, 0xb8597ebd, 0x63c45df5, 0x49ee4573, 0x1cd00b90, 0x561a75ea
+.word 0x13d7581c, 0x2d8aaa5f, 0xc26ee6e8, 0x3edc9ae3, 0xb6a02036, 0xda3dc7f2, 0x5f6a4106, 0x3d581c68
+.word 0xc9abf63b, 0xcec04030, 0x78204b72, 0x2c1e5554, 0xf11f1941, 0x3e14243d, 0x45f6aa40, 0xf5dfd05d
+.word 0x9f0763ca, 0x140e0abc, 0x193e9f00, 0xe4b0748a, 0xe7509475, 0x4ae87c3d, 0x6b1ffbb2, 0x66d14698
+.word 0xa5198744, 0xb3da4d4b, 0xa51b0c9f, 0x945a7d93, 0x7115253e, 0x6e5aa909, 0x933e8935, 0x74829ee1
+.word 0x0aba1857, 0xf4939e8a, 0x9724db33, 0x5764bac9, 0x63811d8c, 0x4a31fcd7, 0x009549d8, 0x91bca8e9
+.word 0xa6d663a3, 0x70d8fd73, 0xa855854a, 0xfe70d3dc, 0xfc867950, 0x58e36140, 0xcf94e1dd, 0x4ba41916
+.word 0x265276f5, 0x9473710f, 0x1a030a83, 0x02327b10, 0x911878d4, 0xb4dbdc66, 0xbbf00bbd, 0x55940c0b
+.word 0x547c9622, 0x8186dd95, 0x74890b93, 0x3d4c8378, 0x151f2f7a, 0x4cf4c51a, 0xfba41801, 0xa94bfb44
+.word 0x254fbe4a, 0xb24a6a44, 0xdc3e8b95, 0x23fdfeb1, 0x67737b6f, 0xcff9d0d7, 0x309f87ab, 0xcb4d0e3c
+.word 0x02059ee5, 0xb57c7049, 0xbe624500, 0x422bc39b, 0x80b88b36, 0x25ee7021, 0xf92ef0d4, 0x02b1f933
+.word 0x6de06411, 0x51611fcc, 0x969d041d, 0xeab725c1, 0x07d17670, 0x07c9a23c, 0x411bc803, 0xea794492
+.word 0xab22c517, 0x19312eb3, 0x447e2b6d, 0x41a3924d, 0x5993b15d, 0xfd6f3b48, 0x54c05f76, 0x9836c7a7
+.word 0xd73535df, 0xa7e493e6, 0x80de6a68, 0x6f81d75a, 0xda9be244, 0xd638bf73, 0x3ab53950, 0x30cc43fc
+.word 0x3b9afd90, 0xa5ad7914, 0xe96b4904, 0x7471329b, 0xc6ccb6f4, 0x6f388862, 0x51ee0824, 0x24776824
+.word 0x017e835a, 0x631bf2cc, 0xc08f823b, 0x745c5438, 0xb80b7003, 0xbbc6503c, 0xe105dfd5, 0x5a4950f9
+.word 0xd84b0646, 0xf468194a, 0x4a0685aa, 0x39362659, 0x624d6d83, 0xd54ce5d2, 0xc25e6574, 0xbc48d9f9
+.word 0xe944fb6b, 0xd9b92b2d, 0xb187bec8, 0xf3b287ea, 0xc957ad90, 0x416d89ee, 0x0b4959bf, 0xe0f77b14
+.word 0xf88eee3b, 0x864e1497, 0x1adf8369, 0xe7e33f64, 0x83b9096f, 0xc4d0604f, 0x81113640, 0x8aa22dfc
+.word 0xb53f8465, 0xea7e3080, 0x2e7ff02a, 0x14f9074a, 0xef2e01e7, 0x3aa76d2a, 0x8f2fd0d9, 0x123df82a
+.word 0x9dae8466, 0xe22cf66b, 0x112c1058, 0xc5abc1cd, 0xaab0f971, 0x20041056, 0x1ec43f4b, 0x925fd577
+.word 0xdbf50b6e, 0xbf7ea275, 0x9818ce16, 0xb3fb024a, 0xf6344165, 0xa2bbde8e, 0x76a8eb67, 0xabaef724
+.word 0xddebf2ad, 0xfe4b8a6a, 0xa79ad855, 0xf02faa3c, 0x719c46c8, 0xb89b98df, 0x580a4d9a, 0x82022609
+.word 0x6bdd66d2, 0x4294c295, 0xf717befa, 0x88cc14c1, 0xa3c6ce93, 0x8d672a77, 0x21bed9dd, 0x77a9d2f7
+.word 0x20d166ba, 0x55ba9494, 0xec2a1ce3, 0xce905e4c, 0xbde8580a, 0xb8865433, 0x8a026726, 0xac975d4a
+.word 0x083a570f, 0xb7c81167, 0x6cdac1e4, 0xdbbcc3b8, 0x09915829, 0x1d57247c, 0x80e0023a, 0xf1ca808e
+.word 0x5824561a, 0xdeaf1f4f, 0x3470d344, 0x4965ce6a, 0x52408daf, 0x8264860d, 0x0acf35f9, 0x70c2e00b
+.word 0x87ceaeb4, 0x57cd3757, 0xddc1c11c, 0xbcf6d135, 0x95f09c8d, 0xf7da4a26, 0x4e383783, 0x7bda59bb
+.word 0xa6f8f759, 0x3f467931, 0xf61c4730, 0x861b845d, 0x7e9230b1, 0x95aabf12, 0x9a0ff891, 0x4b292776
+.word 0x59984d13, 0x9300ce9a, 0xf0504def, 0x0e510d07, 0xcb71b457, 0x2440c1c5, 0xc191525f, 0x076bd403
+.word 0x1d56c912, 0xd526caab, 0x6a290899, 0x5df96845, 0x264aca50, 0xa0d854b5, 0x0a03e68b, 0xb5ce2dfb
+.word 0xf24f2514, 0xebdc88ec, 0x2d408bfc, 0x86735bec, 0x39375f10, 0x47b042da, 0xf9b65960, 0xc967b8dc
+.word 0x6a83b251, 0xb7557947, 0x2d5fdaf5, 0x8ab18883, 0x44ad29cc, 0xa3bc9df5, 0xa84e865a, 0xbef9b9ee
+.word 0x20407f85, 0x9390ceed, 0xb7ab039b, 0x895dc7c1, 0x2bb1ce64, 0x2268831c, 0x5aae1a15, 0xd11b76da
+.word 0x9abc6ed5, 0x45f62241, 0x83e1251e, 0x016d2612, 0x61a7ab42, 0x7898becb, 0x78300811, 0xf326996c
+.word 0xa4209452, 0x1da58006, 0xb7df32b9, 0x79dc611f, 0x89b072ee, 0xfcd20cce, 0x78711824, 0x5c29975b
+.word 0xf578254c, 0x3a71acb2, 0x2cadfebf, 0x8d83e8bb, 0x284352a6, 0xf8987962, 0xa13ca9a0, 0x4b1ad336
+.word 0x2115b31d, 0x942f6a98, 0x9fec1be8, 0xf720e8f2, 0xb5f58c78, 0x2003df72, 0x069c5dc2, 0x822b1612
+.word 0x49433298, 0xadba6e2c, 0x3d5e1532, 0x708d9836, 0x98cb07d0, 0x27efe295, 0x5a66d333, 0xbabfb24a
+.word 0x02fcae4c, 0xe8979bb9, 0x6a553352, 0x42b7549e, 0x500ba64a, 0x824b00f0, 0x19f60251, 0xfaef6961
+.word 0xaf5fc26e, 0x31cf68fb, 0x2123e2b6, 0x4bafe321, 0x1df0dc63, 0x763ce5a4, 0x8cba8f00, 0xf4a9fbd1
+.word 0xbafa300a, 0x37ab52e2, 0x82258f4b, 0x6bc3fcc8, 0xb471b480, 0xb47c828d, 0xc9689946, 0xf7f4a837
+.word 0xe9da8b3c, 0x8e18da7e, 0x1b471026, 0x897e2a40, 0x8f0e853c, 0x0e970d6f, 0x365c4a20, 0xe84e3f73
+.word 0x5efe7870, 0xc3987f74, 0x10e5c200, 0xcd8f9f58, 0x84d031d3, 0x49f2ac5f, 0xcf04aeca, 0xc8212f74
+.word 0x50d2d8f5, 0xbfb9fde3, 0x3f91b4e8, 0x2d1d7436, 0x9f0de084, 0x7e46b7ee, 0xdaefc47c, 0x8a17a527
+.word 0x657121cb, 0xc269e55c, 0x05679b51, 0xb92b8e52, 0x6371e693, 0x1d4cb693, 0x0a3ae752, 0xad5916ce
+.word 0x11371042, 0xccc769e9, 0xaa71a3e0, 0x0fcb03c1, 0xc0c98dae, 0xc2b5bc63, 0x0d69d820, 0xaf4382db
+.word 0x0c17d4e8, 0xc257ac2d, 0x8b0e6c8c, 0xe75d959d, 0x09a49f35, 0xc9c53215, 0x5dddf475, 0xc22b7a22
+.word 0xd48d9b4d, 0xb8dffdcc, 0x95dcf177, 0x7eb62bdc, 0xbca437c9, 0x5c9d3d62, 0xc9b21009, 0x074094a8
+.word 0x36f3e4b9, 0xaf78f72c, 0x358a8402, 0xe267f95a, 0x5fd05503, 0xfb225a75, 0x5872cf0b, 0x9e2cba65
+.word 0x1e9380eb, 0x11e1c391, 0xa941e62a, 0xe932ac03, 0xc1171a4a, 0x321272a2, 0x001c2ffa, 0xb9ef2fa9
+.word 0x6324d968, 0xa13a6283, 0xd5c24903, 0x5da31a1d, 0x6ce27e99, 0x472f132f, 0x30e0b173, 0x95a9dac4
+.word 0xd50f679c, 0x8f02b651, 0x84988dea, 0xa186f77a, 0x8c1503d9, 0xe4c5f423, 0x4bab2d44, 0x90e84ff3
+.word 0xbb34497b, 0x1b8dc87b, 0xf1970c12, 0x6cce77e5, 0x195e3280, 0xcc705a7d, 0xd19d503f, 0x538ff638
+.word 0x47dbc556, 0x8747b3b1, 0x4ff2290f, 0x8cae9ac0, 0x009a19d4, 0xc9590b98, 0x7e622d5d, 0x86b248aa
+.word 0x73060177, 0x86160d06, 0xca603139, 0x45f17333, 0x6836af47, 0x5369ca9b, 0x9e109cd8, 0x1d31783f
+.section .kernel_stack,"aw",@progbits;
+.align 2
+kernel_stack_start:
+.rept 4999
+.4byte 0x0
+.endr
+kernel_stack_end:
+.4byte 0x0

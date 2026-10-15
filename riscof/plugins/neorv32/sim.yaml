@@ -1,0 +1,21 @@
+# =============================================================================
+# riscv-dv/target/rv32i_ghdl/yaml/sim.yaml
+# GHDL tabanlı simülasyon hedefi
+# =============================================================================
+
+compile:
+  cmd:
+    - "ghdl -a --std=08 -frelaxed <rtl_dir>/rv32_top.vhd"
+    - "ghdl -a --std=08 -frelaxed <tb_dir>/tb_rv32i.vhd"
+    - "ghdl -e --std=08 -frelaxed tb_rv32i"
+
+sim:
+  cmd:
+    - "ghdl -r --std=08 tb_rv32i
+         -g HEXFILE=<testcase>.hex
+         -g TRACEFILE=<sim_log>
+         -g MAX_CYCLES=2000000
+         --stop-time=200ms"
+  log_suffix: ".log"
+
+iss_opts: "--isa=rv32i_zicsr"

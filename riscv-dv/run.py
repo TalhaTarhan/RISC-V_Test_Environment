@@ -28,6 +28,7 @@ from scripts.spike_log_to_trace_csv import *
 from scripts.ovpsim_log_to_trace_csv import *
 from scripts.whisper_log_trace_csv import *
 from scripts.sail_log_to_trace_csv import *
+from scripts.rv_log_to_trace_csv import *
 from scripts.instr_trace_compare import *
 
 from types import SimpleNamespace
@@ -723,7 +724,8 @@ def iss_cmp(test_list, iss, output_dir, stop_on_first_error, exp, debug_cmd):
             run_cmd(("echo 'Test binary: {}' >> {}".format(elf, report)))
             for iss in iss_list:
                 log_list.append(
-                    "{}/{}_sim/{}.{}.log".format(output_dir, iss, test['test'], i))
+                    #"{}/{}_sim/{}.{}.log".format(output_dir, iss, test['test'], i))
+                    "{}/{}_sim/{}_{}.log".format(output_dir, iss, test['test'], i))
             compare_iss_log(iss_list, log_list, report, stop_on_first_error,
                             exp)
     save_regr_report(report)
@@ -748,6 +750,8 @@ def compare_iss_log(iss_list, log_list, report, stop_on_first_error=0,
                 process_sail_sim_log(log, csv)
             elif iss == "whisper":
                 process_whisper_sim_log(log, csv)
+            elif iss == "rv":
+                process_rv_sim_log(log, csv)
             else:
                 logging.error("Unsupported ISS {}".format(iss))
                 sys.exit(RET_FAIL)

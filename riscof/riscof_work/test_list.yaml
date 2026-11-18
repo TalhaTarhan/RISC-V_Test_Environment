@@ -1,8 +1,8 @@
-# testlist generated on 2026-10-15 04:45 GMT
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/add-01.S:
+# testlist generated on 2026-11-18 08:58 GMT
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/add-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/add-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/add-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -10,11 +10,11 @@
   coverage_labels:
   - add
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/add-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/addi-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/add-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/addi-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/addi-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/addi-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -22,11 +22,11 @@
   coverage_labels:
   - addi
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/addi-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/and-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/addi-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/and-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/and-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/and-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -34,11 +34,11 @@
   coverage_labels:
   - and
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/and-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/andi-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/and-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/andi-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/andi-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/andi-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -46,11 +46,11 @@
   coverage_labels:
   - andi
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/andi-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/auipc-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/andi-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/auipc-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/auipc-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/auipc-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -58,11 +58,11 @@
   coverage_labels:
   - auipc
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/auipc-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/beq-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/auipc-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/beq-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/beq-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/beq-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -70,11 +70,11 @@
   coverage_labels:
   - beq
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/beq-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bge-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/beq-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bge-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/bge-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/bge-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -82,11 +82,11 @@
   coverage_labels:
   - bge
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bge-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bgeu-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bge-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bgeu-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/bgeu-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/bgeu-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -94,11 +94,11 @@
   coverage_labels:
   - bgeu
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bgeu-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/blt-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bgeu-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/blt-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/blt-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/blt-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -106,11 +106,11 @@
   coverage_labels:
   - blt
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/blt-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bltu-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/blt-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bltu-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/bltu-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/bltu-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -118,11 +118,11 @@
   coverage_labels:
   - bltu
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bltu-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bne-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bltu-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bne-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/bne-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/bne-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -130,11 +130,11 @@
   coverage_labels:
   - bne
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bne-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/fence-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bne-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/fence-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/fence-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/fence-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -142,11 +142,11 @@
   coverage_labels:
   - fence
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/fence-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jal-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/fence-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jal-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/jal-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/jal-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -154,11 +154,11 @@
   coverage_labels:
   - jal
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jal-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jalr-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jal-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jalr-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/jalr-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/jalr-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -166,11 +166,11 @@
   coverage_labels:
   - jalr
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jalr-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lb-align-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/jalr-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lb-align-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/lb-align-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/lb-align-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -178,11 +178,11 @@
   coverage_labels:
   - lb-align
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lb-align-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lbu-align-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lb-align-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lbu-align-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/lbu-align-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/lbu-align-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -190,11 +190,11 @@
   coverage_labels:
   - lbu-align
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lbu-align-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lh-align-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lbu-align-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lh-align-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/lh-align-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/lh-align-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -202,11 +202,11 @@
   coverage_labels:
   - lh-align
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lh-align-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lhu-align-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lh-align-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lhu-align-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/lhu-align-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/lhu-align-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -214,11 +214,11 @@
   coverage_labels:
   - lhu-align
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lhu-align-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lui-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lhu-align-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lui-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/lui-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/lui-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -226,11 +226,11 @@
   coverage_labels:
   - lui
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lui-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lw-align-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lui-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lw-align-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/lw-align-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/lw-align-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -238,11 +238,11 @@
   coverage_labels:
   - lw-align
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lw-align-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/or-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/lw-align-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/or-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/or-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/or-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -250,11 +250,11 @@
   coverage_labels:
   - or
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/or-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/ori-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/or-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/ori-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/ori-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/ori-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -262,11 +262,11 @@
   coverage_labels:
   - ori
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/ori-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sb-align-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/ori-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sb-align-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/sb-align-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/sb-align-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -274,11 +274,11 @@
   coverage_labels:
   - sb-align
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sb-align-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sh-align-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sb-align-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sh-align-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/sh-align-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/sh-align-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -286,11 +286,11 @@
   coverage_labels:
   - sh-align
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sh-align-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sll-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sh-align-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sll-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/sll-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/sll-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -298,11 +298,11 @@
   coverage_labels:
   - sll
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sll-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slli-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sll-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slli-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/slli-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/slli-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -310,11 +310,11 @@
   coverage_labels:
   - slli
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slli-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slt-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slli-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slt-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/slt-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/slt-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -322,11 +322,11 @@
   coverage_labels:
   - slt
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slt-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slti-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slt-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slti-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/slti-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/slti-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -334,11 +334,11 @@
   coverage_labels:
   - slti
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slti-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltiu-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/slti-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltiu-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/sltiu-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/sltiu-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -346,11 +346,11 @@
   coverage_labels:
   - sltiu
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltiu-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltu-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltiu-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltu-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/sltu-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/sltu-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -358,11 +358,11 @@
   coverage_labels:
   - sltu
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltu-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sra-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltu-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sra-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/sra-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/sra-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -370,11 +370,11 @@
   coverage_labels:
   - sra
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sra-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srai-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sra-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srai-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/srai-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/srai-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -382,11 +382,11 @@
   coverage_labels:
   - srai
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srai-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srl-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srai-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srl-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/srl-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/srl-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -394,11 +394,11 @@
   coverage_labels:
   - srl
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srl-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srli-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srl-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srli-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/srli-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/srli-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -406,11 +406,11 @@
   coverage_labels:
   - srli
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srli-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sub-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/srli-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sub-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/sub-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/sub-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -418,11 +418,11 @@
   coverage_labels:
   - sub
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sub-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sw-align-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sub-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sw-align-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/sw-align-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/sw-align-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -430,11 +430,11 @@
   coverage_labels:
   - sw-align
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sw-align-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/xor-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sw-align-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/xor-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/xor-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/xor-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -442,11 +442,11 @@
   coverage_labels:
   - xor
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/xor-01.S
-/home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/xori-01.S:
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/xor-01.S
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/xori-01.S:
   commit_id: '-'
   work_dir: 
-    /home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/xori-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/xori-01.S
   macros:
   - TEST_CASE_1=True
   - XLEN=32
@@ -454,4 +454,4 @@
   coverage_labels:
   - xori
   test_path: 
-    /home/ahonat/Desktop/riscof/neorv32/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/xori-01.S
+    /home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/xori-01.S

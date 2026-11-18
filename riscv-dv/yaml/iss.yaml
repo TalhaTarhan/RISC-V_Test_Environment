@@ -13,9 +13,9 @@
 # limitations under the License.
 
 - iss: rv
-  path_var: RV_PATH
+  path_var: RV_PATH 
   cmd: >
-    python3 /home/ahonat/Desktop/Deneme/run_ghdl.py <elf>
+    python3 ../../RISC-V_Test_Environment/riscof/plugins/rv32_dut/run_ghdl.py <elf>
 
 - iss: spike
   path_var: SPIKE_PATH

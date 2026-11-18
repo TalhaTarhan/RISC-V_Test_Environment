@@ -1,1 +1,9 @@
-/riscv-dv/spike_raw.log
+/riscv-dv/spike_raw.logriscof/riscof_work/
+riscv-dv/output/
+ghdl_work/
+ghdl_work_dv/
+__pycache__/
+*.pyc
+*.cf
+trace.log
+trace.vcd

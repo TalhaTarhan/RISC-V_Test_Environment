@@ -1,91 +1,91 @@
 
-/home/ahonat/Desktop/riscof/neorv32/riscof_work/riscv-test-suite/rv32i_m/I/src/jal-01.S/dut/main.elf:     file format elf32-littleriscv
+/home/ahonat/Desktop/RISC-V_Test_Environment/riscof/riscof_work/riscv-test-suite/rv32i_m/I/src/jal-01.S/dut/main.elf:     file format elf32-littleriscv
 
 
 Disassembly of section .text:
 
 80000000 <rvtest_entry_point>:
 80000000:	7d5c0837          	lui	a6,0x7d5c0
-80000004:	ddb80813          	addi	a6,a6,-549 # 7d5bfddb <absimm+0x382cd8ac>
-80000008:	00785893          	srli	a7,a6,0x7
-8000000c:	01985793          	srli	a5,a6,0x19
+80000004:	ddb80813          	add	a6,a6,-549 # 7d5bfddb <absimm+0x382cd8ac>
+80000008:	00785893          	srl	a7,a6,0x7
+8000000c:	01985793          	srl	a5,a6,0x19
 80000010:	00f8e8b3          	or	a7,a7,a5
-80000014:	0078d913          	srli	s2,a7,0x7
-80000018:	0198d793          	srli	a5,a7,0x19
+80000014:	0078d913          	srl	s2,a7,0x7
+80000018:	0198d793          	srl	a5,a7,0x19
 8000001c:	00f96933          	or	s2,s2,a5
-80000020:	00795993          	srli	s3,s2,0x7
-80000024:	01995793          	srli	a5,s2,0x19
+80000020:	00795993          	srl	s3,s2,0x7
+80000024:	01995793          	srl	a5,s2,0x19
 80000028:	00f9e9b3          	or	s3,s3,a5
-8000002c:	0079da13          	srli	s4,s3,0x7
-80000030:	0199d793          	srli	a5,s3,0x19
+8000002c:	0079da13          	srl	s4,s3,0x7
+80000030:	0199d793          	srl	a5,s3,0x19
 80000034:	00fa6a33          	or	s4,s4,a5
-80000038:	007a5a93          	srli	s5,s4,0x7
-8000003c:	019a5793          	srli	a5,s4,0x19
+80000038:	007a5a93          	srl	s5,s4,0x7
+8000003c:	019a5793          	srl	a5,s4,0x19
 80000040:	00faeab3          	or	s5,s5,a5
-80000044:	007adb13          	srli	s6,s5,0x7
-80000048:	019ad793          	srli	a5,s5,0x19
+80000044:	007adb13          	srl	s6,s5,0x7
+80000048:	019ad793          	srl	a5,s5,0x19
 8000004c:	00fb6b33          	or	s6,s6,a5
-80000050:	007b5b93          	srli	s7,s6,0x7
-80000054:	019b5793          	srli	a5,s6,0x19
+80000050:	007b5b93          	srl	s7,s6,0x7
+80000054:	019b5793          	srl	a5,s6,0x19
 80000058:	00fbebb3          	or	s7,s7,a5
-8000005c:	007bdc13          	srli	s8,s7,0x7
-80000060:	019bd793          	srli	a5,s7,0x19
+8000005c:	007bdc13          	srl	s8,s7,0x7
+80000060:	019bd793          	srl	a5,s7,0x19
 80000064:	00fc6c33          	or	s8,s8,a5
-80000068:	007c5c93          	srli	s9,s8,0x7
-8000006c:	019c5793          	srli	a5,s8,0x19
+80000068:	007c5c93          	srl	s9,s8,0x7
+8000006c:	019c5793          	srl	a5,s8,0x19
 80000070:	00fcecb3          	or	s9,s9,a5
-80000074:	007cdd13          	srli	s10,s9,0x7
-80000078:	019cd793          	srli	a5,s9,0x19
+80000074:	007cdd13          	srl	s10,s9,0x7
+80000078:	019cd793          	srl	a5,s9,0x19
 8000007c:	00fd6d33          	or	s10,s10,a5
-80000080:	007d5d93          	srli	s11,s10,0x7
-80000084:	019d5793          	srli	a5,s10,0x19
+80000080:	007d5d93          	srl	s11,s10,0x7
+80000084:	019d5793          	srl	a5,s10,0x19
 80000088:	00fdedb3          	or	s11,s11,a5
-8000008c:	007dde13          	srli	t3,s11,0x7
-80000090:	019dd793          	srli	a5,s11,0x19
+8000008c:	007dde13          	srl	t3,s11,0x7
+80000090:	019dd793          	srl	a5,s11,0x19
 80000094:	00fe6e33          	or	t3,t3,a5
-80000098:	007e5e93          	srli	t4,t3,0x7
-8000009c:	019e5793          	srli	a5,t3,0x19
+80000098:	007e5e93          	srl	t4,t3,0x7
+8000009c:	019e5793          	srl	a5,t3,0x19
 800000a0:	00feeeb3          	or	t4,t4,a5
-800000a4:	007edf13          	srli	t5,t4,0x7
-800000a8:	019ed793          	srli	a5,t4,0x19
+800000a4:	007edf13          	srl	t5,t4,0x7
+800000a8:	019ed793          	srl	a5,t4,0x19
 800000ac:	00ff6f33          	or	t5,t5,a5
 800000b0:	feedc0b7          	lui	ra,0xfeedc
-800000b4:	ead08093          	addi	ra,ra,-339 # feedbead <immx+0x441ce3dd>
-800000b8:	0070d113          	srli	sp,ra,0x7
-800000bc:	0190d793          	srli	a5,ra,0x19
+800000b4:	ead08093          	add	ra,ra,-339 # feedbead <immx+0x441ce3dd>
+800000b8:	0070d113          	srl	sp,ra,0x7
+800000bc:	0190d793          	srl	a5,ra,0x19
 800000c0:	00f16133          	or	sp,sp,a5
-800000c4:	00715193          	srli	gp,sp,0x7
-800000c8:	01915793          	srli	a5,sp,0x19
+800000c4:	00715193          	srl	gp,sp,0x7
+800000c8:	01915793          	srl	a5,sp,0x19
 800000cc:	00f1e1b3          	or	gp,gp,a5
-800000d0:	0071d213          	srli	tp,gp,0x7
-800000d4:	0191d793          	srli	a5,gp,0x19
+800000d0:	0071d213          	srl	tp,gp,0x7
+800000d4:	0191d793          	srl	a5,gp,0x19
 800000d8:	00f26233          	or	tp,tp,a5
-800000dc:	00725293          	srli	t0,tp,0x7
-800000e0:	01925793          	srli	a5,tp,0x19
+800000dc:	00725293          	srl	t0,tp,0x7
+800000e0:	01925793          	srl	a5,tp,0x19
 800000e4:	00f2e2b3          	or	t0,t0,a5
-800000e8:	0072d313          	srli	t1,t0,0x7
-800000ec:	0192d793          	srli	a5,t0,0x19
+800000e8:	0072d313          	srl	t1,t0,0x7
+800000ec:	0192d793          	srl	a5,t0,0x19
 800000f0:	00f36333          	or	t1,t1,a5
-800000f4:	00735393          	srli	t2,t1,0x7
-800000f8:	01935793          	srli	a5,t1,0x19
+800000f4:	00735393          	srl	t2,t1,0x7
+800000f8:	01935793          	srl	a5,t1,0x19
 800000fc:	00f3e3b3          	or	t2,t2,a5
-80000100:	0073d413          	srli	s0,t2,0x7
-80000104:	0193d793          	srli	a5,t2,0x19
+80000100:	0073d413          	srl	s0,t2,0x7
+80000104:	0193d793          	srl	a5,t2,0x19
 80000108:	00f46433          	or	s0,s0,a5
-8000010c:	00745493          	srli	s1,s0,0x7
-80000110:	01945793          	srli	a5,s0,0x19
+8000010c:	00745493          	srl	s1,s0,0x7
+80000110:	01945793          	srl	a5,s0,0x19
 80000114:	00f4e4b3          	or	s1,s1,a5
-80000118:	0074d513          	srli	a0,s1,0x7
-8000011c:	0194d793          	srli	a5,s1,0x19
+80000118:	0074d513          	srl	a0,s1,0x7
+8000011c:	0194d793          	srl	a5,s1,0x19
 80000120:	00f56533          	or	a0,a0,a5
-80000124:	00755593          	srli	a1,a0,0x7
-80000128:	01955793          	srli	a5,a0,0x19
+80000124:	00755593          	srl	a1,a0,0x7
+80000128:	01955793          	srl	a5,a0,0x19
 8000012c:	00f5e5b3          	or	a1,a1,a5
-80000130:	0075d613          	srli	a2,a1,0x7
-80000134:	0195d793          	srli	a5,a1,0x19
+80000130:	0075d613          	srl	a2,a1,0x7
+80000134:	0195d793          	srl	a5,a1,0x19
 80000138:	00f66633          	or	a2,a2,a5
-8000013c:	00765693          	srli	a3,a2,0x7
-80000140:	01965793          	srli	a5,a2,0x19
+8000013c:	00765693          	srl	a3,a2,0x7
+80000140:	01965793          	srl	a5,a2,0x19
 80000144:	00f6e6b3          	or	a3,a3,a5
 
 80000148 <rvtest_code_begin>:
@@ -96,7 +96,7 @@ Disassembly of section .text:
 80000158:	00000013          	nop
 8000015c:	00000013          	nop
 80000160:	001ae117          	auipc	sp,0x1ae
-80000164:	fb410113          	addi	sp,sp,-76 # 801ae114 <signature_x2_0>
+80000164:	fb410113          	add	sp,sp,-76 # 801ae114 <signature_x2_0>
 80000168:	00000013          	nop
 8000016c:	00000013          	nop
 80000170:	00000013          	nop
@@ -106,7 +106,7 @@ Disassembly of section .text:
 
 80000180 <inst_0>:
 80000180:	000ab697          	auipc	a3,0xab
-80000184:	b1068693          	addi	a3,a3,-1264 # 800aac90 <inst_0+0xaab10>
+80000184:	b1068693          	add	a3,a3,-1264 # 800aac90 <inst_0+0xaab10>
 80000188:	00000013          	nop
 8000018c:	00000013          	nop
 80000190:	00000013          	nop
@@ -122,7 +122,7 @@ Disassembly of section .text:
 800001b8:	00000013          	nop
 800001bc:	00000013          	nop
 800001c0:	000ab697          	auipc	a3,0xab
-800001c4:	b0468693          	addi	a3,a3,-1276 # 800aacc4 <inst_0+0xaab44>
+800001c4:	b0468693          	add	a3,a3,-1276 # 800aacc4 <inst_0+0xaab44>
 800001c8:	00000013          	nop
 800001cc:	00000013          	nop
 800001d0:	00000013          	nop
@@ -130,7 +130,7 @@ Disassembly of section .text:
 800001d8:	00000013          	nop
 800001dc:	00000013          	nop
 800001e0:	00068067          	jr	a3
-800001e4:	001aca93          	xori	s5,s5,1
+800001e4:	001aca93          	xor	s5,s5,1
 800001e8:	fc0000e3          	beqz	zero,800001a8 <inst_0+0x28>
 800001ec:	00000013          	nop
 800001f0:	00000013          	nop
@@ -174894,11 +174894,11 @@ Disassembly of section .text:
 800aac88:	00000013          	nop
 800aac8c:	00000013          	nop
 800aac90:	d5455aef          	jal	s5,800001e4 <inst_0+0x64>
-800aac94:	002aca93          	xori	s5,s5,2
+800aac94:	002aca93          	xor	s5,s5,2
 800aac98:	02c0006f          	j	800aacc4 <inst_0+0xaab44>
-800aac9c:	003aca93          	xori	s5,s5,3
+800aac9c:	003aca93          	xor	s5,s5,3
 800aaca0:	00000697          	auipc	a3,0x0
-800aaca4:	02468693          	addi	a3,a3,36 # 800aacc4 <inst_0+0xaab44>
+800aaca4:	02468693          	add	a3,a3,36 # 800aacc4 <inst_0+0xaab44>
 800aaca8:	00000013          	nop
 800aacac:	00000013          	nop
 800aacb0:	00000013          	nop
@@ -174914,14 +174914,14 @@ Disassembly of section .text:
 800aacd8:	00000013          	nop
 800aacdc:	00000013          	nop
 800aace0:	fff55697          	auipc	a3,0xfff55
-800aace4:	4a068693          	addi	a3,a3,1184 # 80000180 <inst_0>
+800aace4:	4a068693          	add	a3,a3,1184 # 80000180 <inst_0>
 800aace8:	00000013          	nop
 800aacec:	00000013          	nop
 800aacf0:	00000013          	nop
 800aacf4:	00000013          	nop
 800aacf8:	00000013          	nop
 800aacfc:	00000013          	nop
-800aad00:	ffc6f693          	andi	a3,a3,-4
+800aad00:	ffc6f693          	and	a3,a3,-4
 800aad04:	40da8ab3          	sub	s5,s5,a3
 800aad08:	01512023          	sw	s5,0(sp)
 
@@ -174932,7 +174932,7 @@ Disassembly of section .text:
 800aad18:	00000013          	nop
 800aad1c:	00000013          	nop
 800aad20:	00000697          	auipc	a3,0x0
-800aad24:	06c68693          	addi	a3,a3,108 # 800aad8c <inst_1+0x80>
+800aad24:	06c68693          	add	a3,a3,108 # 800aad8c <inst_1+0x80>
 800aad28:	00000013          	nop
 800aad2c:	00000013          	nop
 800aad30:	00000013          	nop
@@ -174948,7 +174948,7 @@ Disassembly of section .text:
 800aad58:	00000013          	nop
 800aad5c:	00000013          	nop
 800aad60:	00000697          	auipc	a3,0x0
-800aad64:	06468693          	addi	a3,a3,100 # 800aadc4 <inst_1+0xb8>
+800aad64:	06468693          	add	a3,a3,100 # 800aadc4 <inst_1+0xb8>
 800aad68:	00000013          	nop
 800aad6c:	00000013          	nop
 800aad70:	00000013          	nop
@@ -174956,15 +174956,15 @@ Disassembly of section .text:
 800aad78:	00000013          	nop
 800aad7c:	00000013          	nop
 800aad80:	00068067          	jr	a3
-800aad84:	0011c193          	xori	gp,gp,1
+800aad84:	0011c193          	xor	gp,gp,1
 800aad88:	fc0000e3          	beqz	zero,800aad48 <inst_1+0x3c>
 800aad8c:	00c001ef          	jal	gp,800aad98 <inst_1+0x8c>
-800aad90:	0021c193          	xori	gp,gp,2
+800aad90:	0021c193          	xor	gp,gp,2
 800aad94:	0300006f          	j	800aadc4 <inst_1+0xb8>
-800aad98:	0031c193          	xori	gp,gp,3
+800aad98:	0031c193          	xor	gp,gp,3
 800aad9c:	00000013          	nop
 800aada0:	00000697          	auipc	a3,0x0
-800aada4:	02468693          	addi	a3,a3,36 # 800aadc4 <inst_1+0xb8>
+800aada4:	02468693          	add	a3,a3,36 # 800aadc4 <inst_1+0xb8>
 800aada8:	00000013          	nop
 800aadac:	00000013          	nop
 800aadb0:	00000013          	nop
@@ -174980,14 +174980,14 @@ Disassembly of section .text:
 800aadd8:	00000013          	nop
 800aaddc:	00000013          	nop
 800aade0:	00000697          	auipc	a3,0x0
-800aade4:	f2c68693          	addi	a3,a3,-212 # 800aad0c <inst_1>
+800aade4:	f2c68693          	add	a3,a3,-212 # 800aad0c <inst_1>
 800aade8:	00000013          	nop
 800aadec:	00000013          	nop
 800aadf0:	00000013          	nop
 800aadf4:	00000013          	nop
 800aadf8:	00000013          	nop
 800aadfc:	00000013          	nop
-800aae00:	ffc6f693          	andi	a3,a3,-4
+800aae00:	ffc6f693          	and	a3,a3,-4
 800aae04:	40d181b3          	sub	gp,gp,a3
 800aae08:	00312223          	sw	gp,4(sp)
 
@@ -174998,7 +174998,7 @@ Disassembly of section .text:
 800aae18:	00000013          	nop
 800aae1c:	00000013          	nop
 800aae20:	00080697          	auipc	a3,0x80
-800aae24:	06468693          	addi	a3,a3,100 # 8012ae84 <inst_2+0x80078>
+800aae24:	06468693          	add	a3,a3,100 # 8012ae84 <inst_2+0x80078>
 800aae28:	00000013          	nop
 800aae2c:	00000013          	nop
 800aae30:	00000013          	nop
@@ -175014,7 +175014,7 @@ Disassembly of section .text:
 800aae58:	00000013          	nop
 800aae5c:	00000013          	nop
 800aae60:	00080697          	auipc	a3,0x80
-800aae64:	06468693          	addi	a3,a3,100 # 8012aec4 <inst_2+0x800b8>
+800aae64:	06468693          	add	a3,a3,100 # 8012aec4 <inst_2+0x800b8>
 800aae68:	00000013          	nop
 800aae6c:	00000013          	nop
 800aae70:	00000013          	nop
@@ -175022,7 +175022,7 @@ Disassembly of section .text:
 800aae78:	00000013          	nop
 800aae7c:	00000013          	nop
 800aae80:	00068067          	jr	a3
-800aae84:	001ece93          	xori	t4,t4,1
+800aae84:	001ece93          	xor	t4,t4,1
 800aae88:	fc0000e3          	beqz	zero,800aae48 <inst_2+0x3c>
 800aae8c:	00000013          	nop
 800aae90:	00000013          	nop
@@ -306095,14 +306095,14 @@ Disassembly of section .text:
 8012ae7c:	00000013          	nop
 8012ae80:	00000013          	nop
 8012ae84:	80080eef          	jal	t4,800aae84 <inst_2+0x78>
-8012ae88:	002ece93          	xori	t4,t4,2
+8012ae88:	002ece93          	xor	t4,t4,2
 8012ae8c:	0380006f          	j	8012aec4 <inst_2+0x800b8>
-8012ae90:	003ece93          	xori	t4,t4,3
+8012ae90:	003ece93          	xor	t4,t4,3
 8012ae94:	00000013          	nop
 8012ae98:	00000013          	nop
 8012ae9c:	00000013          	nop
 8012aea0:	00000697          	auipc	a3,0x0
-8012aea4:	02468693          	addi	a3,a3,36 # 8012aec4 <inst_2+0x800b8>
+8012aea4:	02468693          	add	a3,a3,36 # 8012aec4 <inst_2+0x800b8>
 8012aea8:	00000013          	nop
 8012aeac:	00000013          	nop
 8012aeb0:	00000013          	nop
@@ -306118,14 +306118,14 @@ Disassembly of section .text:
 8012aed8:	00000013          	nop
 8012aedc:	00000013          	nop
 8012aee0:	fff80697          	auipc	a3,0xfff80
-8012aee4:	f2c68693          	addi	a3,a3,-212 # 800aae0c <inst_2>
+8012aee4:	f2c68693          	add	a3,a3,-212 # 800aae0c <inst_2>
 8012aee8:	00000013          	nop
 8012aeec:	00000013          	nop
 8012aef0:	00000013          	nop
 8012aef4:	00000013          	nop
 8012aef8:	00000013          	nop
 8012aefc:	00000013          	nop
-8012af00:	ffc6f693          	andi	a3,a3,-4
+8012af00:	ffc6f693          	and	a3,a3,-4
 8012af04:	40de8eb3          	sub	t4,t4,a3
 8012af08:	01d12423          	sw	t4,8(sp)
 
@@ -306136,7 +306136,7 @@ Disassembly of section .text:
 8012af18:	00000013          	nop
 8012af1c:	00000013          	nop
 8012af20:	00000697          	auipc	a3,0x0
-8012af24:	06c68693          	addi	a3,a3,108 # 8012af8c <inst_3+0x80>
+8012af24:	06c68693          	add	a3,a3,108 # 8012af8c <inst_3+0x80>
 8012af28:	00000013          	nop
 8012af2c:	00000013          	nop
 8012af30:	00000013          	nop
@@ -306152,7 +306152,7 @@ Disassembly of section .text:
 8012af58:	00000013          	nop
 8012af5c:	00000013          	nop
 8012af60:	00080697          	auipc	a3,0x80
-8012af64:	06468693          	addi	a3,a3,100 # 801aafc4 <inst_3+0x800b8>
+8012af64:	06468693          	add	a3,a3,100 # 801aafc4 <inst_3+0x800b8>
 8012af68:	00000013          	nop
 8012af6c:	00000013          	nop
 8012af70:	00000013          	nop
@@ -306160,10 +306160,10 @@ Disassembly of section .text:
 8012af78:	00000013          	nop
 8012af7c:	00000013          	nop
 8012af80:	00068067          	jr	a3
-8012af84:	001dcd93          	xori	s11,s11,1
+8012af84:	001dcd93          	xor	s11,s11,1
 8012af88:	fc0000e3          	beqz	zero,8012af48 <inst_3+0x3c>
 8012af8c:	00080def          	jal	s11,801aaf8c <inst_3+0x80080>
-8012af90:	002dcd93          	xori	s11,s11,2
+8012af90:	002dcd93          	xor	s11,s11,2
 8012af94:	0308006f          	j	801aafc4 <inst_3+0x800b8>
 8012af98:	00000013          	nop
 8012af9c:	00000013          	nop
@@ -437234,13 +437234,13 @@ Disassembly of section .text:
 801aaf80:	00000013          	nop
 801aaf84:	00000013          	nop
 801aaf88:	00000013          	nop
-801aaf8c:	003dcd93          	xori	s11,s11,3
+801aaf8c:	003dcd93          	xor	s11,s11,3
 801aaf90:	00000013          	nop
 801aaf94:	00000013          	nop
 801aaf98:	00000013          	nop
 801aaf9c:	00000013          	nop
 801aafa0:	00000697          	auipc	a3,0x0
-801aafa4:	02468693          	addi	a3,a3,36 # 801aafc4 <inst_3+0x800b8>
+801aafa4:	02468693          	add	a3,a3,36 # 801aafc4 <inst_3+0x800b8>
 801aafa8:	00000013          	nop
 801aafac:	00000013          	nop
 801aafb0:	00000013          	nop
@@ -437256,14 +437256,14 @@ Disassembly of section .text:
 801aafd8:	00000013          	nop
 801aafdc:	00000013          	nop
 801aafe0:	fff80697          	auipc	a3,0xfff80
-801aafe4:	f2c68693          	addi	a3,a3,-212 # 8012af0c <inst_3>
+801aafe4:	f2c68693          	add	a3,a3,-212 # 8012af0c <inst_3>
 801aafe8:	00000013          	nop
 801aafec:	00000013          	nop
 801aaff0:	00000013          	nop
 801aaff4:	00000013          	nop
 801aaff8:	00000013          	nop
 801aaffc:	00000013          	nop
-801ab000:	ffc6f693          	andi	a3,a3,-4
+801ab000:	ffc6f693          	and	a3,a3,-4
 801ab004:	40dd8db3          	sub	s11,s11,a3
 801ab008:	01b12623          	sw	s11,12(sp)
 
@@ -437274,7 +437274,7 @@ Disassembly of section .text:
 801ab018:	00000013          	nop
 801ab01c:	00000013          	nop
 801ab020:	00000697          	auipc	a3,0x0
-801ab024:	06c68693          	addi	a3,a3,108 # 801ab08c <inst_4+0x80>
+801ab024:	06c68693          	add	a3,a3,108 # 801ab08c <inst_4+0x80>
 801ab028:	00000013          	nop
 801ab02c:	00000013          	nop
 801ab030:	00000013          	nop
@@ -437290,7 +437290,7 @@ Disassembly of section .text:
 801ab058:	00000013          	nop
 801ab05c:	00000013          	nop
 801ab060:	00000697          	auipc	a3,0x0
-801ab064:	06468693          	addi	a3,a3,100 # 801ab0c4 <inst_4+0xb8>
+801ab064:	06468693          	add	a3,a3,100 # 801ab0c4 <inst_4+0xb8>
 801ab068:	00000013          	nop
 801ab06c:	00000013          	nop
 801ab070:	00000013          	nop
@@ -437298,15 +437298,15 @@ Disassembly of section .text:
 801ab078:	00000013          	nop
 801ab07c:	00000013          	nop
 801ab080:	00068067          	jr	a3
-801ab084:	00104013          	xori	zero,zero,1
+801ab084:	00104013          	xor	zero,zero,1
 801ab088:	fc0000e3          	beqz	zero,801ab048 <inst_4+0x3c>
 801ab08c:	00c0006f          	j	801ab098 <inst_4+0x8c>
-801ab090:	00204013          	xori	zero,zero,2
+801ab090:	00204013          	xor	zero,zero,2
 801ab094:	0300006f          	j	801ab0c4 <inst_4+0xb8>
-801ab098:	00304013          	xori	zero,zero,3
+801ab098:	00304013          	xor	zero,zero,3
 801ab09c:	00000013          	nop
 801ab0a0:	00000697          	auipc	a3,0x0
-801ab0a4:	02468693          	addi	a3,a3,36 # 801ab0c4 <inst_4+0xb8>
+801ab0a4:	02468693          	add	a3,a3,36 # 801ab0c4 <inst_4+0xb8>
 801ab0a8:	00000013          	nop
 801ab0ac:	00000013          	nop
 801ab0b0:	00000013          	nop
@@ -437322,14 +437322,14 @@ Disassembly of section .text:
 801ab0d8:	00000013          	nop
 801ab0dc:	00000013          	nop
 801ab0e0:	00000697          	auipc	a3,0x0
-801ab0e4:	f2c68693          	addi	a3,a3,-212 # 801ab00c <inst_4>
+801ab0e4:	f2c68693          	add	a3,a3,-212 # 801ab00c <inst_4>
 801ab0e8:	00000013          	nop
 801ab0ec:	00000013          	nop
 801ab0f0:	00000013          	nop
 801ab0f4:	00000013          	nop
 801ab0f8:	00000013          	nop
 801ab0fc:	00000013          	nop
-801ab100:	ffc6f693          	andi	a3,a3,-4
+801ab100:	ffc6f693          	and	a3,a3,-4
 801ab104:	40d00033          	neg	zero,a3
 801ab108:	00012823          	sw	zero,16(sp)
 
@@ -437340,7 +437340,7 @@ Disassembly of section .text:
 801ab118:	00000013          	nop
 801ab11c:	00000013          	nop
 801ab120:	00000697          	auipc	a3,0x0
-801ab124:	06c68693          	addi	a3,a3,108 # 801ab18c <inst_5+0x80>
+801ab124:	06c68693          	add	a3,a3,108 # 801ab18c <inst_5+0x80>
 801ab128:	00000013          	nop
 801ab12c:	00000013          	nop
 801ab130:	00000013          	nop
@@ -437356,7 +437356,7 @@ Disassembly of section .text:
 801ab158:	00000013          	nop
 801ab15c:	00000013          	nop
 801ab160:	00000697          	auipc	a3,0x0
-801ab164:	06468693          	addi	a3,a3,100 # 801ab1c4 <inst_5+0xb8>
+801ab164:	06468693          	add	a3,a3,100 # 801ab1c4 <inst_5+0xb8>
 801ab168:	00000013          	nop
 801ab16c:	00000013          	nop
 801ab170:	00000013          	nop
@@ -437364,15 +437364,15 @@ Disassembly of section .text:
 801ab178:	00000013          	nop
 801ab17c:	00000013          	nop
 801ab180:	00068067          	jr	a3
-801ab184:	00124213          	xori	tp,tp,1
+801ab184:	00124213          	xor	tp,tp,1
 801ab188:	fc0000e3          	beqz	zero,801ab148 <inst_5+0x3c>
 801ab18c:	00c0026f          	jal	tp,801ab198 <inst_5+0x8c>
-801ab190:	00224213          	xori	tp,tp,2
+801ab190:	00224213          	xor	tp,tp,2
 801ab194:	0300006f          	j	801ab1c4 <inst_5+0xb8>
-801ab198:	00324213          	xori	tp,tp,3
+801ab198:	00324213          	xor	tp,tp,3
 801ab19c:	00000013          	nop
 801ab1a0:	00000697          	auipc	a3,0x0
-801ab1a4:	02468693          	addi	a3,a3,36 # 801ab1c4 <inst_5+0xb8>
+801ab1a4:	02468693          	add	a3,a3,36 # 801ab1c4 <inst_5+0xb8>
 801ab1a8:	00000013          	nop
 801ab1ac:	00000013          	nop
 801ab1b0:	00000013          	nop
@@ -437388,14 +437388,14 @@ Disassembly of section .text:
 801ab1d8:	00000013          	nop
 801ab1dc:	00000013          	nop
 801ab1e0:	00000697          	auipc	a3,0x0
-801ab1e4:	f2c68693          	addi	a3,a3,-212 # 801ab10c <inst_5>
+801ab1e4:	f2c68693          	add	a3,a3,-212 # 801ab10c <inst_5>
 801ab1e8:	00000013          	nop
 801ab1ec:	00000013          	nop
 801ab1f0:	00000013          	nop
 801ab1f4:	00000013          	nop
 801ab1f8:	00000013          	nop
 801ab1fc:	00000013          	nop
-801ab200:	ffc6f693          	andi	a3,a3,-4
+801ab200:	ffc6f693          	and	a3,a3,-4
 801ab204:	40d20233          	sub	tp,tp,a3
 801ab208:	00412a23          	sw	tp,20(sp)
 
@@ -437406,7 +437406,7 @@ Disassembly of section .text:
 801ab218:	00000013          	nop
 801ab21c:	00000013          	nop
 801ab220:	00000697          	auipc	a3,0x0
-801ab224:	06c68693          	addi	a3,a3,108 # 801ab28c <inst_6+0x80>
+801ab224:	06c68693          	add	a3,a3,108 # 801ab28c <inst_6+0x80>
 801ab228:	00000013          	nop
 801ab22c:	00000013          	nop
 801ab230:	00000013          	nop
@@ -437422,7 +437422,7 @@ Disassembly of section .text:
 801ab258:	00000013          	nop
 801ab25c:	00000013          	nop
 801ab260:	00000697          	auipc	a3,0x0
-801ab264:	06468693          	addi	a3,a3,100 # 801ab2c4 <inst_6+0xb8>
+801ab264:	06468693          	add	a3,a3,100 # 801ab2c4 <inst_6+0xb8>
 801ab268:	00000013          	nop
 801ab26c:	00000013          	nop
 801ab270:	00000013          	nop
@@ -437430,15 +437430,15 @@ Disassembly of section .text:
 801ab278:	00000013          	nop
 801ab27c:	00000013          	nop
 801ab280:	00068067          	jr	a3
-801ab284:	001b4b13          	xori	s6,s6,1
+801ab284:	001b4b13          	xor	s6,s6,1
 801ab288:	fc0000e3          	beqz	zero,801ab248 <inst_6+0x3c>
 801ab28c:	00c00b6f          	jal	s6,801ab298 <inst_6+0x8c>
-801ab290:	002b4b13          	xori	s6,s6,2
+801ab290:	002b4b13          	xor	s6,s6,2
 801ab294:	0300006f          	j	801ab2c4 <inst_6+0xb8>
-801ab298:	003b4b13          	xori	s6,s6,3
+801ab298:	003b4b13          	xor	s6,s6,3
 801ab29c:	00000013          	nop
 801ab2a0:	00000697          	auipc	a3,0x0
-801ab2a4:	02468693          	addi	a3,a3,36 # 801ab2c4 <inst_6+0xb8>
+801ab2a4:	02468693          	add	a3,a3,36 # 801ab2c4 <inst_6+0xb8>
 801ab2a8:	00000013          	nop
 801ab2ac:	00000013          	nop
 801ab2b0:	00000013          	nop
@@ -437454,14 +437454,14 @@ Disassembly of section .text:
 801ab2d8:	00000013          	nop
 801ab2dc:	00000013          	nop
 801ab2e0:	00000697          	auipc	a3,0x0
-801ab2e4:	f2c68693          	addi	a3,a3,-212 # 801ab20c <inst_6>
+801ab2e4:	f2c68693          	add	a3,a3,-212 # 801ab20c <inst_6>
 801ab2e8:	00000013          	nop
 801ab2ec:	00000013          	nop
 801ab2f0:	00000013          	nop
 801ab2f4:	00000013          	nop
 801ab2f8:	00000013          	nop
 801ab2fc:	00000013          	nop
-801ab300:	ffc6f693          	andi	a3,a3,-4
+801ab300:	ffc6f693          	and	a3,a3,-4
 801ab304:	40db0b33          	sub	s6,s6,a3
 801ab308:	01612c23          	sw	s6,24(sp)
 
@@ -437472,7 +437472,7 @@ Disassembly of section .text:
 801ab318:	00000013          	nop
 801ab31c:	00000013          	nop
 801ab320:	00000697          	auipc	a3,0x0
-801ab324:	06c68693          	addi	a3,a3,108 # 801ab38c <inst_7+0x80>
+801ab324:	06c68693          	add	a3,a3,108 # 801ab38c <inst_7+0x80>
 801ab328:	00000013          	nop
 801ab32c:	00000013          	nop
 801ab330:	00000013          	nop
@@ -437488,7 +437488,7 @@ Disassembly of section .text:
 801ab358:	00000013          	nop
 801ab35c:	00000013          	nop
 801ab360:	00000697          	auipc	a3,0x0
-801ab364:	06468693          	addi	a3,a3,100 # 801ab3c4 <inst_7+0xb8>
+801ab364:	06468693          	add	a3,a3,100 # 801ab3c4 <inst_7+0xb8>
 801ab368:	00000013          	nop
 801ab36c:	00000013          	nop
 801ab370:	00000013          	nop
@@ -437496,15 +437496,15 @@ Disassembly of section .text:
 801ab378:	00000013          	nop
 801ab37c:	00000013          	nop
 801ab380:	00068067          	jr	a3
-801ab384:	00184813          	xori	a6,a6,1
+801ab384:	00184813          	xor	a6,a6,1
 801ab388:	fc0000e3          	beqz	zero,801ab348 <inst_7+0x3c>
 801ab38c:	00c0086f          	jal	a6,801ab398 <inst_7+0x8c>
-801ab390:	00284813          	xori	a6,a6,2
+801ab390:	00284813          	xor	a6,a6,2
 801ab394:	0300006f          	j	801ab3c4 <inst_7+0xb8>
-801ab398:	00384813          	xori	a6,a6,3
+801ab398:	00384813          	xor	a6,a6,3
 801ab39c:	00000013          	nop
 801ab3a0:	00000697          	auipc	a3,0x0
-801ab3a4:	02468693          	addi	a3,a3,36 # 801ab3c4 <inst_7+0xb8>
+801ab3a4:	02468693          	add	a3,a3,36 # 801ab3c4 <inst_7+0xb8>
 801ab3a8:	00000013          	nop
 801ab3ac:	00000013          	nop
 801ab3b0:	00000013          	nop
@@ -437520,14 +437520,14 @@ Disassembly of section .text:
 801ab3d8:	00000013          	nop
 801ab3dc:	00000013          	nop
 801ab3e0:	00000697          	auipc	a3,0x0
-801ab3e4:	f2c68693          	addi	a3,a3,-212 # 801ab30c <inst_7>
+801ab3e4:	f2c68693          	add	a3,a3,-212 # 801ab30c <inst_7>
 801ab3e8:	00000013          	nop
 801ab3ec:	00000013          	nop
 801ab3f0:	00000013          	nop
 801ab3f4:	00000013          	nop
 801ab3f8:	00000013          	nop
 801ab3fc:	00000013          	nop
-801ab400:	ffc6f693          	andi	a3,a3,-4
+801ab400:	ffc6f693          	and	a3,a3,-4
 801ab404:	40d80833          	sub	a6,a6,a3
 801ab408:	01012e23          	sw	a6,28(sp)
 
@@ -437538,7 +437538,7 @@ Disassembly of section .text:
 801ab418:	00000013          	nop
 801ab41c:	00000013          	nop
 801ab420:	00000697          	auipc	a3,0x0
-801ab424:	06c68693          	addi	a3,a3,108 # 801ab48c <inst_8+0x80>
+801ab424:	06c68693          	add	a3,a3,108 # 801ab48c <inst_8+0x80>
 801ab428:	00000013          	nop
 801ab42c:	00000013          	nop
 801ab430:	00000013          	nop
@@ -437554,7 +437554,7 @@ Disassembly of section .text:
 801ab458:	00000013          	nop
 801ab45c:	00000013          	nop
 801ab460:	00000697          	auipc	a3,0x0
-801ab464:	06468693          	addi	a3,a3,100 # 801ab4c4 <inst_8+0xb8>
+801ab464:	06468693          	add	a3,a3,100 # 801ab4c4 <inst_8+0xb8>
 801ab468:	00000013          	nop
 801ab46c:	00000013          	nop
 801ab470:	00000013          	nop
@@ -437562,15 +437562,15 @@ Disassembly of section .text:
 801ab478:	00000013          	nop
 801ab47c:	00000013          	nop
 801ab480:	00068067          	jr	a3
-801ab484:	00164613          	xori	a2,a2,1
+801ab484:	00164613          	xor	a2,a2,1
 801ab488:	fc0000e3          	beqz	zero,801ab448 <inst_8+0x3c>
 801ab48c:	00c0066f          	jal	a2,801ab498 <inst_8+0x8c>
-801ab490:	00264613          	xori	a2,a2,2
+801ab490:	00264613          	xor	a2,a2,2
 801ab494:	0300006f          	j	801ab4c4 <inst_8+0xb8>
-801ab498:	00364613          	xori	a2,a2,3
+801ab498:	00364613          	xor	a2,a2,3
 801ab49c:	00000013          	nop
 801ab4a0:	00000697          	auipc	a3,0x0
-801ab4a4:	02468693          	addi	a3,a3,36 # 801ab4c4 <inst_8+0xb8>
+801ab4a4:	02468693          	add	a3,a3,36 # 801ab4c4 <inst_8+0xb8>
 801ab4a8:	00000013          	nop
 801ab4ac:	00000013          	nop
 801ab4b0:	00000013          	nop
@@ -437586,14 +437586,14 @@ Disassembly of section .text:
 801ab4d8:	00000013          	nop
 801ab4dc:	00000013          	nop
 801ab4e0:	00000697          	auipc	a3,0x0
-801ab4e4:	f2c68693          	addi	a3,a3,-212 # 801ab40c <inst_8>
+801ab4e4:	f2c68693          	add	a3,a3,-212 # 801ab40c <inst_8>
 801ab4e8:	00000013          	nop
 801ab4ec:	00000013          	nop
 801ab4f0:	00000013          	nop
 801ab4f4:	00000013          	nop
 801ab4f8:	00000013          	nop
 801ab4fc:	00000013          	nop
-801ab500:	ffc6f693          	andi	a3,a3,-4
+801ab500:	ffc6f693          	and	a3,a3,-4
 801ab504:	40d60633          	sub	a2,a2,a3
 801ab508:	02c12023          	sw	a2,32(sp)
 
@@ -437604,7 +437604,7 @@ Disassembly of section .text:
 801ab518:	00000013          	nop
 801ab51c:	00000013          	nop
 801ab520:	00000697          	auipc	a3,0x0
-801ab524:	06c68693          	addi	a3,a3,108 # 801ab58c <inst_9+0x80>
+801ab524:	06c68693          	add	a3,a3,108 # 801ab58c <inst_9+0x80>
 801ab528:	00000013          	nop
 801ab52c:	00000013          	nop
 801ab530:	00000013          	nop
@@ -437620,7 +437620,7 @@ Disassembly of section .text:
 801ab558:	00000013          	nop
 801ab55c:	00000013          	nop
 801ab560:	00000697          	auipc	a3,0x0
-801ab564:	06468693          	addi	a3,a3,100 # 801ab5c4 <inst_9+0xb8>
+801ab564:	06468693          	add	a3,a3,100 # 801ab5c4 <inst_9+0xb8>
 801ab568:	00000013          	nop
 801ab56c:	00000013          	nop
 801ab570:	00000013          	nop
@@ -437628,15 +437628,15 @@ Disassembly of section .text:
 801ab578:	00000013          	nop
 801ab57c:	00000013          	nop
 801ab580:	00068067          	jr	a3
-801ab584:	001e4e13          	xori	t3,t3,1
+801ab584:	001e4e13          	xor	t3,t3,1
 801ab588:	fc0000e3          	beqz	zero,801ab548 <inst_9+0x3c>
 801ab58c:	00c00e6f          	jal	t3,801ab598 <inst_9+0x8c>
-801ab590:	002e4e13          	xori	t3,t3,2
+801ab590:	002e4e13          	xor	t3,t3,2
 801ab594:	0300006f          	j	801ab5c4 <inst_9+0xb8>
-801ab598:	003e4e13          	xori	t3,t3,3
+801ab598:	003e4e13          	xor	t3,t3,3
 801ab59c:	00000013          	nop
 801ab5a0:	00000697          	auipc	a3,0x0
-801ab5a4:	02468693          	addi	a3,a3,36 # 801ab5c4 <inst_9+0xb8>
+801ab5a4:	02468693          	add	a3,a3,36 # 801ab5c4 <inst_9+0xb8>
 801ab5a8:	00000013          	nop
 801ab5ac:	00000013          	nop
 801ab5b0:	00000013          	nop
@@ -437652,14 +437652,14 @@ Disassembly of section .text:
 801ab5d8:	00000013          	nop
 801ab5dc:	00000013          	nop
 801ab5e0:	00000697          	auipc	a3,0x0
-801ab5e4:	f2c68693          	addi	a3,a3,-212 # 801ab50c <inst_9>
+801ab5e4:	f2c68693          	add	a3,a3,-212 # 801ab50c <inst_9>
 801ab5e8:	00000013          	nop
 801ab5ec:	00000013          	nop
 801ab5f0:	00000013          	nop
 801ab5f4:	00000013          	nop
 801ab5f8:	00000013          	nop
 801ab5fc:	00000013          	nop
-801ab600:	ffc6f693          	andi	a3,a3,-4
+801ab600:	ffc6f693          	and	a3,a3,-4
 801ab604:	40de0e33          	sub	t3,t3,a3
 801ab608:	03c12223          	sw	t3,36(sp)
 
@@ -437670,7 +437670,7 @@ Disassembly of section .text:
 801ab618:	00000013          	nop
 801ab61c:	00000013          	nop
 801ab620:	00000697          	auipc	a3,0x0
-801ab624:	06c68693          	addi	a3,a3,108 # 801ab68c <inst_10+0x80>
+801ab624:	06c68693          	add	a3,a3,108 # 801ab68c <inst_10+0x80>
 801ab628:	00000013          	nop
 801ab62c:	00000013          	nop
 801ab630:	00000013          	nop
@@ -437686,7 +437686,7 @@ Disassembly of section .text:
 801ab658:	00000013          	nop
 801ab65c:	00000013          	nop
 801ab660:	00000697          	auipc	a3,0x0
-801ab664:	06468693          	addi	a3,a3,100 # 801ab6c4 <inst_10+0xb8>
+801ab664:	06468693          	add	a3,a3,100 # 801ab6c4 <inst_10+0xb8>
 801ab668:	00000013          	nop
 801ab66c:	00000013          	nop
 801ab670:	00000013          	nop
@@ -437694,15 +437694,15 @@ Disassembly of section .text:
 801ab678:	00000013          	nop
 801ab67c:	00000013          	nop
 801ab680:	00068067          	jr	a3
-801ab684:	0015c593          	xori	a1,a1,1
+801ab684:	0015c593          	xor	a1,a1,1
 801ab688:	fc0000e3          	beqz	zero,801ab648 <inst_10+0x3c>
 801ab68c:	00c005ef          	jal	a1,801ab698 <inst_10+0x8c>
-801ab690:	0025c593          	xori	a1,a1,2
+801ab690:	0025c593          	xor	a1,a1,2
 801ab694:	0300006f          	j	801ab6c4 <inst_10+0xb8>
-801ab698:	0035c593          	xori	a1,a1,3
+801ab698:	0035c593          	xor	a1,a1,3
 801ab69c:	00000013          	nop
 801ab6a0:	00000697          	auipc	a3,0x0
-801ab6a4:	02468693          	addi	a3,a3,36 # 801ab6c4 <inst_10+0xb8>
+801ab6a4:	02468693          	add	a3,a3,36 # 801ab6c4 <inst_10+0xb8>
 801ab6a8:	00000013          	nop
 801ab6ac:	00000013          	nop
 801ab6b0:	00000013          	nop
@@ -437718,14 +437718,14 @@ Disassembly of section .text:
 801ab6d8:	00000013          	nop
 801ab6dc:	00000013          	nop
 801ab6e0:	00000697          	auipc	a3,0x0
-801ab6e4:	f2c68693          	addi	a3,a3,-212 # 801ab60c <inst_10>
+801ab6e4:	f2c68693          	add	a3,a3,-212 # 801ab60c <inst_10>
 801ab6e8:	00000013          	nop
 801ab6ec:	00000013          	nop
 801ab6f0:	00000013          	nop
 801ab6f4:	00000013          	nop
 801ab6f8:	00000013          	nop
 801ab6fc:	00000013          	nop
-801ab700:	ffc6f693          	andi	a3,a3,-4
+801ab700:	ffc6f693          	and	a3,a3,-4
 801ab704:	40d585b3          	sub	a1,a1,a3
 801ab708:	02b12423          	sw	a1,40(sp)
 
@@ -437736,7 +437736,7 @@ Disassembly of section .text:
 801ab718:	00000013          	nop
 801ab71c:	00000013          	nop
 801ab720:	00000697          	auipc	a3,0x0
-801ab724:	06c68693          	addi	a3,a3,108 # 801ab78c <inst_11+0x80>
+801ab724:	06c68693          	add	a3,a3,108 # 801ab78c <inst_11+0x80>
 801ab728:	00000013          	nop
 801ab72c:	00000013          	nop
 801ab730:	00000013          	nop
@@ -437752,7 +437752,7 @@ Disassembly of section .text:
 801ab758:	00000013          	nop
 801ab75c:	00000013          	nop
 801ab760:	00000697          	auipc	a3,0x0
-801ab764:	06468693          	addi	a3,a3,100 # 801ab7c4 <inst_11+0xb8>
+801ab764:	06468693          	add	a3,a3,100 # 801ab7c4 <inst_11+0xb8>
 801ab768:	00000013          	nop
 801ab76c:	00000013          	nop
 801ab770:	00000013          	nop
@@ -437760,15 +437760,15 @@ Disassembly of section .text:
 801ab778:	00000013          	nop
 801ab77c:	00000013          	nop
 801ab780:	00068067          	jr	a3
-801ab784:	001f4f13          	xori	t5,t5,1
+801ab784:	001f4f13          	xor	t5,t5,1
 801ab788:	fc0000e3          	beqz	zero,801ab748 <inst_11+0x3c>
 801ab78c:	00c00f6f          	jal	t5,801ab798 <inst_11+0x8c>
-801ab790:	002f4f13          	xori	t5,t5,2
+801ab790:	002f4f13          	xor	t5,t5,2
 801ab794:	0300006f          	j	801ab7c4 <inst_11+0xb8>
-801ab798:	003f4f13          	xori	t5,t5,3
+801ab798:	003f4f13          	xor	t5,t5,3
 801ab79c:	00000013          	nop
 801ab7a0:	00000697          	auipc	a3,0x0
-801ab7a4:	02468693          	addi	a3,a3,36 # 801ab7c4 <inst_11+0xb8>
+801ab7a4:	02468693          	add	a3,a3,36 # 801ab7c4 <inst_11+0xb8>
 801ab7a8:	00000013          	nop
 801ab7ac:	00000013          	nop
 801ab7b0:	00000013          	nop
@@ -437784,14 +437784,14 @@ Disassembly of section .text:
 801ab7d8:	00000013          	nop
 801ab7dc:	00000013          	nop
 801ab7e0:	00000697          	auipc	a3,0x0
-801ab7e4:	f2c68693          	addi	a3,a3,-212 # 801ab70c <inst_11>
+801ab7e4:	f2c68693          	add	a3,a3,-212 # 801ab70c <inst_11>
 801ab7e8:	00000013          	nop
 801ab7ec:	00000013          	nop
 801ab7f0:	00000013          	nop
 801ab7f4:	00000013          	nop
 801ab7f8:	00000013          	nop
 801ab7fc:	00000013          	nop
-801ab800:	ffc6f693          	andi	a3,a3,-4
+801ab800:	ffc6f693          	and	a3,a3,-4
 801ab804:	40df0f33          	sub	t5,t5,a3
 801ab808:	03e12623          	sw	t5,44(sp)
 
@@ -437802,7 +437802,7 @@ Disassembly of section .text:
 801ab818:	00000013          	nop
 801ab81c:	00000013          	nop
 801ab820:	00000697          	auipc	a3,0x0
-801ab824:	06c68693          	addi	a3,a3,108 # 801ab88c <inst_12+0x80>
+801ab824:	06c68693          	add	a3,a3,108 # 801ab88c <inst_12+0x80>
 801ab828:	00000013          	nop
 801ab82c:	00000013          	nop
 801ab830:	00000013          	nop
@@ -437818,7 +437818,7 @@ Disassembly of section .text:
 801ab858:	00000013          	nop
 801ab85c:	00000013          	nop
 801ab860:	00000697          	auipc	a3,0x0
-801ab864:	06468693          	addi	a3,a3,100 # 801ab8c4 <inst_12+0xb8>
+801ab864:	06468693          	add	a3,a3,100 # 801ab8c4 <inst_12+0xb8>
 801ab868:	00000013          	nop
 801ab86c:	00000013          	nop
 801ab870:	00000013          	nop
@@ -437826,15 +437826,15 @@ Disassembly of section .text:
 801ab878:	00000013          	nop
 801ab87c:	00000013          	nop
 801ab880:	00068067          	jr	a3
-801ab884:	00154513          	xori	a0,a0,1
+801ab884:	00154513          	xor	a0,a0,1
 801ab888:	fc0000e3          	beqz	zero,801ab848 <inst_12+0x3c>
 801ab88c:	00c0056f          	jal	a0,801ab898 <inst_12+0x8c>
-801ab890:	00254513          	xori	a0,a0,2
+801ab890:	00254513          	xor	a0,a0,2
 801ab894:	0300006f          	j	801ab8c4 <inst_12+0xb8>
-801ab898:	00354513          	xori	a0,a0,3
+801ab898:	00354513          	xor	a0,a0,3
 801ab89c:	00000013          	nop
 801ab8a0:	00000697          	auipc	a3,0x0
-801ab8a4:	02468693          	addi	a3,a3,36 # 801ab8c4 <inst_12+0xb8>
+801ab8a4:	02468693          	add	a3,a3,36 # 801ab8c4 <inst_12+0xb8>
 801ab8a8:	00000013          	nop
 801ab8ac:	00000013          	nop
 801ab8b0:	00000013          	nop
@@ -437850,14 +437850,14 @@ Disassembly of section .text:
 801ab8d8:	00000013          	nop
 801ab8dc:	00000013          	nop
 801ab8e0:	00000697          	auipc	a3,0x0
-801ab8e4:	f2c68693          	addi	a3,a3,-212 # 801ab80c <inst_12>
+801ab8e4:	f2c68693          	add	a3,a3,-212 # 801ab80c <inst_12>
 801ab8e8:	00000013          	nop
 801ab8ec:	00000013          	nop
 801ab8f0:	00000013          	nop
 801ab8f4:	00000013          	nop
 801ab8f8:	00000013          	nop
 801ab8fc:	00000013          	nop
-801ab900:	ffc6f693          	andi	a3,a3,-4
+801ab900:	ffc6f693          	and	a3,a3,-4
 801ab904:	40d50533          	sub	a0,a0,a3
 801ab908:	02a12823          	sw	a0,48(sp)
 
@@ -437868,7 +437868,7 @@ Disassembly of section .text:
 801ab918:	00000013          	nop
 801ab91c:	00000013          	nop
 801ab920:	00000697          	auipc	a3,0x0
-801ab924:	06c68693          	addi	a3,a3,108 # 801ab98c <inst_13+0x80>
+801ab924:	06c68693          	add	a3,a3,108 # 801ab98c <inst_13+0x80>
 801ab928:	00000013          	nop
 801ab92c:	00000013          	nop
 801ab930:	00000013          	nop
@@ -437884,7 +437884,7 @@ Disassembly of section .text:
 801ab958:	00000013          	nop
 801ab95c:	00000013          	nop
 801ab960:	00000697          	auipc	a3,0x0
-801ab964:	06468693          	addi	a3,a3,100 # 801ab9c4 <inst_13+0xb8>
+801ab964:	06468693          	add	a3,a3,100 # 801ab9c4 <inst_13+0xb8>
 801ab968:	00000013          	nop
 801ab96c:	00000013          	nop
 801ab970:	00000013          	nop
@@ -437892,15 +437892,15 @@ Disassembly of section .text:
 801ab978:	00000013          	nop
 801ab97c:	00000013          	nop
 801ab980:	00068067          	jr	a3
-801ab984:	0010c093          	xori	ra,ra,1
+801ab984:	0010c093          	xor	ra,ra,1
 801ab988:	fc0000e3          	beqz	zero,801ab948 <inst_13+0x3c>
 801ab98c:	00c000ef          	jal	801ab998 <inst_13+0x8c>
-801ab990:	0020c093          	xori	ra,ra,2
+801ab990:	0020c093          	xor	ra,ra,2
 801ab994:	0300006f          	j	801ab9c4 <inst_13+0xb8>
-801ab998:	0030c093          	xori	ra,ra,3
+801ab998:	0030c093          	xor	ra,ra,3
 801ab99c:	00000013          	nop
 801ab9a0:	00000697          	auipc	a3,0x0
-801ab9a4:	02468693          	addi	a3,a3,36 # 801ab9c4 <inst_13+0xb8>
+801ab9a4:	02468693          	add	a3,a3,36 # 801ab9c4 <inst_13+0xb8>
 801ab9a8:	00000013          	nop
 801ab9ac:	00000013          	nop
 801ab9b0:	00000013          	nop
@@ -437916,14 +437916,14 @@ Disassembly of section .text:
 801ab9d8:	00000013          	nop
 801ab9dc:	00000013          	nop
 801ab9e0:	00000697          	auipc	a3,0x0
-801ab9e4:	f2c68693          	addi	a3,a3,-212 # 801ab90c <inst_13>
+801ab9e4:	f2c68693          	add	a3,a3,-212 # 801ab90c <inst_13>
 801ab9e8:	00000013          	nop
 801ab9ec:	00000013          	nop
 801ab9f0:	00000013          	nop
 801ab9f4:	00000013          	nop
 801ab9f8:	00000013          	nop
 801ab9fc:	00000013          	nop
-801aba00:	ffc6f693          	andi	a3,a3,-4
+801aba00:	ffc6f693          	and	a3,a3,-4
 801aba04:	40d080b3          	sub	ra,ra,a3
 801aba08:	02112a23          	sw	ra,52(sp)
 
@@ -437934,7 +437934,7 @@ Disassembly of section .text:
 801aba18:	00000013          	nop
 801aba1c:	00000013          	nop
 801aba20:	00000697          	auipc	a3,0x0
-801aba24:	06c68693          	addi	a3,a3,108 # 801aba8c <inst_14+0x80>
+801aba24:	06c68693          	add	a3,a3,108 # 801aba8c <inst_14+0x80>
 801aba28:	00000013          	nop
 801aba2c:	00000013          	nop
 801aba30:	00000013          	nop
@@ -437950,7 +437950,7 @@ Disassembly of section .text:
 801aba58:	00000013          	nop
 801aba5c:	00000013          	nop
 801aba60:	00000697          	auipc	a3,0x0
-801aba64:	06468693          	addi	a3,a3,100 # 801abac4 <inst_14+0xb8>
+801aba64:	06468693          	add	a3,a3,100 # 801abac4 <inst_14+0xb8>
 801aba68:	00000013          	nop
 801aba6c:	00000013          	nop
 801aba70:	00000013          	nop
@@ -437958,15 +437958,15 @@ Disassembly of section .text:
 801aba78:	00000013          	nop
 801aba7c:	00000013          	nop
 801aba80:	00068067          	jr	a3
-801aba84:	001a4a13          	xori	s4,s4,1
+801aba84:	001a4a13          	xor	s4,s4,1
 801aba88:	fc0000e3          	beqz	zero,801aba48 <inst_14+0x3c>
 801aba8c:	00c00a6f          	jal	s4,801aba98 <inst_14+0x8c>
-801aba90:	002a4a13          	xori	s4,s4,2
+801aba90:	002a4a13          	xor	s4,s4,2
 801aba94:	0300006f          	j	801abac4 <inst_14+0xb8>
-801aba98:	003a4a13          	xori	s4,s4,3
+801aba98:	003a4a13          	xor	s4,s4,3
 801aba9c:	00000013          	nop
 801abaa0:	00000697          	auipc	a3,0x0
-801abaa4:	02468693          	addi	a3,a3,36 # 801abac4 <inst_14+0xb8>
+801abaa4:	02468693          	add	a3,a3,36 # 801abac4 <inst_14+0xb8>
 801abaa8:	00000013          	nop
 801abaac:	00000013          	nop
 801abab0:	00000013          	nop
@@ -437982,14 +437982,14 @@ Disassembly of section .text:
 801abad8:	00000013          	nop
 801abadc:	00000013          	nop
 801abae0:	00000697          	auipc	a3,0x0
-801abae4:	f2c68693          	addi	a3,a3,-212 # 801aba0c <inst_14>
+801abae4:	f2c68693          	add	a3,a3,-212 # 801aba0c <inst_14>
 801abae8:	00000013          	nop
 801abaec:	00000013          	nop
 801abaf0:	00000013          	nop
 801abaf4:	00000013          	nop
 801abaf8:	00000013          	nop
 801abafc:	00000013          	nop
-801abb00:	ffc6f693          	andi	a3,a3,-4
+801abb00:	ffc6f693          	and	a3,a3,-4
 801abb04:	40da0a33          	sub	s4,s4,a3
 801abb08:	03412c23          	sw	s4,56(sp)
 
@@ -438000,7 +438000,7 @@ Disassembly of section .text:
 801abb18:	00000013          	nop
 801abb1c:	00000013          	nop
 801abb20:	00000697          	auipc	a3,0x0
-801abb24:	06c68693          	addi	a3,a3,108 # 801abb8c <inst_15+0x80>
+801abb24:	06c68693          	add	a3,a3,108 # 801abb8c <inst_15+0x80>
 801abb28:	00000013          	nop
 801abb2c:	00000013          	nop
 801abb30:	00000013          	nop
@@ -438016,7 +438016,7 @@ Disassembly of section .text:
 801abb58:	00000013          	nop
 801abb5c:	00000013          	nop
 801abb60:	00000697          	auipc	a3,0x0
-801abb64:	06468693          	addi	a3,a3,100 # 801abbc4 <inst_15+0xb8>
+801abb64:	06468693          	add	a3,a3,100 # 801abbc4 <inst_15+0xb8>
 801abb68:	00000013          	nop
 801abb6c:	00000013          	nop
 801abb70:	00000013          	nop
@@ -438024,15 +438024,15 @@ Disassembly of section .text:
 801abb78:	00000013          	nop
 801abb7c:	00000013          	nop
 801abb80:	00068067          	jr	a3
-801abb84:	0019c993          	xori	s3,s3,1
+801abb84:	0019c993          	xor	s3,s3,1
 801abb88:	fc0000e3          	beqz	zero,801abb48 <inst_15+0x3c>
 801abb8c:	00c009ef          	jal	s3,801abb98 <inst_15+0x8c>
-801abb90:	0029c993          	xori	s3,s3,2
+801abb90:	0029c993          	xor	s3,s3,2
 801abb94:	0300006f          	j	801abbc4 <inst_15+0xb8>
-801abb98:	0039c993          	xori	s3,s3,3
+801abb98:	0039c993          	xor	s3,s3,3
 801abb9c:	00000013          	nop
 801abba0:	00000697          	auipc	a3,0x0
-801abba4:	02468693          	addi	a3,a3,36 # 801abbc4 <inst_15+0xb8>
+801abba4:	02468693          	add	a3,a3,36 # 801abbc4 <inst_15+0xb8>
 801abba8:	00000013          	nop
 801abbac:	00000013          	nop
 801abbb0:	00000013          	nop
@@ -438048,14 +438048,14 @@ Disassembly of section .text:
 801abbd8:	00000013          	nop
 801abbdc:	00000013          	nop
 801abbe0:	00000697          	auipc	a3,0x0
-801abbe4:	f2c68693          	addi	a3,a3,-212 # 801abb0c <inst_15>
+801abbe4:	f2c68693          	add	a3,a3,-212 # 801abb0c <inst_15>
 801abbe8:	00000013          	nop
 801abbec:	00000013          	nop
 801abbf0:	00000013          	nop
 801abbf4:	00000013          	nop
 801abbf8:	00000013          	nop
 801abbfc:	00000013          	nop
-801abc00:	ffc6f693          	andi	a3,a3,-4
+801abc00:	ffc6f693          	and	a3,a3,-4
 801abc04:	40d989b3          	sub	s3,s3,a3
 801abc08:	03312e23          	sw	s3,60(sp)
 
@@ -438066,7 +438066,7 @@ Disassembly of section .text:
 801abc18:	00000013          	nop
 801abc1c:	00000013          	nop
 801abc20:	00000697          	auipc	a3,0x0
-801abc24:	06c68693          	addi	a3,a3,108 # 801abc8c <inst_16+0x80>
+801abc24:	06c68693          	add	a3,a3,108 # 801abc8c <inst_16+0x80>
 801abc28:	00000013          	nop
 801abc2c:	00000013          	nop
 801abc30:	00000013          	nop
@@ -438082,7 +438082,7 @@ Disassembly of section .text:
 801abc58:	00000013          	nop
 801abc5c:	00000013          	nop
 801abc60:	00000697          	auipc	a3,0x0
-801abc64:	06468693          	addi	a3,a3,100 # 801abcc4 <inst_16+0xb8>
+801abc64:	06468693          	add	a3,a3,100 # 801abcc4 <inst_16+0xb8>
 801abc68:	00000013          	nop
 801abc6c:	00000013          	nop
 801abc70:	00000013          	nop
@@ -438090,15 +438090,15 @@ Disassembly of section .text:
 801abc78:	00000013          	nop
 801abc7c:	00000013          	nop
 801abc80:	00068067          	jr	a3
-801abc84:	001c4c13          	xori	s8,s8,1
+801abc84:	001c4c13          	xor	s8,s8,1
 801abc88:	fc0000e3          	beqz	zero,801abc48 <inst_16+0x3c>
 801abc8c:	00c00c6f          	jal	s8,801abc98 <inst_16+0x8c>
-801abc90:	002c4c13          	xori	s8,s8,2
+801abc90:	002c4c13          	xor	s8,s8,2
 801abc94:	0300006f          	j	801abcc4 <inst_16+0xb8>
-801abc98:	003c4c13          	xori	s8,s8,3
+801abc98:	003c4c13          	xor	s8,s8,3
 801abc9c:	00000013          	nop
 801abca0:	00000697          	auipc	a3,0x0
-801abca4:	02468693          	addi	a3,a3,36 # 801abcc4 <inst_16+0xb8>
+801abca4:	02468693          	add	a3,a3,36 # 801abcc4 <inst_16+0xb8>
 801abca8:	00000013          	nop
 801abcac:	00000013          	nop
 801abcb0:	00000013          	nop
@@ -438114,14 +438114,14 @@ Disassembly of section .text:
 801abcd8:	00000013          	nop
 801abcdc:	00000013          	nop
 801abce0:	00000697          	auipc	a3,0x0
-801abce4:	f2c68693          	addi	a3,a3,-212 # 801abc0c <inst_16>
+801abce4:	f2c68693          	add	a3,a3,-212 # 801abc0c <inst_16>
 801abce8:	00000013          	nop
 801abcec:	00000013          	nop
 801abcf0:	00000013          	nop
 801abcf4:	00000013          	nop
 801abcf8:	00000013          	nop
 801abcfc:	00000013          	nop
-801abd00:	ffc6f693          	andi	a3,a3,-4
+801abd00:	ffc6f693          	and	a3,a3,-4
 801abd04:	40dc0c33          	sub	s8,s8,a3
 801abd08:	05812023          	sw	s8,64(sp)
 
@@ -438132,7 +438132,7 @@ Disassembly of section .text:
 801abd18:	00000013          	nop
 801abd1c:	00000013          	nop
 801abd20:	00000697          	auipc	a3,0x0
-801abd24:	06c68693          	addi	a3,a3,108 # 801abd8c <inst_17+0x80>
+801abd24:	06c68693          	add	a3,a3,108 # 801abd8c <inst_17+0x80>
 801abd28:	00000013          	nop
 801abd2c:	00000013          	nop
 801abd30:	00000013          	nop
@@ -438148,7 +438148,7 @@ Disassembly of section .text:
 801abd58:	00000013          	nop
 801abd5c:	00000013          	nop
 801abd60:	00000697          	auipc	a3,0x0
-801abd64:	06468693          	addi	a3,a3,100 # 801abdc4 <inst_17+0xb8>
+801abd64:	06468693          	add	a3,a3,100 # 801abdc4 <inst_17+0xb8>
 801abd68:	00000013          	nop
 801abd6c:	00000013          	nop
 801abd70:	00000013          	nop
@@ -438156,15 +438156,15 @@ Disassembly of section .text:
 801abd78:	00000013          	nop
 801abd7c:	00000013          	nop
 801abd80:	00068067          	jr	a3
-801abd84:	0013c393          	xori	t2,t2,1
+801abd84:	0013c393          	xor	t2,t2,1
 801abd88:	fc0000e3          	beqz	zero,801abd48 <inst_17+0x3c>
 801abd8c:	00c003ef          	jal	t2,801abd98 <inst_17+0x8c>
-801abd90:	0023c393          	xori	t2,t2,2
+801abd90:	0023c393          	xor	t2,t2,2
 801abd94:	0300006f          	j	801abdc4 <inst_17+0xb8>
-801abd98:	0033c393          	xori	t2,t2,3
+801abd98:	0033c393          	xor	t2,t2,3
 801abd9c:	00000013          	nop
 801abda0:	00000697          	auipc	a3,0x0
-801abda4:	02468693          	addi	a3,a3,36 # 801abdc4 <inst_17+0xb8>
+801abda4:	02468693          	add	a3,a3,36 # 801abdc4 <inst_17+0xb8>
 801abda8:	00000013          	nop
 801abdac:	00000013          	nop
 801abdb0:	00000013          	nop
@@ -438180,14 +438180,14 @@ Disassembly of section .text:
 801abdd8:	00000013          	nop
 801abddc:	00000013          	nop
 801abde0:	00000697          	auipc	a3,0x0
-801abde4:	f2c68693          	addi	a3,a3,-212 # 801abd0c <inst_17>
+801abde4:	f2c68693          	add	a3,a3,-212 # 801abd0c <inst_17>
 801abde8:	00000013          	nop
 801abdec:	00000013          	nop
 801abdf0:	00000013          	nop
 801abdf4:	00000013          	nop
 801abdf8:	00000013          	nop
 801abdfc:	00000013          	nop
-801abe00:	ffc6f693          	andi	a3,a3,-4
+801abe00:	ffc6f693          	and	a3,a3,-4
 801abe04:	40d383b3          	sub	t2,t2,a3
 801abe08:	04712223          	sw	t2,68(sp)
 
@@ -438198,7 +438198,7 @@ Disassembly of section .text:
 801abe18:	00000013          	nop
 801abe1c:	00000013          	nop
 801abe20:	00000697          	auipc	a3,0x0
-801abe24:	06c68693          	addi	a3,a3,108 # 801abe8c <inst_18+0x80>
+801abe24:	06c68693          	add	a3,a3,108 # 801abe8c <inst_18+0x80>
 801abe28:	00000013          	nop
 801abe2c:	00000013          	nop
 801abe30:	00000013          	nop
@@ -438214,7 +438214,7 @@ Disassembly of section .text:
 801abe58:	00000013          	nop
 801abe5c:	00000013          	nop
 801abe60:	00000697          	auipc	a3,0x0
-801abe64:	06468693          	addi	a3,a3,100 # 801abec4 <inst_18+0xb8>
+801abe64:	06468693          	add	a3,a3,100 # 801abec4 <inst_18+0xb8>
 801abe68:	00000013          	nop
 801abe6c:	00000013          	nop
 801abe70:	00000013          	nop
@@ -438222,15 +438222,15 @@ Disassembly of section .text:
 801abe78:	00000013          	nop
 801abe7c:	00000013          	nop
 801abe80:	00068067          	jr	a3
-801abe84:	00134313          	xori	t1,t1,1
+801abe84:	00134313          	xor	t1,t1,1
 801abe88:	fc0000e3          	beqz	zero,801abe48 <inst_18+0x3c>
 801abe8c:	00c0036f          	jal	t1,801abe98 <inst_18+0x8c>
-801abe90:	00234313          	xori	t1,t1,2
+801abe90:	00234313          	xor	t1,t1,2
 801abe94:	0300006f          	j	801abec4 <inst_18+0xb8>
-801abe98:	00334313          	xori	t1,t1,3
+801abe98:	00334313          	xor	t1,t1,3
 801abe9c:	00000013          	nop
 801abea0:	00000697          	auipc	a3,0x0
-801abea4:	02468693          	addi	a3,a3,36 # 801abec4 <inst_18+0xb8>
+801abea4:	02468693          	add	a3,a3,36 # 801abec4 <inst_18+0xb8>
 801abea8:	00000013          	nop
 801abeac:	00000013          	nop
 801abeb0:	00000013          	nop
@@ -438246,14 +438246,14 @@ Disassembly of section .text:
 801abed8:	00000013          	nop
 801abedc:	00000013          	nop
 801abee0:	00000697          	auipc	a3,0x0
-801abee4:	f2c68693          	addi	a3,a3,-212 # 801abe0c <inst_18>
+801abee4:	f2c68693          	add	a3,a3,-212 # 801abe0c <inst_18>
 801abee8:	00000013          	nop
 801abeec:	00000013          	nop
 801abef0:	00000013          	nop
 801abef4:	00000013          	nop
 801abef8:	00000013          	nop
 801abefc:	00000013          	nop
-801abf00:	ffc6f693          	andi	a3,a3,-4
+801abf00:	ffc6f693          	and	a3,a3,-4
 801abf04:	40d30333          	sub	t1,t1,a3
 801abf08:	04612423          	sw	t1,72(sp)
 
@@ -438264,7 +438264,7 @@ Disassembly of section .text:
 801abf18:	00000013          	nop
 801abf1c:	00000013          	nop
 801abf20:	00000697          	auipc	a3,0x0
-801abf24:	06c68693          	addi	a3,a3,108 # 801abf8c <inst_19+0x80>
+801abf24:	06c68693          	add	a3,a3,108 # 801abf8c <inst_19+0x80>
 801abf28:	00000013          	nop
 801abf2c:	00000013          	nop
 801abf30:	00000013          	nop
@@ -438280,7 +438280,7 @@ Disassembly of section .text:
 801abf58:	00000013          	nop
 801abf5c:	00000013          	nop
 801abf60:	00000697          	auipc	a3,0x0
-801abf64:	06468693          	addi	a3,a3,100 # 801abfc4 <inst_19+0xb8>
+801abf64:	06468693          	add	a3,a3,100 # 801abfc4 <inst_19+0xb8>
 801abf68:	00000013          	nop
 801abf6c:	00000013          	nop
 801abf70:	00000013          	nop
@@ -438288,15 +438288,15 @@ Disassembly of section .text:
 801abf78:	00000013          	nop
 801abf7c:	00000013          	nop
 801abf80:	00068067          	jr	a3
-801abf84:	00144413          	xori	s0,s0,1
+801abf84:	00144413          	xor	s0,s0,1
 801abf88:	fc0000e3          	beqz	zero,801abf48 <inst_19+0x3c>
 801abf8c:	00c0046f          	jal	s0,801abf98 <inst_19+0x8c>
-801abf90:	00244413          	xori	s0,s0,2
+801abf90:	00244413          	xor	s0,s0,2
 801abf94:	0300006f          	j	801abfc4 <inst_19+0xb8>
-801abf98:	00344413          	xori	s0,s0,3
+801abf98:	00344413          	xor	s0,s0,3
 801abf9c:	00000013          	nop
 801abfa0:	00000697          	auipc	a3,0x0
-801abfa4:	02468693          	addi	a3,a3,36 # 801abfc4 <inst_19+0xb8>
+801abfa4:	02468693          	add	a3,a3,36 # 801abfc4 <inst_19+0xb8>
 801abfa8:	00000013          	nop
 801abfac:	00000013          	nop
 801abfb0:	00000013          	nop
@@ -438312,14 +438312,14 @@ Disassembly of section .text:
 801abfd8:	00000013          	nop
 801abfdc:	00000013          	nop
 801abfe0:	00000697          	auipc	a3,0x0
-801abfe4:	f2c68693          	addi	a3,a3,-212 # 801abf0c <inst_19>
+801abfe4:	f2c68693          	add	a3,a3,-212 # 801abf0c <inst_19>
 801abfe8:	00000013          	nop
 801abfec:	00000013          	nop
 801abff0:	00000013          	nop
 801abff4:	00000013          	nop
 801abff8:	00000013          	nop
 801abffc:	00000013          	nop
-801ac000:	ffc6f693          	andi	a3,a3,-4
+801ac000:	ffc6f693          	and	a3,a3,-4
 801ac004:	40d40433          	sub	s0,s0,a3
 801ac008:	04812623          	sw	s0,76(sp)
 
@@ -438330,7 +438330,7 @@ Disassembly of section .text:
 801ac018:	00000013          	nop
 801ac01c:	00000013          	nop
 801ac020:	00000697          	auipc	a3,0x0
-801ac024:	06c68693          	addi	a3,a3,108 # 801ac08c <inst_20+0x80>
+801ac024:	06c68693          	add	a3,a3,108 # 801ac08c <inst_20+0x80>
 801ac028:	00000013          	nop
 801ac02c:	00000013          	nop
 801ac030:	00000013          	nop
@@ -438346,7 +438346,7 @@ Disassembly of section .text:
 801ac058:	00000013          	nop
 801ac05c:	00000013          	nop
 801ac060:	00000697          	auipc	a3,0x0
-801ac064:	06468693          	addi	a3,a3,100 # 801ac0c4 <inst_20+0xb8>
+801ac064:	06468693          	add	a3,a3,100 # 801ac0c4 <inst_20+0xb8>
 801ac068:	00000013          	nop
 801ac06c:	00000013          	nop
 801ac070:	00000013          	nop
@@ -438354,15 +438354,15 @@ Disassembly of section .text:
 801ac078:	00000013          	nop
 801ac07c:	00000013          	nop
 801ac080:	00068067          	jr	a3
-801ac084:	001fcf93          	xori	t6,t6,1
+801ac084:	001fcf93          	xor	t6,t6,1
 801ac088:	fc0000e3          	beqz	zero,801ac048 <inst_20+0x3c>
 801ac08c:	00c00fef          	jal	t6,801ac098 <inst_20+0x8c>
-801ac090:	002fcf93          	xori	t6,t6,2
+801ac090:	002fcf93          	xor	t6,t6,2
 801ac094:	0300006f          	j	801ac0c4 <inst_20+0xb8>
-801ac098:	003fcf93          	xori	t6,t6,3
+801ac098:	003fcf93          	xor	t6,t6,3
 801ac09c:	00000013          	nop
 801ac0a0:	00000697          	auipc	a3,0x0
-801ac0a4:	02468693          	addi	a3,a3,36 # 801ac0c4 <inst_20+0xb8>
+801ac0a4:	02468693          	add	a3,a3,36 # 801ac0c4 <inst_20+0xb8>
 801ac0a8:	00000013          	nop
 801ac0ac:	00000013          	nop
 801ac0b0:	00000013          	nop
@@ -438378,14 +438378,14 @@ Disassembly of section .text:
 801ac0d8:	00000013          	nop
 801ac0dc:	00000013          	nop
 801ac0e0:	00000697          	auipc	a3,0x0
-801ac0e4:	f2c68693          	addi	a3,a3,-212 # 801ac00c <inst_20>
+801ac0e4:	f2c68693          	add	a3,a3,-212 # 801ac00c <inst_20>
 801ac0e8:	00000013          	nop
 801ac0ec:	00000013          	nop
 801ac0f0:	00000013          	nop
 801ac0f4:	00000013          	nop
 801ac0f8:	00000013          	nop
 801ac0fc:	00000013          	nop
-801ac100:	ffc6f693          	andi	a3,a3,-4
+801ac100:	ffc6f693          	and	a3,a3,-4
 801ac104:	40df8fb3          	sub	t6,t6,a3
 801ac108:	05f12823          	sw	t6,80(sp)
 
@@ -438396,7 +438396,7 @@ Disassembly of section .text:
 801ac118:	00000013          	nop
 801ac11c:	00000013          	nop
 801ac120:	00000697          	auipc	a3,0x0
-801ac124:	06c68693          	addi	a3,a3,108 # 801ac18c <inst_21+0x80>
+801ac124:	06c68693          	add	a3,a3,108 # 801ac18c <inst_21+0x80>
 801ac128:	00000013          	nop
 801ac12c:	00000013          	nop
 801ac130:	00000013          	nop
@@ -438412,7 +438412,7 @@ Disassembly of section .text:
 801ac158:	00000013          	nop
 801ac15c:	00000013          	nop
 801ac160:	00000697          	auipc	a3,0x0
-801ac164:	06468693          	addi	a3,a3,100 # 801ac1c4 <inst_21+0xb8>
+801ac164:	06468693          	add	a3,a3,100 # 801ac1c4 <inst_21+0xb8>
 801ac168:	00000013          	nop
 801ac16c:	00000013          	nop
 801ac170:	00000013          	nop
@@ -438420,15 +438420,15 @@ Disassembly of section .text:
 801ac178:	00000013          	nop
 801ac17c:	00000013          	nop
 801ac180:	00068067          	jr	a3
-801ac184:	001d4d13          	xori	s10,s10,1
+801ac184:	001d4d13          	xor	s10,s10,1
 801ac188:	fc0000e3          	beqz	zero,801ac148 <inst_21+0x3c>
 801ac18c:	00c00d6f          	jal	s10,801ac198 <inst_21+0x8c>
-801ac190:	002d4d13          	xori	s10,s10,2
+801ac190:	002d4d13          	xor	s10,s10,2
 801ac194:	0300006f          	j	801ac1c4 <inst_21+0xb8>
-801ac198:	003d4d13          	xori	s10,s10,3
+801ac198:	003d4d13          	xor	s10,s10,3
 801ac19c:	00000013          	nop
 801ac1a0:	00000697          	auipc	a3,0x0
-801ac1a4:	02468693          	addi	a3,a3,36 # 801ac1c4 <inst_21+0xb8>
+801ac1a4:	02468693          	add	a3,a3,36 # 801ac1c4 <inst_21+0xb8>
 801ac1a8:	00000013          	nop
 801ac1ac:	00000013          	nop
 801ac1b0:	00000013          	nop
@@ -438444,14 +438444,14 @@ Disassembly of section .text:
 801ac1d8:	00000013          	nop
 801ac1dc:	00000013          	nop
 801ac1e0:	00000697          	auipc	a3,0x0
-801ac1e4:	f2c68693          	addi	a3,a3,-212 # 801ac10c <inst_21>
+801ac1e4:	f2c68693          	add	a3,a3,-212 # 801ac10c <inst_21>
 801ac1e8:	00000013          	nop
 801ac1ec:	00000013          	nop
 801ac1f0:	00000013          	nop
 801ac1f4:	00000013          	nop
 801ac1f8:	00000013          	nop
 801ac1fc:	00000013          	nop
-801ac200:	ffc6f693          	andi	a3,a3,-4
+801ac200:	ffc6f693          	and	a3,a3,-4
 801ac204:	40dd0d33          	sub	s10,s10,a3
 801ac208:	05a12a23          	sw	s10,84(sp)
 
@@ -438462,7 +438462,7 @@ Disassembly of section .text:
 801ac218:	00000013          	nop
 801ac21c:	00000013          	nop
 801ac220:	00000697          	auipc	a3,0x0
-801ac224:	06c68693          	addi	a3,a3,108 # 801ac28c <inst_22+0x80>
+801ac224:	06c68693          	add	a3,a3,108 # 801ac28c <inst_22+0x80>
 801ac228:	00000013          	nop
 801ac22c:	00000013          	nop
 801ac230:	00000013          	nop
@@ -438478,7 +438478,7 @@ Disassembly of section .text:
 801ac258:	00000013          	nop
 801ac25c:	00000013          	nop
 801ac260:	00000697          	auipc	a3,0x0
-801ac264:	06468693          	addi	a3,a3,100 # 801ac2c4 <inst_22+0xb8>
+801ac264:	06468693          	add	a3,a3,100 # 801ac2c4 <inst_22+0xb8>
 801ac268:	00000013          	nop
 801ac26c:	00000013          	nop
 801ac270:	00000013          	nop
@@ -438486,15 +438486,15 @@ Disassembly of section .text:
 801ac278:	00000013          	nop
 801ac27c:	00000013          	nop
 801ac280:	00068067          	jr	a3
-801ac284:	0012c293          	xori	t0,t0,1
+801ac284:	0012c293          	xor	t0,t0,1
 801ac288:	fc0000e3          	beqz	zero,801ac248 <inst_22+0x3c>
 801ac28c:	00c002ef          	jal	t0,801ac298 <inst_22+0x8c>
-801ac290:	0022c293          	xori	t0,t0,2
+801ac290:	0022c293          	xor	t0,t0,2
 801ac294:	0300006f          	j	801ac2c4 <inst_22+0xb8>
-801ac298:	0032c293          	xori	t0,t0,3
+801ac298:	0032c293          	xor	t0,t0,3
 801ac29c:	00000013          	nop
 801ac2a0:	00000697          	auipc	a3,0x0
-801ac2a4:	02468693          	addi	a3,a3,36 # 801ac2c4 <inst_22+0xb8>
+801ac2a4:	02468693          	add	a3,a3,36 # 801ac2c4 <inst_22+0xb8>
 801ac2a8:	00000013          	nop
 801ac2ac:	00000013          	nop
 801ac2b0:	00000013          	nop
@@ -438510,14 +438510,14 @@ Disassembly of section .text:
 801ac2d8:	00000013          	nop
 801ac2dc:	00000013          	nop
 801ac2e0:	00000697          	auipc	a3,0x0
-801ac2e4:	f2c68693          	addi	a3,a3,-212 # 801ac20c <inst_22>
+801ac2e4:	f2c68693          	add	a3,a3,-212 # 801ac20c <inst_22>
 801ac2e8:	00000013          	nop
 801ac2ec:	00000013          	nop
 801ac2f0:	00000013          	nop
 801ac2f4:	00000013          	nop
 801ac2f8:	00000013          	nop
 801ac2fc:	00000013          	nop
-801ac300:	ffc6f693          	andi	a3,a3,-4
+801ac300:	ffc6f693          	and	a3,a3,-4
 801ac304:	40d282b3          	sub	t0,t0,a3
 801ac308:	04512c23          	sw	t0,88(sp)
 
@@ -438528,7 +438528,7 @@ Disassembly of section .text:
 801ac318:	00000013          	nop
 801ac31c:	00000013          	nop
 801ac320:	00000697          	auipc	a3,0x0
-801ac324:	06c68693          	addi	a3,a3,108 # 801ac38c <inst_23+0x80>
+801ac324:	06c68693          	add	a3,a3,108 # 801ac38c <inst_23+0x80>
 801ac328:	00000013          	nop
 801ac32c:	00000013          	nop
 801ac330:	00000013          	nop
@@ -438544,7 +438544,7 @@ Disassembly of section .text:
 801ac358:	00000013          	nop
 801ac35c:	00000013          	nop
 801ac360:	00000697          	auipc	a3,0x0
-801ac364:	06468693          	addi	a3,a3,100 # 801ac3c4 <inst_23+0xb8>
+801ac364:	06468693          	add	a3,a3,100 # 801ac3c4 <inst_23+0xb8>
 801ac368:	00000013          	nop
 801ac36c:	00000013          	nop
 801ac370:	00000013          	nop
@@ -438552,15 +438552,15 @@ Disassembly of section .text:
 801ac378:	00000013          	nop
 801ac37c:	00000013          	nop
 801ac380:	00068067          	jr	a3
-801ac384:	0017c793          	xori	a5,a5,1
+801ac384:	0017c793          	xor	a5,a5,1
 801ac388:	fc0000e3          	beqz	zero,801ac348 <inst_23+0x3c>
 801ac38c:	00c007ef          	jal	a5,801ac398 <inst_23+0x8c>
-801ac390:	0027c793          	xori	a5,a5,2
+801ac390:	0027c793          	xor	a5,a5,2
 801ac394:	0300006f          	j	801ac3c4 <inst_23+0xb8>
-801ac398:	0037c793          	xori	a5,a5,3
+801ac398:	0037c793          	xor	a5,a5,3
 801ac39c:	00000013          	nop
 801ac3a0:	00000697          	auipc	a3,0x0
-801ac3a4:	02468693          	addi	a3,a3,36 # 801ac3c4 <inst_23+0xb8>
+801ac3a4:	02468693          	add	a3,a3,36 # 801ac3c4 <inst_23+0xb8>
 801ac3a8:	00000013          	nop
 801ac3ac:	00000013          	nop
 801ac3b0:	00000013          	nop
@@ -438576,14 +438576,14 @@ Disassembly of section .text:
 801ac3d8:	00000013          	nop
 801ac3dc:	00000013          	nop
 801ac3e0:	00000697          	auipc	a3,0x0
-801ac3e4:	f2c68693          	addi	a3,a3,-212 # 801ac30c <inst_23>
+801ac3e4:	f2c68693          	add	a3,a3,-212 # 801ac30c <inst_23>
 801ac3e8:	00000013          	nop
 801ac3ec:	00000013          	nop
 801ac3f0:	00000013          	nop
 801ac3f4:	00000013          	nop
 801ac3f8:	00000013          	nop
 801ac3fc:	00000013          	nop
-801ac400:	ffc6f693          	andi	a3,a3,-4
+801ac400:	ffc6f693          	and	a3,a3,-4
 801ac404:	40d787b3          	sub	a5,a5,a3
 801ac408:	04f12e23          	sw	a5,92(sp)
 
@@ -438594,7 +438594,7 @@ Disassembly of section .text:
 801ac418:	00000013          	nop
 801ac41c:	00000013          	nop
 801ac420:	00000697          	auipc	a3,0x0
-801ac424:	06c68693          	addi	a3,a3,108 # 801ac48c <inst_24+0x80>
+801ac424:	06c68693          	add	a3,a3,108 # 801ac48c <inst_24+0x80>
 801ac428:	00000013          	nop
 801ac42c:	00000013          	nop
 801ac430:	00000013          	nop
@@ -438610,7 +438610,7 @@ Disassembly of section .text:
 801ac458:	00000013          	nop
 801ac45c:	00000013          	nop
 801ac460:	00000697          	auipc	a3,0x0
-801ac464:	06468693          	addi	a3,a3,100 # 801ac4c4 <inst_24+0xb8>
+801ac464:	06468693          	add	a3,a3,100 # 801ac4c4 <inst_24+0xb8>
 801ac468:	00000013          	nop
 801ac46c:	00000013          	nop
 801ac470:	00000013          	nop
@@ -438618,15 +438618,15 @@ Disassembly of section .text:
 801ac478:	00000013          	nop
 801ac47c:	00000013          	nop
 801ac480:	00068067          	jr	a3
-801ac484:	001bcb93          	xori	s7,s7,1
+801ac484:	001bcb93          	xor	s7,s7,1
 801ac488:	fc0000e3          	beqz	zero,801ac448 <inst_24+0x3c>
 801ac48c:	00c00bef          	jal	s7,801ac498 <inst_24+0x8c>
-801ac490:	002bcb93          	xori	s7,s7,2
+801ac490:	002bcb93          	xor	s7,s7,2
 801ac494:	0300006f          	j	801ac4c4 <inst_24+0xb8>
-801ac498:	003bcb93          	xori	s7,s7,3
+801ac498:	003bcb93          	xor	s7,s7,3
 801ac49c:	00000013          	nop
 801ac4a0:	00000697          	auipc	a3,0x0
-801ac4a4:	02468693          	addi	a3,a3,36 # 801ac4c4 <inst_24+0xb8>
+801ac4a4:	02468693          	add	a3,a3,36 # 801ac4c4 <inst_24+0xb8>
 801ac4a8:	00000013          	nop
 801ac4ac:	00000013          	nop
 801ac4b0:	00000013          	nop
@@ -438642,14 +438642,14 @@ Disassembly of section .text:
 801ac4d8:	00000013          	nop
 801ac4dc:	00000013          	nop
 801ac4e0:	00000697          	auipc	a3,0x0
-801ac4e4:	f2c68693          	addi	a3,a3,-212 # 801ac40c <inst_24>
+801ac4e4:	f2c68693          	add	a3,a3,-212 # 801ac40c <inst_24>
 801ac4e8:	00000013          	nop
 801ac4ec:	00000013          	nop
 801ac4f0:	00000013          	nop
 801ac4f4:	00000013          	nop
 801ac4f8:	00000013          	nop
 801ac4fc:	00000013          	nop
-801ac500:	ffc6f693          	andi	a3,a3,-4
+801ac500:	ffc6f693          	and	a3,a3,-4
 801ac504:	40db8bb3          	sub	s7,s7,a3
 801ac508:	07712023          	sw	s7,96(sp)
 
@@ -438660,7 +438660,7 @@ Disassembly of section .text:
 801ac518:	00000013          	nop
 801ac51c:	00000013          	nop
 801ac520:	00000697          	auipc	a3,0x0
-801ac524:	06c68693          	addi	a3,a3,108 # 801ac58c <inst_25+0x80>
+801ac524:	06c68693          	add	a3,a3,108 # 801ac58c <inst_25+0x80>
 801ac528:	00000013          	nop
 801ac52c:	00000013          	nop
 801ac530:	00000013          	nop
@@ -438676,7 +438676,7 @@ Disassembly of section .text:
 801ac558:	00000013          	nop
 801ac55c:	00000013          	nop
 801ac560:	00000697          	auipc	a3,0x0
-801ac564:	06468693          	addi	a3,a3,100 # 801ac5c4 <inst_25+0xb8>
+801ac564:	06468693          	add	a3,a3,100 # 801ac5c4 <inst_25+0xb8>
 801ac568:	00000013          	nop
 801ac56c:	00000013          	nop
 801ac570:	00000013          	nop
@@ -438684,15 +438684,15 @@ Disassembly of section .text:
 801ac578:	00000013          	nop
 801ac57c:	00000013          	nop
 801ac580:	00068067          	jr	a3
-801ac584:	001ccc93          	xori	s9,s9,1
+801ac584:	001ccc93          	xor	s9,s9,1
 801ac588:	fc0000e3          	beqz	zero,801ac548 <inst_25+0x3c>
 801ac58c:	00c00cef          	jal	s9,801ac598 <inst_25+0x8c>
-801ac590:	002ccc93          	xori	s9,s9,2
+801ac590:	002ccc93          	xor	s9,s9,2
 801ac594:	0300006f          	j	801ac5c4 <inst_25+0xb8>
-801ac598:	003ccc93          	xori	s9,s9,3
+801ac598:	003ccc93          	xor	s9,s9,3
 801ac59c:	00000013          	nop
 801ac5a0:	00000697          	auipc	a3,0x0
-801ac5a4:	02468693          	addi	a3,a3,36 # 801ac5c4 <inst_25+0xb8>
+801ac5a4:	02468693          	add	a3,a3,36 # 801ac5c4 <inst_25+0xb8>
 801ac5a8:	00000013          	nop
 801ac5ac:	00000013          	nop
 801ac5b0:	00000013          	nop
@@ -438708,14 +438708,14 @@ Disassembly of section .text:
 801ac5d8:	00000013          	nop
 801ac5dc:	00000013          	nop
 801ac5e0:	00000697          	auipc	a3,0x0
-801ac5e4:	f2c68693          	addi	a3,a3,-212 # 801ac50c <inst_25>
+801ac5e4:	f2c68693          	add	a3,a3,-212 # 801ac50c <inst_25>
 801ac5e8:	00000013          	nop
 801ac5ec:	00000013          	nop
 801ac5f0:	00000013          	nop
 801ac5f4:	00000013          	nop
 801ac5f8:	00000013          	nop
 801ac5fc:	00000013          	nop
-801ac600:	ffc6f693          	andi	a3,a3,-4
+801ac600:	ffc6f693          	and	a3,a3,-4
 801ac604:	40dc8cb3          	sub	s9,s9,a3
 801ac608:	07912223          	sw	s9,100(sp)
 
@@ -438726,7 +438726,7 @@ Disassembly of section .text:
 801ac618:	00000013          	nop
 801ac61c:	00000013          	nop
 801ac620:	00000697          	auipc	a3,0x0
-801ac624:	06c68693          	addi	a3,a3,108 # 801ac68c <inst_26+0x80>
+801ac624:	06c68693          	add	a3,a3,108 # 801ac68c <inst_26+0x80>
 801ac628:	00000013          	nop
 801ac62c:	00000013          	nop
 801ac630:	00000013          	nop
@@ -438742,7 +438742,7 @@ Disassembly of section .text:
 801ac658:	00000013          	nop
 801ac65c:	00000013          	nop
 801ac660:	00000697          	auipc	a3,0x0
-801ac664:	06468693          	addi	a3,a3,100 # 801ac6c4 <inst_26+0xb8>
+801ac664:	06468693          	add	a3,a3,100 # 801ac6c4 <inst_26+0xb8>
 801ac668:	00000013          	nop
 801ac66c:	00000013          	nop
 801ac670:	00000013          	nop
@@ -438750,15 +438750,15 @@ Disassembly of section .text:
 801ac678:	00000013          	nop
 801ac67c:	00000013          	nop
 801ac680:	00068067          	jr	a3
-801ac684:	00194913          	xori	s2,s2,1
+801ac684:	00194913          	xor	s2,s2,1
 801ac688:	fc0000e3          	beqz	zero,801ac648 <inst_26+0x3c>
 801ac68c:	00c0096f          	jal	s2,801ac698 <inst_26+0x8c>
-801ac690:	00294913          	xori	s2,s2,2
+801ac690:	00294913          	xor	s2,s2,2
 801ac694:	0300006f          	j	801ac6c4 <inst_26+0xb8>
-801ac698:	00394913          	xori	s2,s2,3
+801ac698:	00394913          	xor	s2,s2,3
 801ac69c:	00000013          	nop
 801ac6a0:	00000697          	auipc	a3,0x0
-801ac6a4:	02468693          	addi	a3,a3,36 # 801ac6c4 <inst_26+0xb8>
+801ac6a4:	02468693          	add	a3,a3,36 # 801ac6c4 <inst_26+0xb8>
 801ac6a8:	00000013          	nop
 801ac6ac:	00000013          	nop
 801ac6b0:	00000013          	nop
@@ -438774,14 +438774,14 @@ Disassembly of section .text:
 801ac6d8:	00000013          	nop
 801ac6dc:	00000013          	nop
 801ac6e0:	00000697          	auipc	a3,0x0
-801ac6e4:	f2c68693          	addi	a3,a3,-212 # 801ac60c <inst_26>
+801ac6e4:	f2c68693          	add	a3,a3,-212 # 801ac60c <inst_26>
 801ac6e8:	00000013          	nop
 801ac6ec:	00000013          	nop
 801ac6f0:	00000013          	nop
 801ac6f4:	00000013          	nop
 801ac6f8:	00000013          	nop
 801ac6fc:	00000013          	nop
-801ac700:	ffc6f693          	andi	a3,a3,-4
+801ac700:	ffc6f693          	and	a3,a3,-4
 801ac704:	40d90933          	sub	s2,s2,a3
 801ac708:	07212423          	sw	s2,104(sp)
 
@@ -438792,7 +438792,7 @@ Disassembly of section .text:
 801ac718:	00000013          	nop
 801ac71c:	00000013          	nop
 801ac720:	00000697          	auipc	a3,0x0
-801ac724:	06c68693          	addi	a3,a3,108 # 801ac78c <inst_27+0x80>
+801ac724:	06c68693          	add	a3,a3,108 # 801ac78c <inst_27+0x80>
 801ac728:	00000013          	nop
 801ac72c:	00000013          	nop
 801ac730:	00000013          	nop
@@ -438808,7 +438808,7 @@ Disassembly of section .text:
 801ac758:	00000013          	nop
 801ac75c:	00000013          	nop
 801ac760:	00000697          	auipc	a3,0x0
-801ac764:	06468693          	addi	a3,a3,100 # 801ac7c4 <inst_27+0xb8>
+801ac764:	06468693          	add	a3,a3,100 # 801ac7c4 <inst_27+0xb8>
 801ac768:	00000013          	nop
 801ac76c:	00000013          	nop
 801ac770:	00000013          	nop
@@ -438816,15 +438816,15 @@ Disassembly of section .text:
 801ac778:	00000013          	nop
 801ac77c:	00000013          	nop
 801ac780:	00068067          	jr	a3
-801ac784:	0014c493          	xori	s1,s1,1
+801ac784:	0014c493          	xor	s1,s1,1
 801ac788:	fc0000e3          	beqz	zero,801ac748 <inst_27+0x3c>
 801ac78c:	00c004ef          	jal	s1,801ac798 <inst_27+0x8c>
-801ac790:	0024c493          	xori	s1,s1,2
+801ac790:	0024c493          	xor	s1,s1,2
 801ac794:	0300006f          	j	801ac7c4 <inst_27+0xb8>
-801ac798:	0034c493          	xori	s1,s1,3
+801ac798:	0034c493          	xor	s1,s1,3
 801ac79c:	00000013          	nop
 801ac7a0:	00000697          	auipc	a3,0x0
-801ac7a4:	02468693          	addi	a3,a3,36 # 801ac7c4 <inst_27+0xb8>
+801ac7a4:	02468693          	add	a3,a3,36 # 801ac7c4 <inst_27+0xb8>
 801ac7a8:	00000013          	nop
 801ac7ac:	00000013          	nop
 801ac7b0:	00000013          	nop
@@ -438840,14 +438840,14 @@ Disassembly of section .text:
 801ac7d8:	00000013          	nop
 801ac7dc:	00000013          	nop
 801ac7e0:	00000697          	auipc	a3,0x0
-801ac7e4:	f2c68693          	addi	a3,a3,-212 # 801ac70c <inst_27>
+801ac7e4:	f2c68693          	add	a3,a3,-212 # 801ac70c <inst_27>
 801ac7e8:	00000013          	nop
 801ac7ec:	00000013          	nop
 801ac7f0:	00000013          	nop
 801ac7f4:	00000013          	nop
 801ac7f8:	00000013          	nop
 801ac7fc:	00000013          	nop
-801ac800:	ffc6f693          	andi	a3,a3,-4
+801ac800:	ffc6f693          	and	a3,a3,-4
 801ac804:	40d484b3          	sub	s1,s1,a3
 801ac808:	06912623          	sw	s1,108(sp)
 
@@ -438858,7 +438858,7 @@ Disassembly of section .text:
 801ac818:	00000013          	nop
 801ac81c:	00000013          	nop
 801ac820:	00000197          	auipc	gp,0x0
-801ac824:	06c18193          	addi	gp,gp,108 # 801ac88c <inst_28+0x80>
+801ac824:	06c18193          	add	gp,gp,108 # 801ac88c <inst_28+0x80>
 801ac828:	00000013          	nop
 801ac82c:	00000013          	nop
 801ac830:	00000013          	nop
@@ -438874,7 +438874,7 @@ Disassembly of section .text:
 801ac858:	00000013          	nop
 801ac85c:	00000013          	nop
 801ac860:	00000197          	auipc	gp,0x0
-801ac864:	06418193          	addi	gp,gp,100 # 801ac8c4 <inst_28+0xb8>
+801ac864:	06418193          	add	gp,gp,100 # 801ac8c4 <inst_28+0xb8>
 801ac868:	00000013          	nop
 801ac86c:	00000013          	nop
 801ac870:	00000013          	nop
@@ -438882,15 +438882,15 @@ Disassembly of section .text:
 801ac878:	00000013          	nop
 801ac87c:	00000013          	nop
 801ac880:	00018067          	jr	gp
-801ac884:	0016c693          	xori	a3,a3,1
+801ac884:	0016c693          	xor	a3,a3,1
 801ac888:	fc0000e3          	beqz	zero,801ac848 <inst_28+0x3c>
 801ac88c:	00c006ef          	jal	a3,801ac898 <inst_28+0x8c>
-801ac890:	0026c693          	xori	a3,a3,2
+801ac890:	0026c693          	xor	a3,a3,2
 801ac894:	0300006f          	j	801ac8c4 <inst_28+0xb8>
-801ac898:	0036c693          	xori	a3,a3,3
+801ac898:	0036c693          	xor	a3,a3,3
 801ac89c:	00000013          	nop
 801ac8a0:	00000197          	auipc	gp,0x0
-801ac8a4:	02418193          	addi	gp,gp,36 # 801ac8c4 <inst_28+0xb8>
+801ac8a4:	02418193          	add	gp,gp,36 # 801ac8c4 <inst_28+0xb8>
 801ac8a8:	00000013          	nop
 801ac8ac:	00000013          	nop
 801ac8b0:	00000013          	nop
@@ -438906,14 +438906,14 @@ Disassembly of section .text:
 801ac8d8:	00000013          	nop
 801ac8dc:	00000013          	nop
 801ac8e0:	00000197          	auipc	gp,0x0
-801ac8e4:	f2c18193          	addi	gp,gp,-212 # 801ac80c <inst_28>
+801ac8e4:	f2c18193          	add	gp,gp,-212 # 801ac80c <inst_28>
 801ac8e8:	00000013          	nop
 801ac8ec:	00000013          	nop
 801ac8f0:	00000013          	nop
 801ac8f4:	00000013          	nop
 801ac8f8:	00000013          	nop
 801ac8fc:	00000013          	nop
-801ac900:	ffc1f193          	andi	gp,gp,-4
+801ac900:	ffc1f193          	and	gp,gp,-4
 801ac904:	403686b3          	sub	a3,a3,gp
 801ac908:	06d12823          	sw	a3,112(sp)
 801ac90c:	00000013          	nop
@@ -438922,7 +438922,7 @@ Disassembly of section .text:
 801ac918:	00000013          	nop
 801ac91c:	00000013          	nop
 801ac920:	00002097          	auipc	ra,0x2
-801ac924:	86808093          	addi	ra,ra,-1944 # 801ae188 <signature_x1_0>
+801ac924:	86808093          	add	ra,ra,-1944 # 801ae188 <signature_x1_0>
 801ac928:	00000013          	nop
 801ac92c:	00000013          	nop
 801ac930:	00000013          	nop
@@ -438932,7 +438932,7 @@ Disassembly of section .text:
 
 801ac940 <inst_29>:
 801ac940:	00000197          	auipc	gp,0x0
-801ac944:	06c18193          	addi	gp,gp,108 # 801ac9ac <inst_29+0x6c>
+801ac944:	06c18193          	add	gp,gp,108 # 801ac9ac <inst_29+0x6c>
 801ac948:	00000013          	nop
 801ac94c:	00000013          	nop
 801ac950:	00000013          	nop
@@ -438948,7 +438948,7 @@ Disassembly of section .text:
 801ac978:	00000013          	nop
 801ac97c:	00000013          	nop
 801ac980:	00000197          	auipc	gp,0x0
-801ac984:	06418193          	addi	gp,gp,100 # 801ac9e4 <inst_29+0xa4>
+801ac984:	06418193          	add	gp,gp,100 # 801ac9e4 <inst_29+0xa4>
 801ac988:	00000013          	nop
 801ac98c:	00000013          	nop
 801ac990:	00000013          	nop
@@ -438956,15 +438956,15 @@ Disassembly of section .text:
 801ac998:	00000013          	nop
 801ac99c:	00000013          	nop
 801ac9a0:	00018067          	jr	gp
-801ac9a4:	00174713          	xori	a4,a4,1
+801ac9a4:	00174713          	xor	a4,a4,1
 801ac9a8:	fc0000e3          	beqz	zero,801ac968 <inst_29+0x28>
 801ac9ac:	00c0076f          	jal	a4,801ac9b8 <inst_29+0x78>
-801ac9b0:	00274713          	xori	a4,a4,2
+801ac9b0:	00274713          	xor	a4,a4,2
 801ac9b4:	0300006f          	j	801ac9e4 <inst_29+0xa4>
-801ac9b8:	00374713          	xori	a4,a4,3
+801ac9b8:	00374713          	xor	a4,a4,3
 801ac9bc:	00000013          	nop
 801ac9c0:	00000197          	auipc	gp,0x0
-801ac9c4:	02418193          	addi	gp,gp,36 # 801ac9e4 <inst_29+0xa4>
+801ac9c4:	02418193          	add	gp,gp,36 # 801ac9e4 <inst_29+0xa4>
 801ac9c8:	00000013          	nop
 801ac9cc:	00000013          	nop
 801ac9d0:	00000013          	nop
@@ -438980,14 +438980,14 @@ Disassembly of section .text:
 801ac9f8:	00000013          	nop
 801ac9fc:	00000013          	nop
 801aca00:	00000197          	auipc	gp,0x0
-801aca04:	f4018193          	addi	gp,gp,-192 # 801ac940 <inst_29>
+801aca04:	f4018193          	add	gp,gp,-192 # 801ac940 <inst_29>
 801aca08:	00000013          	nop
 801aca0c:	00000013          	nop
 801aca10:	00000013          	nop
 801aca14:	00000013          	nop
 801aca18:	00000013          	nop
 801aca1c:	00000013          	nop
-801aca20:	ffc1f193          	andi	gp,gp,-4
+801aca20:	ffc1f193          	and	gp,gp,-4
 801aca24:	40370733          	sub	a4,a4,gp
 801aca28:	00e0a023          	sw	a4,0(ra)
 
@@ -438998,7 +438998,7 @@ Disassembly of section .text:
 801aca38:	00000013          	nop
 801aca3c:	00000013          	nop
 801aca40:	00000197          	auipc	gp,0x0
-801aca44:	06c18193          	addi	gp,gp,108 # 801acaac <inst_30+0x80>
+801aca44:	06c18193          	add	gp,gp,108 # 801acaac <inst_30+0x80>
 801aca48:	00000013          	nop
 801aca4c:	00000013          	nop
 801aca50:	00000013          	nop
@@ -439014,7 +439014,7 @@ Disassembly of section .text:
 801aca78:	00000013          	nop
 801aca7c:	00000013          	nop
 801aca80:	00000197          	auipc	gp,0x0
-801aca84:	06418193          	addi	gp,gp,100 # 801acae4 <inst_30+0xb8>
+801aca84:	06418193          	add	gp,gp,100 # 801acae4 <inst_30+0xb8>
 801aca88:	00000013          	nop
 801aca8c:	00000013          	nop
 801aca90:	00000013          	nop
@@ -439022,15 +439022,15 @@ Disassembly of section .text:
 801aca98:	00000013          	nop
 801aca9c:	00000013          	nop
 801acaa0:	00018067          	jr	gp
-801acaa4:	0018c893          	xori	a7,a7,1
+801acaa4:	0018c893          	xor	a7,a7,1
 801acaa8:	fc0000e3          	beqz	zero,801aca68 <inst_30+0x3c>
 801acaac:	00c008ef          	jal	a7,801acab8 <inst_30+0x8c>
-801acab0:	0028c893          	xori	a7,a7,2
+801acab0:	0028c893          	xor	a7,a7,2
 801acab4:	0300006f          	j	801acae4 <inst_30+0xb8>
-801acab8:	0038c893          	xori	a7,a7,3
+801acab8:	0038c893          	xor	a7,a7,3
 801acabc:	00000013          	nop
 801acac0:	00000197          	auipc	gp,0x0
-801acac4:	02418193          	addi	gp,gp,36 # 801acae4 <inst_30+0xb8>
+801acac4:	02418193          	add	gp,gp,36 # 801acae4 <inst_30+0xb8>
 801acac8:	00000013          	nop
 801acacc:	00000013          	nop
 801acad0:	00000013          	nop
@@ -439046,14 +439046,14 @@ Disassembly of section .text:
 801acaf8:	00000013          	nop
 801acafc:	00000013          	nop
 801acb00:	00000197          	auipc	gp,0x0
-801acb04:	f2c18193          	addi	gp,gp,-212 # 801aca2c <inst_30>
+801acb04:	f2c18193          	add	gp,gp,-212 # 801aca2c <inst_30>
 801acb08:	00000013          	nop
 801acb0c:	00000013          	nop
 801acb10:	00000013          	nop
 801acb14:	00000013          	nop
 801acb18:	00000013          	nop
 801acb1c:	00000013          	nop
-801acb20:	ffc1f193          	andi	gp,gp,-4
+801acb20:	ffc1f193          	and	gp,gp,-4
 801acb24:	403888b3          	sub	a7,a7,gp
 801acb28:	0110a223          	sw	a7,4(ra)
 
@@ -439064,7 +439064,7 @@ Disassembly of section .text:
 801acb38:	00000013          	nop
 801acb3c:	00000013          	nop
 801acb40:	00000197          	auipc	gp,0x0
-801acb44:	06c18193          	addi	gp,gp,108 # 801acbac <inst_31+0x80>
+801acb44:	06c18193          	add	gp,gp,108 # 801acbac <inst_31+0x80>
 801acb48:	00000013          	nop
 801acb4c:	00000013          	nop
 801acb50:	00000013          	nop
@@ -439080,7 +439080,7 @@ Disassembly of section .text:
 801acb78:	00000013          	nop
 801acb7c:	00000013          	nop
 801acb80:	00000197          	auipc	gp,0x0
-801acb84:	06418193          	addi	gp,gp,100 # 801acbe4 <inst_31+0xb8>
+801acb84:	06418193          	add	gp,gp,100 # 801acbe4 <inst_31+0xb8>
 801acb88:	00000013          	nop
 801acb8c:	00000013          	nop
 801acb90:	00000013          	nop
@@ -439088,15 +439088,15 @@ Disassembly of section .text:
 801acb98:	00000013          	nop
 801acb9c:	00000013          	nop
 801acba0:	00018067          	jr	gp
-801acba4:	00114113          	xori	sp,sp,1
+801acba4:	00114113          	xor	sp,sp,1
 801acba8:	fc0000e3          	beqz	zero,801acb68 <inst_31+0x3c>
 801acbac:	00c0016f          	jal	sp,801acbb8 <inst_31+0x8c>
-801acbb0:	00214113          	xori	sp,sp,2
+801acbb0:	00214113          	xor	sp,sp,2
 801acbb4:	0300006f          	j	801acbe4 <inst_31+0xb8>
-801acbb8:	00314113          	xori	sp,sp,3
+801acbb8:	00314113          	xor	sp,sp,3
 801acbbc:	00000013          	nop
 801acbc0:	00000197          	auipc	gp,0x0
-801acbc4:	02418193          	addi	gp,gp,36 # 801acbe4 <inst_31+0xb8>
+801acbc4:	02418193          	add	gp,gp,36 # 801acbe4 <inst_31+0xb8>
 801acbc8:	00000013          	nop
 801acbcc:	00000013          	nop
 801acbd0:	00000013          	nop
@@ -439112,14 +439112,14 @@ Disassembly of section .text:
 801acbf8:	00000013          	nop
 801acbfc:	00000013          	nop
 801acc00:	00000197          	auipc	gp,0x0
-801acc04:	f2c18193          	addi	gp,gp,-212 # 801acb2c <inst_31>
+801acc04:	f2c18193          	add	gp,gp,-212 # 801acb2c <inst_31>
 801acc08:	00000013          	nop
 801acc0c:	00000013          	nop
 801acc10:	00000013          	nop
 801acc14:	00000013          	nop
 801acc18:	00000013          	nop
 801acc1c:	00000013          	nop
-801acc20:	ffc1f193          	andi	gp,gp,-4
+801acc20:	ffc1f193          	and	gp,gp,-4
 801acc24:	40310133          	sub	sp,sp,gp
 801acc28:	0020a423          	sw	sp,8(ra)
 
@@ -439131,16 +439131,16 @@ Disassembly of section .text:
 801acc34:	18012303          	lw	t1,384(sp)
 801acc38:	00930333          	add	t1,t1,s1
 801acc3c:	bad0e337          	lui	t1,0xbad0e
-801acc40:	ad030313          	addi	t1,t1,-1328 # bad0dad0 <immx>
+801acc40:	ad030313          	add	t1,t1,-1328 # bad0dad0 <immx>
 801acc44:	fe64ae23          	sw	t1,-4(s1)
 801acc48:	0040006f          	j	801acc4c <exit_cleanup>
 
 801acc4c <exit_cleanup>:
 801acc4c:	f0000237          	lui	tp,0xf0000
 801acc50:	00001297          	auipc	t0,0x1
-801acc54:	4c028293          	addi	t0,t0,1216 # 801ae110 <begin_signature>
+801acc54:	4c028293          	add	t0,t0,1216 # 801ae110 <begin_signature>
 801acc58:	00001317          	auipc	t1,0x1
-801acc5c:	54830313          	addi	t1,t1,1352 # 801ae1a0 <_end>
+801acc5c:	54830313          	add	t1,t1,1352 # 801ae1a0 <_end>
 801acc60:	00522023          	sw	t0,0(tp) # f0000000 <immx+0x352f2530>
 801acc64:	00622223          	sw	t1,4(tp) # 4 <MMODE_SIG+0x1>
 
@@ -439161,7 +439161,7 @@ Disassembly of section .text:
 	...
 
 801ae000 <begin_regstate>:
-801ae000:	0080                	addi	s0,sp,64
+801ae000:	0080                	add	s0,sp,64
 	...
 
 801ae100 <end_regstate>:
